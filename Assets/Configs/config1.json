@@ -1,0 +1,174 @@
+{   
+    "paperfactory" : 
+    {
+         "capital": 500 ,
+         "ivestments": 0 ,
+         "production": 0,
+         "amortization": 0,
+         "income": 0,
+         "profit": 0,
+         "deductions": 0, 
+         "numJobs": 0, 
+         "reqJobs": 0,
+
+
+          "capitalLifeTime" : 5 ,
+          "numberJobsPer1Cap":5, 
+          "avgLaborProd": 5, 
+          "baseCost": 5,
+          "varCosts": 0.05 
+    },
+
+    "fish" : 
+    {
+         "capital": 500 ,
+         "ivestments": 0 ,
+         "production": 0,
+         "amortization": 0,
+         "income": 0,
+         "profit": 0,
+         "deductions": 0, 
+         "numJobs": 0, 
+         "reqJobs": 0,
+
+
+          "capitalLifeTime" : 5 ,
+          "numberJobsPer1Cap":5, 
+          "avgLaborProd": 5, 
+          "baseCost": 5,
+          "varCosts": 0.05 ,
+          "eColOth" : 10
+    },
+
+    "aquaCulture" : 
+    {
+         "capital": 200 ,
+         "ivestments": 0 ,
+         "production": 0,
+         "amortization": 0,
+         "income": 0,
+         "profit": 0,
+         "deductions": 0, 
+         "numJobs": 0, 
+         "reqJobs": 0,
+
+
+          "capitalLifeTime" : 5 ,
+          "numberJobsPer1Cap":5, 
+          "avgLaborProd": 5, 
+          "baseCost": 5,
+          "varCosts": 0.05 ,
+          "eColOth" : 10
+    },
+
+    "agroCulture" : 
+    {
+         "capital": 200 ,
+         "ivestments": 0 ,
+         "production": 0,
+         "amortization": 0,
+         "income": 0,
+         "profit": 0,
+         "deductions": 0, 
+         "numJobs": 0, 
+         "reqJobs": 0,
+
+
+          "capitalLifeTime" : 5 ,
+          "numberJobsPer1Cap":5, 
+          "avgLaborProd": 5, 
+          "baseCost": 5,
+          "varCosts": 0.05 ,
+          "orgMatterOth" : 10
+    },
+
+    "tourism" : 
+    {
+         "capital": 100 ,
+         "ivestments": 0 ,
+         "production": 0,
+         "amortization": 0,
+         "income": 0,
+         "profit": 0,
+         "deductions": 0, 
+         "numJobs": 0, 
+         "reqJobs": 0,
+
+
+          "capitalLifeTime" : 5 ,
+          "numberJobsPer1Cap":5, 
+          "avgLaborProd": 5, 
+          "baseCost": 5,
+          "varCosts": 0.05 ,
+          "eColOth" : 10,
+          "phsOth" : 10
+    },
+
+    "chemCleaning" : 
+    {
+         "capital": 50 ,
+         "ivestments": 0 ,
+         "production": 0,
+         "amortization": 0,
+         "income": 0,
+         "profit": 0,
+         "deductions": 0, 
+         "numJobs": 0, 
+         "reqJobs": 0,
+
+
+          "capitalLifeTime" : 5 ,
+          "numberJobsPer1Cap":5, 
+          "avgLaborProd": 5, 
+          "chemCleanFact" : 1000
+    },
+
+    "bioCleaning":
+    {
+        "capital": 50 ,
+        "ivestments": 0 ,
+        "production": 0,
+        "amortization": 0,
+        "income": 0,
+        "profit": 0,
+        "deductions": 0, 
+        "numJobs": 0, 
+        "reqJobs": 0,
+
+
+         "capitalLifeTime" : 5 ,
+         "numberJobsPer1Cap":5, 
+         "avgLaborProd": 5, 
+         "chemCleanFact" : 1000
+   },
+
+
+    "fishAmount" : 2000000,
+    "ejectEColi" : 0, 
+    "ejectOrg": 0, 
+    "ejectPhs": 0, 
+    "residueEColi": 100, 
+    "residueOrg": 100, 
+    "residuePhs": 10,
+    "swampArea": 67, 
+    "incomeSumPerHum": 0,
+    "humDevInd": 0, 
+    "qualityOfEnv": 0,
+    "moneySpend": 0,
+    "moneyLeft": 0,
+    "incomeSum": 0,
+    "laborAmountSum": 0 ,
+    "population": 600000, 
+    "employmentRate": 1,
+    "numJobsReqSum": 0,
+    "capitalSum": 0 , 
+    "ablePopSum": 0, 
+    "difDirt": 0,
+    "budget" : 10000,
+    "popInc" : 5,
+    "ableToLabor" : 40,
+    "baseCostInc" : 2,
+    "profitTax" : 40,
+    "fishInc" : 5
+
+}
