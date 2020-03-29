@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 	
 	private YearsDB DBScript;
 
-	private string configJSON = "Assets/Configs/config1.json";
+	private string configJSON = "Assets/Configs/config2.json";
 	
 	
 	//Awake is always called before any Start functions
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 	{
 
 		DBScript = GetComponent<YearsDB>();
-		//InitGame();
+		InitGame();
 	}
 
 	//This is called each time a scene is loaded.
@@ -28,15 +28,19 @@ public class GameManager : MonoBehaviour
 	void InitGame()
 	{
 		DBScript.InitDB(configJSON);
+		//DBScript.PreGameCalc();
 	}
 
 	void Update() 
 	{
 		bool down = Input.GetKeyDown(KeyCode.Space);
-		if (down)
+		if(down)
 		{
-			Debug.Log("CHECK");
+			Debug.Log("Check");
+			DBScript.AbsCalc();
 		}
+		
+		
 	}
 	
 }

@@ -11,7 +11,7 @@ public class Industry
     public int amortization;
     public int income;
     public int profit;
-    public int deductions; // deductions  into the budget
+    public int toBudget; // deductions  into the budget
     public int numJobs; // number of jobs at factory
     public int reqJobs; // amount of jobs that industry needed
     
@@ -39,7 +39,7 @@ public class Fish : Industry
     public int AVG_LABOR_PROD; //Средняя производительность труда 1 работника
     public int BASE_COST;
     
-    public int VAR_COSTS; //variable costs
+    public float VAR_COSTS; //variable costs
 
     public int E_COL_OTH; //Процент кишечных палочек от объема продукции во второй отрасли (Ловля рыбы)
 
@@ -54,9 +54,9 @@ public class AquaCulture : Industry
     public int AVG_LABOR_PROD; //Средняя производительность труда 1 работника
     public int BASE_COST;
     
-    public int VAR_COSTS; //variable costs
+    public float VAR_COSTS; //variable costs
 
-    public int ORG_MATTER_OTH; //Процент органических отходов от объема продукции в третьей отрасли (Аквакультура)
+    public int ORG_OTH; //Процент органических отходов от объема продукции в третьей отрасли (Аквакультура)
 
 };
 
@@ -68,9 +68,9 @@ public class AgroCulture : Industry
     public int AVG_LABOR_PROD; //Средняя производительность труда 1 работника
     public int BASE_COST;
     
-    public int VAR_COSTS; //variable costs
+    public float VAR_COSTS; //variable costs
 
-    public int ORG_MATTER_OTH; //Процент органических отходов от объема продукции в третьей отрасли (Сельское)
+    public int ORG_OTH; //Процент органических отходов от объема продукции в третьей отрасли (Сельское)
 
 };
 
@@ -82,7 +82,7 @@ public class Tourism : Industry
     public int AVG_LABOR_PROD; //Средняя производительность труда 1 работника
     public int BASE_COST;
     
-    public int VAR_COSTS; //variable costs
+    public float VAR_COSTS; //variable costs
     public int E_COL_OTH; //Процент кишечных палочек от объема продукции в пятой отрасли (Туризм)
     public int PHS_OTH; //Процент фосфатных отходов от объема продукции в пятой отрасли (Туризм)
 
@@ -106,6 +106,6 @@ public class BioCleaning : Industry
     public int NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
     public int AVG_LABOR_PROD; //Средняя производительность труда 1 работника
    
-    public int BIO_CLEAN_FACTR; //Чуствительность технологии к переработке (Химическая очистка)
+    public int BIO_CLEAN_FACT; //Чуствительность технологии к переработке (Химическая очистка)
 
 };

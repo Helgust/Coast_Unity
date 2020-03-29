@@ -1,14 +1,14 @@
 {   
     "paperfactory" : 
     {
-         "capital": 500 ,
-         "ivestments": 0 ,
-         "production": 0,
-         "amortization": 0,
-         "income": 0,
-         "profit": 0,
-         "deductions": 0, 
-         "numJobs": 0, 
+         "capital": 750 ,
+         "ivestments": 50 ,
+         "production": 150,
+         "amortization": 150,
+         "income": 1500,
+         "profit": 1200,
+         "deductions": 500, 
+         "numJobs": 25, 
          "reqJobs": 0,
 
 
@@ -22,13 +22,13 @@
     "fish" : 
     {
          "capital": 500 ,
-         "ivestments": 0 ,
-         "production": 0,
-         "amortization": 0,
-         "income": 0,
-         "profit": 0,
-         "deductions": 0, 
-         "numJobs": 0, 
+         "ivestments": 50 ,
+         "production": 100,
+         "amortization": 100,
+         "income": 1000,
+         "profit": 800,
+         "deductions": 300, 
+         "numJobs": 18, 
          "reqJobs": 0,
 
 
@@ -43,13 +43,13 @@
     "aquaCulture" : 
     {
          "capital": 200 ,
-         "ivestments": 0 ,
-         "production": 0,
-         "amortization": 0,
-         "income": 0,
-         "profit": 0,
-         "deductions": 0, 
-         "numJobs": 0, 
+         "ivestments": 50 ,
+         "production": 40,
+         "amortization": 40,
+         "income": 400,
+         "profit": 300,
+         "deductions": 140, 
+         "numJobs": 7, 
          "reqJobs": 0,
 
 
@@ -64,13 +64,13 @@
     "agroCulture" : 
     {
          "capital": 200 ,
-         "ivestments": 0 ,
-         "production": 0,
-         "amortization": 0,
-         "income": 0,
-         "profit": 0,
-         "deductions": 0, 
-         "numJobs": 0, 
+         "ivestments": 50 ,
+         "production": 40,
+         "amortization": 40,
+         "income": 400,
+         "profit": 300,
+         "deductions": 140, 
+         "numJobs": 6, 
          "reqJobs": 0,
 
 
@@ -85,13 +85,13 @@
     "tourism" : 
     {
          "capital": 100 ,
-         "ivestments": 0 ,
-         "production": 0,
-         "amortization": 0,
-         "income": 0,
-         "profit": 0,
-         "deductions": 0, 
-         "numJobs": 0, 
+         "ivestments": 50 ,
+         "production": 20,
+         "amortization": 20,
+         "income": 200,
+         "profit": 100,
+         "deductions": 70, 
+         "numJobs": 2, 
          "reqJobs": 0,
 
 
@@ -106,14 +106,14 @@
 
     "chemCleaning" : 
     {
-         "capital": 50 ,
-         "ivestments": 0 ,
-         "production": 0,
-         "amortization": 0,
+         "capital": 500 ,
+         "ivestments": 50 ,
+         "production": 100,
+         "amortization": 100,
          "income": 0,
          "profit": 0,
          "deductions": 0, 
-         "numJobs": 0, 
+         "numJobs": 1, 
          "reqJobs": 0,
 
 
@@ -125,14 +125,14 @@
 
     "bioCleaning":
     {
-        "capital": 50 ,
-        "ivestments": 0 ,
-        "production": 0,
-        "amortization": 0,
+        "capital": 500 ,
+        "ivestments": 50 ,
+        "production": 100,
+        "amortization": 100,
         "income": 0,
         "profit": 0,
         "deductions": 0, 
-        "numJobs": 0, 
+        "numJobs": 1, 
         "reqJobs": 0,
 
 
@@ -144,25 +144,25 @@
 
 
     "fishAmount" : 2000000,
-    "ejectEColi" : 0, 
-    "ejectOrg": 0, 
-    "ejectPhs": 0, 
+    "ejectEColi" : 500, 
+    "ejectOrg": 5, 
+    "ejectPhs": 600, 
     "residueEColi": 100, 
     "residueOrg": 100, 
     "residuePhs": 10,
-    "swampArea": 67, 
-    "incomeSumPerHum": 0,
-    "humDevInd": 0, 
-    "qualityOfEnv": 0,
-    "moneySpend": 0,
-    "moneyLeft": 0,
-    "incomeSum": 0,
-    "jobsAmountSum": 0 ,
+    "swampArea": 0, 
+    "incomeSumPerHum": 10,
+    "humDevInd": 50, 
+    "qualityOfEnv": 1,
+    "moneySpend": 100,
+    "moneyLeft": 900,
+    "incomeSum": 3500,
+    "jobsAmountSum": 60 ,
     "population": 600000, 
     "employmentRate": 1,
-    "numJobsReqSum": 0,
-    "capitalSum": 0 , 
-    "ablePopSum": 0, 
+    "numJobsReqSum": 60,
+    "capitalSum": 2750 , 
+    "ablePopSum": 240000, 
     "difDirt": 0,
     "BUDGET" : 10000,
     "POP_INC" : 5,
