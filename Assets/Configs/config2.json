@@ -7,13 +7,13 @@
          "amortization": 150,
          "income": 1500,
          "profit": 1200,
-         "deductions": 500, 
+         "toBudget": 500, 
          "numJobs": 25, 
          "reqJobs": 0,
 
 
           "CAP_LIFE_TIME" : 5 ,
-          "NUM_JOB_PER_CAP":5, 
+          "NUM_JOB_PER_CAP":0.050000, 
           "AVG_LABOR_PROD": 5, 
           "BASE_COST": 5,
           "VAR_COSTS": 0.05 
@@ -27,13 +27,13 @@
          "amortization": 100,
          "income": 1000,
          "profit": 800,
-         "deductions": 300, 
+         "toBudget": 300, 
          "numJobs": 18, 
          "reqJobs": 0,
 
 
           "CAP_LIFE_TIME" : 5 ,
-          "NUM_JOB_PER_CAP":5, 
+          "NUM_JOB_PER_CAP":0.050000, 
           "AVG_LABOR_PROD": 5, 
           "BASE_COST": 5,
           "VAR_COSTS": 0.05 ,
@@ -48,13 +48,13 @@
          "amortization": 40,
          "income": 400,
          "profit": 300,
-         "deductions": 140, 
+         "toBudget": 140, 
          "numJobs": 7, 
          "reqJobs": 0,
 
 
           "CAP_LIFE_TIME" : 5 ,
-          "NUM_JOB_PER_CAP":5, 
+          "NUM_JOB_PER_CAP":0.050000, 
           "AVG_LABOR_PROD": 5, 
           "BASE_COST": 5,
           "VAR_COSTS": 0.05 ,
@@ -69,13 +69,13 @@
          "amortization": 40,
          "income": 400,
          "profit": 300,
-         "deductions": 140, 
+         "toBudget": 140, 
          "numJobs": 6, 
          "reqJobs": 0,
 
 
           "CAP_LIFE_TIME" : 5 ,
-          "NUM_JOB_PER_CAP":5, 
+          "NUM_JOB_PER_CAP":0.050000, 
           "AVG_LABOR_PROD": 5, 
           "BASE_COST": 5,
           "VAR_COSTS": 0.05 ,
@@ -90,13 +90,13 @@
          "amortization": 20,
          "income": 200,
          "profit": 100,
-         "deductions": 70, 
+         "toBudget": 70, 
          "numJobs": 2, 
          "reqJobs": 0,
 
 
           "CAP_LIFE_TIME" : 5 ,
-          "NUM_JOB_PER_CAP":5, 
+          "NUM_JOB_PER_CAP":0.050000, 
           "AVG_LABOR_PROD": 5, 
           "BASE_COST": 5,
           "VAR_COSTS": 0.05 ,
@@ -112,15 +112,15 @@
          "amortization": 100,
          "income": 0,
          "profit": 0,
-         "deductions": 0, 
+         "toBudget": 0, 
          "numJobs": 1, 
          "reqJobs": 0,
 
 
           "CAP_LIFE_TIME" : 5 ,
-          "NUM_JOB_PER_CAP":5, 
-          "AVG_LABOR_PROD": 5, 
-          "CHEM_CLEAN_FACT" : 1000
+          "NUM_JOB_PER_CAP":0.050000, 
+          "AVG_LABOR_PROD": 100, 
+          "CHEM_CLEAN_FACT" : 100
     },
 
     "bioCleaning":
@@ -131,44 +131,50 @@
         "amortization": 100,
         "income": 0,
         "profit": 0,
-        "deductions": 0, 
+        "toBudget": 0, 
         "numJobs": 1, 
         "reqJobs": 0,
 
 
          "CAP_LIFE_TIME" : 5 ,
          "NUM_JOB_PER_CAP":5, 
-         "AVG_LABOR_PROD": 5, 
-         "BIO_CLEAN_FACT" : 1000
+         "AVG_LABOR_PROD": 100, 
+         "BIO_CLEAN_FACT" : 100
    },
 
 
-    "fishAmount" : 2000000,
+    "fishAmount" : 2000,
     "ejectEColi" : 500, 
     "ejectOrg": 5, 
     "ejectPhs": 600, 
     "residueEColi": 100, 
     "residueOrg": 100, 
     "residuePhs": 10,
-    "swampArea": 0, 
-    "incomeSumPerHum": 10,
-    "humDevInd": 50, 
-    "qualityOfEnv": 1,
+    "degr": 0,
+    "degrLand": 0, 
+    "degrSea": 0,
+    "budget" : 1000,
     "moneySpend": 100,
     "moneyLeft": 900,
     "incomeSum": 3500,
-    "jobsAmountSum": 60 ,
-    "population": 600000, 
-    "employmentRate": 1,
-    "numJobsReqSum": 60,
-    "capitalSum": 2750 , 
-    "ablePopSum": 240000, 
-    "difDirt": 0,
-    "BUDGET" : 10000,
-    "POP_INC" : 5,
+    "capitalSum": 2750 ,  
+    "incomeSumPerHum": 10,
+    "population": 600,
+    "employmentRate": 25,
+    "unemploymentRate": 0,
+    "jobsAmSum": 60 ,
+    "JobsReqSum": 60,
+    "ablePopSum": 240,
+    "lifespan" : 75,
+    "humDevInd": 50, 
+    "qualityOfEnv": 1,
+    "POP_INC" : 4.5,
     "ABLE_TO_LABOR" : 40,
     "BASE_COST_INC" : 2,
+    "BANK_PROCENT" : 5,
     "PROFIT_TAX" : 40,
-    "FISH_INC" : 5
+    "FISH_INC" : 5,
+    "E_COL_OTH_POP" : 1,
+    "ORG_OTH_POP" : 1
 
 }

@@ -6,7 +6,6 @@ using UnityEngine;
 [System.Serializable]
 public class YearsDB : MonoBehaviour
 {
-    public int currentYear;
     public List<Year> yearDataBase = new List<Year>();
 
 
@@ -15,12 +14,12 @@ public class YearsDB : MonoBehaviour
         Debug.Log("File Exists" + File.Exists(jsonString));
         string json = File.ReadAllText(jsonString);
         yearDataBase[0] = JsonUtility.FromJson<Year>(json);
-        currentYear = 1;
+        PreCalc();
     }
 
 
     //Расчет амотризационных отчислений по отраслям
-    public void AmorCacl()
+    private void AmorCacl(int currentYear)
     {
         yearDataBase[currentYear].paperfactory.amortization = yearDataBase[currentYear - 1].paperfactory.capital / yearDataBase[currentYear - 1].paperfactory.CAP_LIFE_TIME;
         yearDataBase[currentYear].fish.amortization = yearDataBase[currentYear - 1].fish.capital / yearDataBase[currentYear - 1].fish.CAP_LIFE_TIME;
@@ -31,7 +30,7 @@ public class YearsDB : MonoBehaviour
         yearDataBase[currentYear].bioCleaning.amortization = yearDataBase[currentYear - 1].bioCleaning.capital / yearDataBase[currentYear - 1].bioCleaning.CAP_LIFE_TIME;
     }
     //Расчет количества денежжных ресурсов в этом году
-    public void CapCalc()
+    private void CapCalc(int currentYear)
     {
         yearDataBase[currentYear].paperfactory.capital = (yearDataBase[currentYear - 1].paperfactory.capital + yearDataBase[currentYear].paperfactory.investments) - yearDataBase[currentYear].paperfactory.amortization;
         yearDataBase[currentYear].fish.capital = (yearDataBase[currentYear - 1].fish.capital + yearDataBase[currentYear].fish.investments) - yearDataBase[currentYear].fish.amortization;
@@ -42,7 +41,7 @@ public class YearsDB : MonoBehaviour
         yearDataBase[currentYear].bioCleaning.capital = (yearDataBase[currentYear - 1].bioCleaning.capital + yearDataBase[currentYear].bioCleaning.investments) - yearDataBase[currentYear].bioCleaning.amortization;
     }
 
-    public void CapSumCalc()
+    private void CapSumCalc(int currentYear)
     {
         yearDataBase[currentYear].capitalSum =  yearDataBase[currentYear].paperfactory.capital +
                                                 yearDataBase[currentYear].fish.capital +
@@ -54,7 +53,7 @@ public class YearsDB : MonoBehaviour
     }
 
     //Расчет требуемого количества рабочих мест на конкретном предприятии
-    public void JobsReqCalc()
+    private void JobsReqCalc(int currentYear)
     {
         yearDataBase[currentYear].paperfactory.reqJobs = yearDataBase[currentYear].paperfactory.NUM_JOB_PER_CAP * yearDataBase[currentYear].paperfactory.capital;
         yearDataBase[currentYear].fish.reqJobs = yearDataBase[currentYear].fish.NUM_JOB_PER_CAP * yearDataBase[currentYear].fish.capital;
@@ -65,7 +64,7 @@ public class YearsDB : MonoBehaviour
         yearDataBase[currentYear].bioCleaning.reqJobs = yearDataBase[currentYear].bioCleaning.NUM_JOB_PER_CAP * yearDataBase[currentYear].bioCleaning.capital;
     }
 
-    public void JobsReqSumCalc()
+    private void JobsReqSumCalc(int currentYear)
     {
         yearDataBase[currentYear].jobsReqSum = yearDataBase[currentYear].paperfactory.reqJobs +
                                                   yearDataBase[currentYear].fish.reqJobs +
@@ -77,12 +76,12 @@ public class YearsDB : MonoBehaviour
     }
 
 
-    public void PopAmCalc()
+    private void PopAmCalc(int currentYear)
     {
         yearDataBase[currentYear].population = yearDataBase[currentYear - 1].population * (1 + yearDataBase[currentYear].POP_INC / 100);
     }
 
-    public void JobsAmOrig()
+    private void JobsAmOrig(int currentYear)
     {
         if (yearDataBase[currentYear].jobsReqSum > yearDataBase[currentYear].ablePopSum)
         {
@@ -95,7 +94,7 @@ public class YearsDB : MonoBehaviour
     }
 
     //Расчет требуемого количества востребованных рабочих мест на конкретном предприятии
-    public void JobsAmCalc()
+    private void JobsAmCalc(int currentYear)
     {
         yearDataBase[currentYear].paperfactory.numJobs = (yearDataBase[currentYear].paperfactory.reqJobs * yearDataBase[currentYear].jobsAmSum) / yearDataBase[currentYear].jobsReqSum;
         yearDataBase[currentYear].fish.numJobs = (yearDataBase[currentYear].fish.reqJobs * yearDataBase[currentYear].jobsAmSum) / yearDataBase[currentYear].jobsReqSum;
@@ -107,7 +106,7 @@ public class YearsDB : MonoBehaviour
 
     }
 
-    public int ProdExpCalc(int ProdRez, int VolRes)
+    private int ProdExpCalc(int ProdRez, int VolRes)
 
     {
         int Res;
@@ -125,7 +124,7 @@ public class YearsDB : MonoBehaviour
     }
 
     //Расчет объема производства без учета количества доступного сырья
-    public void ProdCalc()
+    private void ProdCalc(int currentYear)
     {
         int temp1 = yearDataBase[currentYear].fish.AVG_LABOR_PROD * yearDataBase[currentYear].fish.numJobs;
         int temp2 = yearDataBase[currentYear].chemCleaning.AVG_LABOR_PROD * yearDataBase[currentYear].chemCleaning.numJobs;
@@ -136,13 +135,13 @@ public class YearsDB : MonoBehaviour
         yearDataBase[currentYear].aquaCulture.production = yearDataBase[currentYear].aquaCulture.AVG_LABOR_PROD * yearDataBase[currentYear].aquaCulture.numJobs * yearDataBase[currentYear-1].qualityOfEnv;
         yearDataBase[currentYear].agroCulture.production = yearDataBase[currentYear].agroCulture.AVG_LABOR_PROD * yearDataBase[currentYear].agroCulture.numJobs * yearDataBase[currentYear-1].qualityOfEnv;
         yearDataBase[currentYear].tourism.production = yearDataBase[currentYear].tourism.AVG_LABOR_PROD * yearDataBase[currentYear].tourism.numJobs * yearDataBase[currentYear-1].qualityOfEnv;
-        yearDataBase[currentYear].chemCleaning.production = ProdExpCalc(temp2, ChemSens());
-        yearDataBase[currentYear].bioCleaning.production =  ProdExpCalc(temp3, BioSens());
+        yearDataBase[currentYear].chemCleaning.production = ProdExpCalc(temp2, ChemSens(currentYear));
+        yearDataBase[currentYear].bioCleaning.production =  ProdExpCalc(temp3, BioSens(currentYear));
     }
 
-    public void FishCalc()
+    private void FishCalc(int currentYear)
     {
-        yearDataBase[currentYear].fishAmount = (yearDataBase[currentYear - 1].fishAmount + yearDataBase[currentYear - 1].fishAmount * yearDataBase[currentYear].FISH_INC / 100 * yearDataBase[currentYear].qualityOfEnv)* (int)(2.600000 * Mathf.Exp(-1 * ((yearDataBase[currentYear-1].fishAmount - 2000) * (yearDataBase[currentYear-1].fishAmount - 2000)) / 180000)) - yearDataBase[currentYear].fish.production;
+        yearDataBase[currentYear].fishAmount = yearDataBase[currentYear - 1].fishAmount + yearDataBase[currentYear - 1].fishAmount * yearDataBase[currentYear].FISH_INC / 100 * yearDataBase[currentYear].qualityOfEnv * (int)(2.600000 * Mathf.Exp(-1 * ((yearDataBase[currentYear-1].fishAmount - 2000) * (yearDataBase[currentYear-1].fishAmount - 2000)) / 180000)) - yearDataBase[currentYear].fish.production;
 
     }
 
@@ -150,7 +149,7 @@ public class YearsDB : MonoBehaviour
 
     //Расчет доходов в этом году
 
-    public void IncomeCalc()
+    private void IncomeCalc(int currentYear)
     {
         yearDataBase[currentYear].paperfactory.income = yearDataBase[currentYear].paperfactory.BASE_COST * yearDataBase[currentYear].BASE_COST_INC / 100 * yearDataBase[currentYear].paperfactory.production;
         yearDataBase[currentYear].fish.income = yearDataBase[currentYear].fish.BASE_COST * yearDataBase[currentYear].BASE_COST_INC / 100 * yearDataBase[currentYear].fish.production;
@@ -160,7 +159,7 @@ public class YearsDB : MonoBehaviour
     }
 
 
-    public void ProfitCalc()
+    private void ProfitCalc(int currentYear)
     {
         yearDataBase[currentYear].paperfactory.profit = (int)((yearDataBase[currentYear].paperfactory.income - yearDataBase[currentYear].paperfactory.amortization) - (yearDataBase[currentYear].paperfactory.production * yearDataBase[currentYear].paperfactory.VAR_COSTS));
         yearDataBase[currentYear].fish.profit = (int)((yearDataBase[currentYear].fish.income - yearDataBase[currentYear].fish.amortization) - (yearDataBase[currentYear].fish.production * yearDataBase[currentYear].fish.VAR_COSTS));
@@ -170,7 +169,7 @@ public class YearsDB : MonoBehaviour
     }
 
 
-    public void ToBudgCalc()
+    private void ToBudgCalc(int currentYear)
     {
         yearDataBase[currentYear].paperfactory.toBudget = yearDataBase[currentYear].paperfactory.income > 0 ? yearDataBase[currentYear].paperfactory.income * yearDataBase[currentYear].PROFIT_TAX / 100 : 0;
         yearDataBase[currentYear].fish.toBudget = yearDataBase[currentYear].fish.income > 0 ? yearDataBase[currentYear].fish.income * yearDataBase[currentYear].PROFIT_TAX / 100 : 0;
@@ -180,26 +179,26 @@ public class YearsDB : MonoBehaviour
 
     }
 
-    public void HumDevIndCacl()
+    private void HumDevIndCacl(int currentYear)
     {
         float Res =  33 * yearDataBase[currentYear].qualityOfEnv + 33 * (yearDataBase[currentYear].incomeSum / 25) + 33 * (yearDataBase[currentYear].employmentRate / 100);
         yearDataBase[currentYear].humDevInd = (int)(Res) ;
     }
 
-    public void QualEnvCalc() // TODO Rewrite
+    private void QualEnvCalc(int currentYear) // TODO Rewrite
     {
         float Res = yearDataBase[0].degr / (3.0f * yearDataBase[currentYear].degr);
         Res = Res + (2.0f * yearDataBase[currentYear].fishAmount) / (3.0f * yearDataBase[0].fishAmount);
         yearDataBase[currentYear].qualityOfEnv = (int)Res;
     }
 
-    public void IncomeSumPerHumanCalc()
+    private void IncomeSumPerHumanCalc(int currentYear)
     {
         yearDataBase[currentYear].incomeSumPerHum = (int)(yearDataBase[currentYear].incomeSum / yearDataBase[currentYear].population * 1000) / 1000;
     }
 
     //Расчет суммарного дохода все отраслей (без очистных сооружений)
-    public void IncomeSumCalc()
+    private void IncomeSumCalc(int currentYear)
     {
         yearDataBase[currentYear].incomeSum =  yearDataBase[currentYear].paperfactory.income +
                                                    yearDataBase[currentYear].fish.income +
@@ -208,7 +207,7 @@ public class YearsDB : MonoBehaviour
                                                    yearDataBase[currentYear].tourism.income;
     }
 
-    public void NewbudgetCalc()
+    private void NewbudgetCalc(int currentYear)
     {
         Debug.Log("NEW budget");
         yearDataBase[currentYear].budget = yearDataBase[currentYear-1].moneyLeft*(1 + yearDataBase[currentYear].BANK_PROCENT ) +
@@ -221,7 +220,7 @@ public class YearsDB : MonoBehaviour
 
 
     //Расчет остатка и общей распределенной суммы
-    public void MoneyCalc()
+    private void MoneyCalc(int currentYear)
     {
         //ADD MoneySpend Calc
         yearDataBase[currentYear].moneySpend = 0;
@@ -231,14 +230,14 @@ public class YearsDB : MonoBehaviour
     }
 
     //Расчет количества трудоспособного населения
-    public void AbleToJobPopCalc()
+    private void AbleToJobPopCalc(int currentYear)
     {
 
         yearDataBase[currentYear].ablePopSum = (int)((yearDataBase[currentYear].population * yearDataBase[currentYear].ABLE_TO_LABOR)/100);
 
     }
     //Поправка на чуствительность технологии к переработке (Химическая очистка)
-    public int ChemSens()
+    private int ChemSens(int currentYear)
     {
         if (yearDataBase[currentYear-1].residueOrg < yearDataBase[currentYear].chemCleaning.CHEM_CLEAN_FACT)
         {
@@ -251,7 +250,7 @@ public class YearsDB : MonoBehaviour
     }
 
     //Поправка на чуствительность технологии к переработке (Биологическая очистка)
-    public int BioSens()
+    private int BioSens(int currentYear)
     {
         if (yearDataBase[currentYear-1].residueEColi < yearDataBase[currentYear].bioCleaning.BIO_CLEAN_FACT)
         {
@@ -264,26 +263,30 @@ public class YearsDB : MonoBehaviour
     }
 
     //Расчет уровня занятости, %
-    public void EmployRateCalc()
+    private void EmployRateCalc(int currentYear)
     {
         yearDataBase[currentYear].employmentRate = (int)(yearDataBase[currentYear].jobsAmSum/yearDataBase[currentYear].ablePopSum*100);
     }
      //Расчет уровня безработицы, %
-    public void UnEmployRateCalc()
+    private void UnEmployRateCalc(int currentYear)
     {
         yearDataBase[currentYear].unemploymentRate = 100 - yearDataBase[currentYear].employmentRate;
     }
 
     //Расчет выброса загрязнителей
-    public void DirtEjectCacl()
+    private void DirtEjectCacl(int currentYear)
     {
-        yearDataBase[currentYear].ejectEColi = (yearDataBase[currentYear].fish.production * yearDataBase[currentYear].fish.E_COL_OTH/100) + (yearDataBase[currentYear].tourism.production * yearDataBase[currentYear].tourism.E_COL_OTH/100);
-        yearDataBase[currentYear].ejectOrg = (yearDataBase[currentYear].agroCulture.production * yearDataBase[currentYear].agroCulture.ORG_OTH/100) + (yearDataBase[currentYear].aquaCulture.production * yearDataBase[currentYear].aquaCulture.ORG_OTH/100);
+        yearDataBase[currentYear].ejectEColi = (yearDataBase[currentYear].fish.production * yearDataBase[currentYear].fish.E_COL_OTH/100) + 
+                                                (yearDataBase[currentYear].tourism.production * yearDataBase[currentYear].tourism.E_COL_OTH/100) + 
+                                                (yearDataBase[currentYear].E_COL_OTH_POP * yearDataBase[currentYear].population);
+        yearDataBase[currentYear].ejectOrg = (yearDataBase[currentYear].agroCulture.production * yearDataBase[currentYear].agroCulture.ORG_OTH/100) + 
+                                            (yearDataBase[currentYear].aquaCulture.production * yearDataBase[currentYear].aquaCulture.ORG_OTH/100) +
+                                            (yearDataBase[currentYear].ORG_OTH_POP * yearDataBase[currentYear].population);
         yearDataBase[currentYear].ejectPhs = (yearDataBase[currentYear].tourism.production * yearDataBase[currentYear].tourism.PHS_OTH/100);
 
     }
 
-    public void ResediuEjectCacl()
+    private void ResediuEjectCacl(int currentYear)
     {
         yearDataBase[currentYear].residueEColi = yearDataBase[currentYear-1].residueEColi + yearDataBase[currentYear].ejectEColi - yearDataBase[currentYear].bioCleaning.production;
         yearDataBase[currentYear].residueOrg = yearDataBase[currentYear-1].residueOrg + yearDataBase[currentYear].ejectOrg - yearDataBase[currentYear].chemCleaning.production;
@@ -291,33 +294,36 @@ public class YearsDB : MonoBehaviour
 
     }
 
-    public void PopIncCalc()
+    private void PopIncCalc(int currentYear)
     {
         yearDataBase[currentYear].POP_INC =  yearDataBase[currentYear-1].POP_INC * yearDataBase[currentYear-1].qualityOfEnv;
     }
     
-    public void LifespanCalc()
+    private void LifespanCalc(int currentYear)
     {
          yearDataBase[currentYear].lifespan = (int)(75 * yearDataBase[currentYear].qualityOfEnv);
     }
 
-    public void DegrCalc()
+    private void DegrCalc(int currentYear)
     {
         float Res = -0.040000f * (1 - Mathf.Pow(1000f / yearDataBase[currentYear].residueOrg, -0.300000f));
         Res = Res - 0.010000f * (1 - Mathf.Pow(1000f / yearDataBase[currentYear].residueEColi, -0.200000f));
         Res = Res + 0.010000f * (1 - Mathf.Pow(1000f / yearDataBase[currentYear].residuePhs, -0.300000f));
         Res = Res * 2;
-        yearDataBase[currentYear].degr = (int)(Res * 1000);
+        // yearDataBase[currentYear].degr = (int)(Res * 1000);
+        yearDataBase[currentYear].degr = 0;
     }
 
-    public void MoveConst()
+    private void MoveConst(int currentYear)
     {
         yearDataBase[currentYear].FISH_INC = yearDataBase[currentYear-1].FISH_INC;
-        yearDataBase[currentYear].POP_INC = yearDataBase[currentYear-1].POP_INC;
         yearDataBase[currentYear].PROFIT_TAX = yearDataBase[currentYear-1].PROFIT_TAX;
         yearDataBase[currentYear].ABLE_TO_LABOR = yearDataBase[currentYear-1].ABLE_TO_LABOR;
         yearDataBase[currentYear].BASE_COST_INC = yearDataBase[currentYear-1].BASE_COST_INC;
-        yearDataBase[currentYear].budget = yearDataBase[currentYear-1].budget;
+        yearDataBase[currentYear].BANK_PROCENT = yearDataBase[currentYear-1].BANK_PROCENT;
+        yearDataBase[currentYear].E_COL_OTH_POP = yearDataBase[currentYear-1].E_COL_OTH_POP;
+        yearDataBase[currentYear].ORG_OTH_POP = yearDataBase[currentYear-1].ORG_OTH_POP;
+        //yearDataBase[currentYear].budget = yearDataBase[currentYear-1].budget;
 
 
         yearDataBase[currentYear].paperfactory.investments = 0;
@@ -373,69 +379,47 @@ public class YearsDB : MonoBehaviour
         yearDataBase[currentYear].bioCleaning.AVG_LABOR_PROD = yearDataBase[currentYear-1].bioCleaning.AVG_LABOR_PROD;
         yearDataBase[currentYear].bioCleaning.BIO_CLEAN_FACT = yearDataBase[currentYear-1].bioCleaning.BIO_CLEAN_FACT;
         
+        yearDataBase[currentYear].qualityOfEnv = yearDataBase[currentYear-1].qualityOfEnv;
         
     }
 
 
-    public void AbsCalc()
+    public void AbsCalc(int currentYear)
     {
-        MoveConst();
-        
-        
-        MoneyCalc();
-        AmorCacl();
-        CapCalc();
-        CapSumCalc();
-        JobsReqCalc();
-        JobsReqSumCalc();
-        PopIncCalc();
-        PopAmCalc();
-        AbleToJobPopCalc();
-        JobsAmOrig();
-        JobsAmCalc();
-        ProdCalc();
-        EmployRateCalc();
-        UnEmployRateCalc();
-        FishCalc();
-        DirtEjectCacl();
-        ResediuEjectCacl();
-        DegrCalc(); // TODO
-        IncomeCalc();
-        IncomeSumCalc();
-        ProfitCalc();
-        ToBudgCalc();
-        NewbudgetCalc();
-        IncomeSumPerHumanCalc();
-        HumDevIndCacl();
-        QualEnvCalc(); 
-        LifespanCalc(); 
-
-        currentYear+=1;      
+        MoveConst(currentYear);
+        MoneyCalc(currentYear);
+        AmorCacl(currentYear);
+        CapCalc(currentYear);
+        CapSumCalc(currentYear);
+        JobsReqCalc(currentYear);
+        JobsReqSumCalc(currentYear);
+        PopIncCalc(currentYear);
+        PopAmCalc(currentYear);
+        AbleToJobPopCalc(currentYear);
+        JobsAmOrig(currentYear);
+        JobsAmCalc(currentYear);
+        ProdCalc(currentYear);
+        EmployRateCalc(currentYear);
+        UnEmployRateCalc(currentYear);
+        FishCalc(currentYear);
+        DirtEjectCacl(currentYear);
+        ResediuEjectCacl(currentYear);
+        DegrCalc(currentYear); // TODO
+        IncomeCalc(currentYear);
+        IncomeSumCalc(currentYear);
+        ProfitCalc(currentYear);
+        ToBudgCalc(currentYear);
+        NewbudgetCalc(currentYear);
+        IncomeSumPerHumanCalc(currentYear);
+        HumDevIndCacl(currentYear);
+        //QualEnvCalc(currentYear); 
+        LifespanCalc(currentYear);      
     }
 
-   /*  public void PreGameCalc()
+     public void PreCalc()
     {
-        Debug.Log("PreCalc START");
-        CapSumCalc();
-        JobsReqCalc();
-        JobsReqSumCalc();
-        AbleToJobPopCalc();
-        JobsAmOrig();
-        //ProdCalc();
-        Debug.Log("CHECK"); 
-        EmployRateCalc();
-        
-        FishCalc();
-        DirtEjectCacl();
-        IncomeCalc();
-        IncomeSumCalc();
-        ProfitCalc();
-        TaxCalc();
-        HumDevIndCacl();
-        QualEnvCalc();
-
-        currentYear+=1; 
-        Debug.Log("PreCalc FIN");
+        yearDataBase[0].unemploymentRate = 100 - yearDataBase[0].employmentRate;
+        yearDataBase[0].POP_INC    = yearDataBase[0].POP_INC * yearDataBase[0].qualityOfEnv;  
        
-    } */
+    } 
 }
