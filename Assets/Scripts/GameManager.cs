@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 	
 	public int currentYear;
 	private YearsDB DBScript;
+	private BoardManager BoardScript;
 	//public bool enable;
 
 
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
 	{
 
 		DBScript = GetComponent<YearsDB>();
+		BoardScript = GetComponent<BoardManager>();
 		InitGame();
 	}
 
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
 	{
 		currentYear=0;
 		DBScript.InitDB(configJSON);
+		BoardScript.InitBoard(configJSON);
 		currentYear=1;
 		//DBScript.PreGameCalc();
 	}

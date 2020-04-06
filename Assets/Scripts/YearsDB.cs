@@ -11,7 +11,7 @@ public class YearsDB : MonoBehaviour
 
     public void InitDB(string jsonString)
     {
-        Debug.Log("File Exists" + File.Exists(jsonString));
+        Debug.Log("InitDB: File Exists: " + File.Exists(jsonString));
         string json = File.ReadAllText(jsonString);
         yearDataBase[0] = JsonUtility.FromJson<Year>(json);
         PreCalc();
