@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using Newtonsoft.Json;
 
 using System.Collections.Generic;		//Allows us to use Lists. 
 //using UnityEngine.UI;					//Allows us to use UI.
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
 
 
 	private string configJSON = "Assets/Configs/config2.json";
+	private string configMapJSON = "Assets/Configs/config2Map.json";
 	
 	
 	//Awake is always called before any Start functions
@@ -34,7 +36,7 @@ public class GameManager : MonoBehaviour
 	{
 		currentYear=0;
 		DBScript.InitDB(configJSON);
-		BoardScript.InitBoard(configJSON);
+		BoardScript.InitBoard(configMapJSON);
 		currentYear=1;
 		//DBScript.PreGameCalc();
 	}
