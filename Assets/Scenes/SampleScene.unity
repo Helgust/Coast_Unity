@@ -205,7 +205,6 @@ GameObject:
   - component: {fileID: 1219814403}
   - component: {fileID: 1219814404}
   - component: {fileID: 1219814405}
-  - component: {fileID: 1219814406}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -249,7 +248,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1219814402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe51da6fa8c70ed4d9f9d9d618ccdfc3, type: 3}
+  m_Script: {fileID: 11500000, guid: a59b75d59eb107b4e954727c9135471a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   yearDataBase:
@@ -394,6 +393,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -535,6 +537,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -676,6 +681,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -817,6 +825,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -958,6 +969,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -1099,6 +1113,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -1240,6 +1257,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -1381,6 +1401,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -1522,6 +1545,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -1663,6 +1689,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -1804,6 +1833,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -1945,6 +1977,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -2086,6 +2121,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -2227,6 +2265,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -2368,6 +2409,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -2509,6 +2553,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -2650,6 +2697,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -2791,6 +2841,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -2932,6 +2985,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   - paperfactory:
       capital: 0
       investments: 0
@@ -3073,25 +3129,9 @@ MonoBehaviour:
     BANK_PROCENT: 0
     E_COL_OTH_POP: 0
     ORG_OTH_POP: 0
---- !u!114 &1219814406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1219814402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 239e7c9b3a286c24bbe90a0ecc281c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    shipUCap: 0
+    agroUCap: 0
+    turUCap: 0
   board:
     columns: 0
     rows: 0
-    array2d: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  exit: {fileID: 0}
-  floorTiles: []
-  wallTiles: []
-  foodTiles: []
-  enemyTiles: []
-  outerWallTiles: []

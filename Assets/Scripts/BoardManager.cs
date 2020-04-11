@@ -25,20 +25,12 @@ using Random = UnityEngine.Random; 		//Tells Random to use the Unity Engine rand
 		
 
 		public void InitBoard(string jsonString)
-    {
-        Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
-        string json = File.ReadAllText(jsonString);
-		board = JsonConvert.DeserializeObject<Board>(json);
-		for (int i = 0; i < 20; i++)
-		{
-			for (int j = 0; j < 20; j++)
-			{
-				Debug.Log(board.array2d[i][j]);
-			}
-			Debug.Log("NEW LINE");
-		}
+    	{
+			Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
+			string json = File.ReadAllText(jsonString);
+			board = JsonConvert.DeserializeObject<Board>(json);
 				
-    }
+    	}
 		//Clears our list gridPositions and prepares it to generate a new board.
 		void InitialiseList ()
 		{
@@ -85,6 +77,11 @@ using Random = UnityEngine.Random; 		//Tells Random to use the Unity Engine rand
 					instance.transform.SetParent (boardHolder);
 				}
 			}
+		}
+
+		public void BoardCalc()
+		{
+
 		}
 		
 		

@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
 {
 	
 	public int currentYear;
-	private YearsDB DBScript;
-	private BoardManager BoardScript;
+	private DB DBScript;
+	//private BoardManager BoardScript;
 	//public bool enable;
 
 
@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
 	void Awake() // here was Awake
 	{
 
-		DBScript = GetComponent<YearsDB>();
-		BoardScript = GetComponent<BoardManager>();
+		DBScript = GetComponent<DB>();
+		//BoardScript = GetComponent<BoardManager>();
 		InitGame();
 	}
 
@@ -36,14 +36,13 @@ public class GameManager : MonoBehaviour
 	{
 		currentYear=0;
 		DBScript.InitDB(configJSON);
-		BoardScript.InitBoard(configMapJSON);
+		DBScript.InitBoard(configMapJSON);
 		currentYear=1;
-		//DBScript.PreGameCalc();
 	}
 
 	void CheckGameOver()
 	{
-		if(currentYear > 3) 
+		if(currentYear > 19) 
 		{
 			enabled = false;
 		}
@@ -57,6 +56,7 @@ public class GameManager : MonoBehaviour
 		{
 			Debug.Log("Check");
 			DBScript.AbsCalc(currentYear);
+			DBScript.MapCalc(currentYear);
 			currentYear +=1;
 		}
 		

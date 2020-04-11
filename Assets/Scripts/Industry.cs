@@ -23,7 +23,7 @@ public class Industry
 public class PaperFact : Industry
 {
     public int CAP_LIFE_TIME;
-    public int NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
+    public float NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
     public int AVG_LABOR_PROD; //Средняя производительность труда 1 работника
     public int BASE_COST;
     
@@ -35,7 +35,7 @@ public class PaperFact : Industry
 public class Fish : Industry
 {
      public int CAP_LIFE_TIME;
-    public int NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
+    public float NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
     public int AVG_LABOR_PROD; //Средняя производительность труда 1 работника
     public int BASE_COST;
     
@@ -50,7 +50,7 @@ public class Fish : Industry
 public class AquaCulture : Industry
 {
     public int CAP_LIFE_TIME;
-    public int NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
+    public float NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
     public int AVG_LABOR_PROD; //Средняя производительность труда 1 работника
     public int BASE_COST;
     
@@ -64,7 +64,7 @@ public class AquaCulture : Industry
 public class AgroCulture : Industry
 {
      public int CAP_LIFE_TIME;
-    public int NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
+    public float NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
     public int AVG_LABOR_PROD; //Средняя производительность труда 1 работника
     public int BASE_COST;
     
@@ -78,7 +78,7 @@ public class AgroCulture : Industry
 public class Tourism : Industry
 {
      public int CAP_LIFE_TIME;
-    public int NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
+    public float NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
     public int AVG_LABOR_PROD; //Средняя производительность труда 1 работника
     public int BASE_COST;
     
@@ -92,7 +92,7 @@ public class Tourism : Industry
 public class ChemCleaning : Industry
 {
     public int CAP_LIFE_TIME;
-    public int NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
+    public float NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
     public int AVG_LABOR_PROD; //Средняя производительность труда 1 работника
    
     public int CHEM_CLEAN_FACT; //Чуствительность технологии к переработке (Химическая очистка)
@@ -103,7 +103,7 @@ public class ChemCleaning : Industry
 public class BioCleaning : Industry
 {
      public int CAP_LIFE_TIME;
-    public int NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
+    public float NUM_JOB_PER_CAP; //Количество рабочих мест, обеспечиваемое единицей капиала в первой отрасли
     public int AVG_LABOR_PROD; //Средняя производительность труда 1 работника
    
     public int BIO_CLEAN_FACT; //Чуствительность технологии к переработке (Химическая очистка)

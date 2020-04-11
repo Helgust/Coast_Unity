@@ -175,5 +175,8 @@
     "PROFIT_TAX" : 40,
     "FISH_INC" : 5,
     "E_COL_OTH_POP" : 1,
-    "ORG_OTH_POP" : 1
+    "ORG_OTH_POP" : 1,
+    "shipUCap" : 500,
+    "agroUCap" : 20,
+    "turUCap" : 100
 }

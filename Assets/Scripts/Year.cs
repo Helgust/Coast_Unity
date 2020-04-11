@@ -44,7 +44,7 @@ public class Year
 
 
     // параметры модели
-    public int POP_INC; // show how fast population is growing %
+    public float POP_INC; // show how fast population is growing %
     public int ABLE_TO_LABOR; // prosent of population how can work
     public int BASE_COST_INC; //Base cost increase per year, %
     public int PROFIT_TAX; // налог на прибыль %
@@ -54,4 +54,8 @@ public class Year
 
     public int E_COL_OTH_POP;// остатки кишечной палочки от населения
     public int ORG_OTH_POP; // остатки орагники от населения
+
+    public int shipUCap;
+    public int agroUCap;
+    public int turUCap;
 };

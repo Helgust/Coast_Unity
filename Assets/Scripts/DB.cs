@@ -1,20 +1,44 @@
 ﻿using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using UnityEngine;
 
 [System.Serializable]
-public class YearsDB : MonoBehaviour
+public class DB : MonoBehaviour
 {
     public List<Year> yearDataBase = new List<Year>();
+    public Board board;
+    public List<(int , int)>  array_old = new List<(int,int)>();
+    
+
+    // private void FillUpBoard_OldWithZero(int rows, int columns)
+    // {
+    //     for(int i = 0; i < rows; i++)
+    //     {
+    //         for(int j = 0; j < columns; j++)
+    //         {
+    //             board_old.array2d[i][j] = 0;
+    //         }
+    //     }
+    // }
 
 
     public void InitDB(string jsonString)
     {
+        // for current moment size og list is locked by dev TODO: made it modifiable(изменяемым)
+        Debug.Log("InitDB: Size of list" + yearDataBase.Count);
         Debug.Log("InitDB: File Exists: " + File.Exists(jsonString));
         string json = File.ReadAllText(jsonString);
-        yearDataBase[0] = JsonUtility.FromJson<Year>(json);
+        yearDataBase[0] = JsonConvert.DeserializeObject<Year>(json);
         PreCalc();
+    }
+
+    public void InitBoard(string jsonString)
+    {
+			Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
+			string json = File.ReadAllText(jsonString);
+			board = JsonConvert.DeserializeObject<Board>(json);
     }
 
 
@@ -55,13 +79,13 @@ public class YearsDB : MonoBehaviour
     //Расчет требуемого количества рабочих мест на конкретном предприятии
     private void JobsReqCalc(int currentYear)
     {
-        yearDataBase[currentYear].paperfactory.reqJobs = yearDataBase[currentYear].paperfactory.NUM_JOB_PER_CAP * yearDataBase[currentYear].paperfactory.capital;
-        yearDataBase[currentYear].fish.reqJobs = yearDataBase[currentYear].fish.NUM_JOB_PER_CAP * yearDataBase[currentYear].fish.capital;
-        yearDataBase[currentYear].aquaCulture.reqJobs = yearDataBase[currentYear].aquaCulture.NUM_JOB_PER_CAP * yearDataBase[currentYear].aquaCulture.capital;
-        yearDataBase[currentYear].agroCulture.reqJobs = yearDataBase[currentYear].agroCulture.NUM_JOB_PER_CAP * yearDataBase[currentYear].agroCulture.capital;
-        yearDataBase[currentYear].tourism.reqJobs = yearDataBase[currentYear].tourism.NUM_JOB_PER_CAP * yearDataBase[currentYear].tourism.capital;
-        yearDataBase[currentYear].chemCleaning.reqJobs = yearDataBase[currentYear].chemCleaning.NUM_JOB_PER_CAP * yearDataBase[currentYear].chemCleaning.capital;
-        yearDataBase[currentYear].bioCleaning.reqJobs = yearDataBase[currentYear].bioCleaning.NUM_JOB_PER_CAP * yearDataBase[currentYear].bioCleaning.capital;
+        yearDataBase[currentYear].paperfactory.reqJobs = (int)(yearDataBase[currentYear].paperfactory.NUM_JOB_PER_CAP * yearDataBase[currentYear].paperfactory.capital);
+        yearDataBase[currentYear].fish.reqJobs = (int)(yearDataBase[currentYear].fish.NUM_JOB_PER_CAP * yearDataBase[currentYear].fish.capital);
+        yearDataBase[currentYear].aquaCulture.reqJobs = (int)(yearDataBase[currentYear].aquaCulture.NUM_JOB_PER_CAP * yearDataBase[currentYear].aquaCulture.capital);
+        yearDataBase[currentYear].agroCulture.reqJobs = (int)(yearDataBase[currentYear].agroCulture.NUM_JOB_PER_CAP * yearDataBase[currentYear].agroCulture.capital);
+        yearDataBase[currentYear].tourism.reqJobs = (int)(yearDataBase[currentYear].tourism.NUM_JOB_PER_CAP * yearDataBase[currentYear].tourism.capital);
+        yearDataBase[currentYear].chemCleaning.reqJobs = (int)(yearDataBase[currentYear].chemCleaning.NUM_JOB_PER_CAP * yearDataBase[currentYear].chemCleaning.capital);
+        yearDataBase[currentYear].bioCleaning.reqJobs = (int)(yearDataBase[currentYear].bioCleaning.NUM_JOB_PER_CAP * yearDataBase[currentYear].bioCleaning.capital);
     }
 
     private void JobsReqSumCalc(int currentYear)
@@ -78,7 +102,7 @@ public class YearsDB : MonoBehaviour
 
     private void PopAmCalc(int currentYear)
     {
-        yearDataBase[currentYear].population = yearDataBase[currentYear - 1].population * (1 + yearDataBase[currentYear].POP_INC / 100);
+        yearDataBase[currentYear].population = yearDataBase[currentYear - 1].population * (int)(1 + yearDataBase[currentYear].POP_INC / 100);
     }
 
     private void JobsAmOrig(int currentYear)
@@ -187,9 +211,43 @@ public class YearsDB : MonoBehaviour
 
     private void QualEnvCalc(int currentYear) // TODO Rewrite
     {
-        float Res = yearDataBase[0].degr / (3.0f * yearDataBase[currentYear].degr);
-        Res = Res + (2.0f * yearDataBase[currentYear].fishAmount) / (3.0f * yearDataBase[0].fishAmount);
-        yearDataBase[currentYear].qualityOfEnv = (int)Res;
+        
+        int Sea_good = 0;
+        int Sea_bed = 0;
+        int Land_good = 0;
+        int Land_bed = 0;
+        AnMMap(1);
+        Sea_good = Sea_good + array_old.Count;
+        AnMMap(2);
+        Sea_good = Sea_good + array_old.Count;
+        AnMMap(10);
+        Sea_good = Sea_good + array_old.Count;
+        AnMMap(11);
+        Sea_good = Sea_good + array_old.Count;
+        AnMMap(6);
+        Sea_bed = Sea_bed + array_old.Count;
+        AnMMap(7);
+        Sea_bed = Sea_bed + array_old.Count;
+        AnMMap(6);
+        Land_good = Land_good + array_old.Count;
+        AnMMap(4);
+        Land_good = Land_good + array_old.Count;
+        AnMMap(3);
+        Land_good = Land_good + array_old.Count;
+        AnMMap(12);
+        Land_good = Land_good + array_old.Count;
+        AnMMap(13);
+        Land_good = Land_good + array_old.Count;
+        AnMMap(14);
+        Land_good = Land_good + array_old.Count;
+        AnMMap(8);
+        Land_bed = Land_bed + array_old.Count;
+        AnMMap(9);
+        Land_bed = Land_bed + array_old.Count;
+        float Res = (Sea_good - Sea_bed) / Sea_good * 0.100000f + (Land_good - Land_bed) / Land_good * 0.900000f;
+        
+        //return (int(Math.pow(Res, 3) * 100) / 100);
+        yearDataBase[currentYear].qualityOfEnv = (int)((Mathf.Pow(Res, 3) * 100) / 100);
     }
 
     private void IncomeSumPerHumanCalc(int currentYear)
@@ -323,6 +381,9 @@ public class YearsDB : MonoBehaviour
         yearDataBase[currentYear].BANK_PROCENT = yearDataBase[currentYear-1].BANK_PROCENT;
         yearDataBase[currentYear].E_COL_OTH_POP = yearDataBase[currentYear-1].E_COL_OTH_POP;
         yearDataBase[currentYear].ORG_OTH_POP = yearDataBase[currentYear-1].ORG_OTH_POP;
+        yearDataBase[currentYear].shipUCap = yearDataBase[currentYear-1].shipUCap;
+        yearDataBase[currentYear].agroUCap = yearDataBase[currentYear-1].agroUCap;
+        yearDataBase[currentYear].turUCap = yearDataBase[currentYear-1].turUCap;
         //yearDataBase[currentYear].budget = yearDataBase[currentYear-1].budget;
 
 
@@ -411,9 +472,9 @@ public class YearsDB : MonoBehaviour
         ToBudgCalc(currentYear);
         NewbudgetCalc(currentYear);
         IncomeSumPerHumanCalc(currentYear);
-        HumDevIndCacl(currentYear);
-        //QualEnvCalc(currentYear); 
-        LifespanCalc(currentYear);      
+        // HumDevIndCacl(currentYear);
+        // QualEnvCalc(currentYear); 
+        // LifespanCalc(currentYear);      
     }
 
      public void PreCalc()
@@ -422,4 +483,242 @@ public class YearsDB : MonoBehaviour
         yearDataBase[0].POP_INC    = yearDataBase[0].POP_INC * yearDataBase[0].qualityOfEnv;  
        
     } 
+
+
+
+    // [Action in Frame 95]
+    public void MapCalc(int currentYear)
+    {
+        int loc2;
+        loc2 = yearDataBase[currentYear].degr - yearDataBase[currentYear-1].degr;
+        //DegrR(_loc2);
+        if (loc2 > 0)
+        {
+            int  Melk = (int)(loc2 * 0.250000);
+            int  Plag = (int)(loc2 * 0.250000);
+            int  Sea = (int)(loc2 * 0.250000);
+            int  PrirF = (int)(loc2 * 0.120000);
+            int  PrirL = loc2 - Sea - Melk - Plag - PrirF;
+            int ost = ModifMMap(2, 7, Melk);
+            yearDataBase[currentYear].degrSea = yearDataBase[currentYear-1].degrSea + (Melk - ost);
+            Plag = Plag + ost;
+            ost = ModifMMap(3, 8, Plag);
+            yearDataBase[currentYear].degrLand = yearDataBase[currentYear-1].degrLand + (Plag - ost);
+            Sea = Sea + ost;
+            ost = ModifMMap(1, 6, Sea);
+            yearDataBase[currentYear].degrSea = yearDataBase[currentYear-1].degrSea + (Sea - ost);
+            PrirF = PrirF + ost;
+            ost = ModifMMap(4, 9, PrirF);
+            yearDataBase[currentYear].degrLand = yearDataBase[currentYear-1].degrLand + (PrirF - ost);
+            PrirL = PrirL + ost;
+            ost = ModifMMap(14, 9, PrirL);
+            yearDataBase[currentYear].degrLand = yearDataBase[currentYear-1].degrLand + (PrirL - ost);
+            Debug.Log("ost_for_forest=" + ost);
+            if (ost > 0)
+            {
+                ost = ModifMMap(4, 9, ost);
+            } // end if
+            Debug.Log("ost_all=" + ost);
+            
+            if (ost > 0)
+            {
+                // AddTextInf("<br><b>" + MSG_endprir + "</b>");
+                // MC_msg.MSG_bot.text = MSG_endprir;
+                // _loc1.is_over = true;
+                Debug.Log("enter at some place for making interaction with UI 1 //TODO ");
+            } // end if
+        }
+        else
+        {
+            loc2 = Mathf.Abs(loc2);
+            var Melk = (int)(loc2 * 0.250000);
+            var Plag = (int)(loc2 * 0.250000);
+            var Sea = (int)(loc2 * 0.250000);
+            var PrirF = (int)(loc2 * 0.120000);
+            var PrirL = loc2 - Sea - Melk - Plag - PrirF;
+            int ost = ModifMMap(7, 2, (int)(Mathf.Abs(Melk)));
+           // trace ("Melk=" + Melk + "  ost=" + ost);
+            Debug.Log("Melk= " + Melk + " ost=" + ost);
+            yearDataBase[currentYear].degrSea = yearDataBase[currentYear-1].degrSea + (Melk - ost);
+            Plag = Plag + ost;
+            ost = ModifMMap(8, 3, (int)(Mathf.Abs(Plag)));
+            yearDataBase[currentYear].degrLand = yearDataBase[currentYear-1].degrLand + (Plag - ost);
+            Sea = Sea + ost;
+            ost = ModifMMap(6, 1, (int)(Mathf.Abs(Sea)));
+            yearDataBase[currentYear].degrSea = yearDataBase[currentYear-1].degrSea + (Sea - ost);
+            PrirF = PrirF + ost;
+            ost = ModifMMap(9, 4, (int)(Mathf.Abs(PrirF)));
+            yearDataBase[currentYear].degrLand = yearDataBase[currentYear-1].degrLand + (PrirF - ost);
+            PrirL = PrirL + ost;
+            ost = ModifMMap(9, 14, (int)(Mathf.Abs(PrirL)));
+            yearDataBase[currentYear].degrLand = yearDataBase[currentYear-1].degrLand + (PrirL - ost);
+
+        } // end else if
+        int loc3 = (yearDataBase[currentYear].tourism.capital - yearDataBase[currentYear - 1].tourism.capital) / yearDataBase[currentYear].turUCap;
+        //TurR(_loc3);
+        if (loc3 > 0)
+        {
+            int Plag = (int)(loc3 * 0.250000);
+            int Prir = loc3 - Plag;
+            int ost = ModifMMap(3, 12, Plag);
+            Prir = Prir + ost;
+            ost = ModifMMap(4, 13, Prir);
+            if (ost > 0)
+            {
+                // _loc1.is_over = true;
+                // AddTextInf("<br><b>" + MSG_endres + "</b>");
+                // MC_msg.MSG_bot.text = MSG_endres;
+                Debug.Log("enter at some place for making interaction with UI 2 //TODO");
+            } // end if
+        }
+        else
+        {
+            int Plag = (int)(loc3 * 0.250000);
+            int Prir = loc3 - Plag;
+            int ost = ModifMMap(12, 3, (int)(Mathf.Abs(Plag)));
+            Prir = Prir + ost;
+            ost = ModifMMap(13, 4, (int)(Mathf.Abs(Prir)));
+        } // end else if
+        int Agro =(yearDataBase[currentYear].agroCulture.capital - yearDataBase[currentYear - 1].agroCulture.capital) / yearDataBase[currentYear].agroUCap;
+        //AgroR(Agro);
+        if (Agro > 0)
+        {
+            int ost = ModifMMap(14, 5, (int)(Agro));
+            ost = ModifMMap(4, 5, (int)(Mathf.Abs(ost)));
+            if (ost > 0)
+            {
+                // _loc1.is_over = true;
+                // AddTextInf("<br><b>" + MSG_endres + "</b>");
+                // MC_msg.MSG_bot.text = MSG_endres;
+                Debug.Log("enter at some place for making interaction with UI 3 //TODO");
+            } // end if
+        }
+        else
+        {
+            int Flug = (int)(Agro * 0.500000);
+            int Fles = Agro - Flug;
+            int ost = ModifMMap(5, 14, (int)(Mathf.Abs(Flug)));
+            Fles = Fles + ost;
+            ost = ModifMMap(5, 4, (int)(Mathf.Abs(Fles)));
+        } // end else if
+        int Ship  =(yearDataBase[currentYear].fish.capital - yearDataBase[currentYear - 1].fish.capital) / yearDataBase[currentYear].shipUCap;
+        // FishR(Ship);
+        if (Ship > 0)
+        {
+            var Sea = (int)(Ship * 0.750000);
+            int ost = ModifMMap(1, 10, (int)(Sea));
+            int Melk = Ship - Sea + ost;
+            ost = ModifMMap(2, 11, (int)(Melk));
+            if (ost > 0)
+            {
+                // _loc1.is_over = true;
+                // AddTextInf("<br><b>" + MSG_endres + "</b>");
+                // MC_msg.MSG_bot.text = MSG_endres;
+                Debug.Log("enter at some place for making interaction with UI 4 //TODO");
+            } // end if
+        }
+        else
+        {
+            var Sea = (int)(Ship * 0.750000);
+            var Melk = (int)(Ship) - Sea;
+            int ost = ModifMMap(10, 1, (int)(Mathf.Abs(Sea)));
+            Melk = Melk + ost;
+            ost = ModifMMap(11, 2, (int)(Mathf.Abs(Melk)));
+        } // end else if
+        //CbkR(_loc1.CapPar1[_loc1.year]);
+        // if (_loc1.PribPar1[_loc1.year] < 0)
+        // {
+        //     AddTextInf(ALT_cbkMC + ": " + MSG_ubi);
+        // } // end if
+        // if (_loc1.PribPar2[_loc1.year] < 0)
+        // {
+        //     AddTextInf(ALT_ribMC + ": " + MSG_ubi);
+        // } // end if
+        // AcvaFermR(_loc1.CapPar3[_loc1.year]);
+        // if (_loc1.PribPar3[_loc1.year] < 0)
+        // {
+        //     AddTextInf(ALT_aqMC + ": " + MSG_ubi);
+        // } // end if
+        // if (_loc1.PribPar4[_loc1.year] < 0)
+        // {
+        //     AddTextInf(ALT_agroMC + ": " + MSG_ubi);
+        // } // end if
+        // if (_loc1.PribPar5[_loc1.year] < 0)
+        // {
+        //     AddTextInf(ALT_turMC + ": " + MSG_ubi);
+        // } // end if
+        Debug.Log("enter at some place for making interaction with UI 4 //TODO");
+
+        //BioClnR(_loc1.CapPar7[_loc1.year]);
+        //ChemClnR(_loc1.CapPar6[_loc1.year]);
+
+         HumDevIndCacl(currentYear);
+         QualEnvCalc(currentYear); 
+         LifespanCalc(currentYear);
+
+        // HDevR();    
+        // OcrSrR();
+        // TestTime();
+        // MC_msg.Year_tm.text = _root.MSG_year + " " + _loc1.year + " " + _root.MSG_of + " " + _loc1.endYear;
+        // MC_msg.I1.text = _loc1.Budt[_loc1.year];
+        // MC_msg.I2.text = _loc1.FishAm[_loc1.year];
+        // MC_msg.I3.text = _loc1.NasAm[_loc1.year];
+        // MC_msg.U1.text = _loc1.DohSumNDN[_loc1.year];
+        // MC_msg.U2.text = _loc1.QuolOcrSr[_loc1.year];
+        // MC_msg.U3.text = _loc1.HDev[_loc1.year];
+        // EndGame();
+            
+    } // End of the function
+
+
+    private int  ModifMMap(int old_index, int new_index, int count)
+    {
+        while (count > 0)
+        {
+            AnMMap(old_index);
+            if (array_old.Count == 0) //
+            {
+                break;
+            }
+            else
+            {
+                RandMMap(old_index, new_index);
+            } // end else if
+            count--;
+        } // end while
+        return (count);
+    } // End of the function
+
+    
+    private void AnMMap(int old_index)
+    {
+       array_old.Clear();
+        for (int i = 0; i < board.rows; i++)
+        {
+            for (int j = 0; j < board.columns; j++)
+            {
+                if (board.array2d[j][i] == old_index)
+                {
+                    array_old.Add((j, i));
+                } 
+            } 
+        } 
+    }  
+
+    private void RandMMap(int old_index, int new_index)
+    {
+        int numb = (int) (Random.value * array_old.Count);
+        //++_global.all_num;
+        //int column = _global.OldArr[numb][0];
+        //int row = _global.OldArr[numb][1];
+        int column = array_old[numb].Item1;
+        int row = array_old[numb].Item2;
+        board.array2d[column][row] = new_index;
+        // eval(base + "." + column + "." + row + "." + "icon").gotoAndStop(new_index);
+    } // End of the function
+
+
+
+
+
 }
