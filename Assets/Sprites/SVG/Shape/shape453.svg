@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:author="http://www.sothink.com"
+width="115px" height="61px"
+xml:space="preserve">
+<g id="218" transform="matrix(1, 0, 0, 1, 57.6, 30.5)">
+<linearGradient
+id="LinearGradID_705" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-0.000152588, 0.0367126, -0.0366058, -0.00012207, 0.45, 0)" spreadMethod ="pad" x1="-819.2" y1="0" x2="819.2" y2="0" >
+<stop  offset="0" style="stop-color:#9DD6DD;stop-opacity:1" />
+<stop  offset="1" style="stop-color:#DBE6BE;stop-opacity:1" />
+</linearGradient>
+<path style="fill:url(#LinearGradID_705) " d="M56.05,-30L56.55 -30L57.05 -30L57.05 30L56.55 30L56.05 30L56.05 -30" />
+<path style="fill:#9DD6DD;fill-opacity:0.6" d="M-51,-24.4L49.55 -24.4L49.55 23L49.55 23.05L-51 23.05L-51 23L-51 -24.4M6.6,-8.65L-2 -1.75L-5.5 9.1L3.1 2.15L6.6 -8.65" />
+<path style="fill:#D1EAED;fill-opacity:1" d="M56.05,30L-57.1 30L-57.1 -30L56.05 -30L56.05 30M49.6,23L49.6 -29.95L-56.95 -29.95L-56.95 23L-51 23L-51 23.05L49.55 23.05L49.55 23L49.6 23" />
+<path style="fill:#42AEBD;fill-opacity:1" d="M-51,23L-56.95 23L-56.95 -29.95L49.6 -29.95L49.6 23L49.55 23L49.55 -24.4L-51 -24.4L-51 23" />
+<path style="fill:#FF9900;fill-opacity:1" d="M3.1,2.15L-5.5 9.1L-2 -1.75L6.6 -8.65L3.1 2.15" />
+<path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3;stroke:#FFFFFF;stroke-opacity:1" d="M56.55,30L56.05 30L-57.1 30L-57.1 -30L56.05 -30L56.55 -30M56.05,-30L56.05 30" />
+<path style="fill:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3;stroke:#FF9900;stroke-opacity:1" d="M11.7,0.65L13.55 0.65L13.55 0.5Q13.55 -4.75 9.8 -8.45Q6.1 -12.2 0.85 -12.15L0.6 -12.15L0.6 -9.5M0.45,10.8L0.45 13.2L0.85 13.2Q6.1 13.2 9.8 9.45Q13.5 5.8 13.55 0.65M3.1,2.15L-5.5 9.1L-2 -1.75L6.6 -8.65L3.1 2.15M18.45,18.6L-16.3 18.6L-16.3 -16.25L18.45 -16.25L18.45 18.6M-9.55,0.35L-11.8 0.35L-11.8 0.5Q-11.85 5.75 -8.1 9.45Q-4.55 13.05 0.45 13.2M-11.8,0.35Q-11.75 -4.8 -8.1 -8.45Q-4.5 -12.1 0.6 -12.15" />
+</g>
+</svg>

@@ -39,6 +39,11 @@ public class DB : MonoBehaviour
 			Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
 			string json = File.ReadAllText(jsonString);
 			board = JsonConvert.DeserializeObject<Board>(json);
+            /* for (int i = 0; i < 20; i++)
+            {
+                Debug.Log(board.array2d[19][i]);
+            } */
+            
     }
 
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:author="http://www.sothink.com"
+width="170px" height="30px"
+xml:space="preserve">
+<g id="170" transform="matrix(1, 0, 0, 1, 85, 15)">
+<path style="fill:#FF9F00;fill-opacity:1" d="M19.4,-5.1Q26.75 -1.55 34.05 1.95L19.4 8.9L19.4 4.25L-30.95 4.25L-30.95 -0.45L19.4 -0.45L19.4 -5.1" />
+<path style="fill:#9DD6DD;fill-opacity:0.6" d="M19.4,-5.65L19.4 -5.6L19.45 -5.65L19.4 -5.65M19.4,-5.6L19.35 -5.65L19.35 -5.6L19.4 -5.6M19.4,-0.45L-30.95 -0.45L-30.95 4.25L19.4 4.25L19.4 8.9L34.05 1.95Q26.75 -1.55 19.4 -5.1L19.4 -0.45M-81.95,-12.3L82 -12.3L82 12L-81.95 12L-81.95 -12.3" />
+<path style="fill:#42AEBD;fill-opacity:1" d="M-81.95,12L-84.9 12L-84.9 -15L82.1 -15L82.1 12L82.1 -12.3L82 -12.3L-81.95 -12.3L-81.95 12" />
+<path style="fill:#D1EAED;fill-opacity:1" d="M-81.95,12L82 12L82 -12.3L82.1 -12.3L82.1 12L82.1 -15L85 -15L85 15L-85 15L-85 -15L-85 12L-84.9 12L-81.95 12" />
+<path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3;stroke:#FF9F00;stroke-opacity:1" d="M53.7,-7.25L-50.2 -7.25L-50.2 11.05L53.7 11.05L53.7 -7.25z" />
+</g>
+</svg>

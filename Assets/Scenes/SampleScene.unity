@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 1219814403}
   - component: {fileID: 1219814404}
   - component: {fileID: 1219814405}
+  - component: {fileID: 1219814406}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3133,5 +3134,42 @@ MonoBehaviour:
     agroUCap: 0
     turUCap: 0
   board:
-    columns: 0
-    rows: 0
+    columns: 19
+    rows: 19
+--- !u!114 &1219814406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219814402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239e7c9b3a286c24bbe90a0ecc281c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameBoard:
+    columns: 19
+    rows: 19
+  ShipTiles:
+  - {fileID: 100000, guid: d5dbdb85ad5480e4ebe89bb2c37593ef, type: 3}
+  OuterWaterTiles:
+  - {fileID: 5343903899728279743, guid: feb0c56adb44f9547812b12e4520cd8b, type: 3}
+  MiddleWaterTiles:
+  - {fileID: 5670348245748635718, guid: bf3dec4d4454bee4b900eab9ec4dc761, type: 3}
+  InnerWaterTiles:
+  - {fileID: 560229582807554553, guid: 42a27bb18d40fc74bb5da3e0593e9992, type: 3}
+  ForestTiles:
+  - {fileID: 100002, guid: 7a07b78dfd12ddb4d94f56f41513464d, type: 3}
+  AgroCultureTiles:
+  - {fileID: 100000, guid: 9b044a8afffdfd74eac9b3cb31abd532, type: 3}
+  TourismTiles:
+  - {fileID: 100000, guid: 578fe604cbf38da40aec1bbcb250d0f0, type: 3}
+  FactoryTiles:
+  - {fileID: 100000, guid: df02c8bde651f4048bb273627ffc4d9c, type: 3}
+  PlaneTiles:
+  - {fileID: 1971006586673401073, guid: 1091546bf9452e9448733dd7cdb58283, type: 3}
+  DirtTiles:
+  - {fileID: 100000, guid: ca1a0bee4f96603438fe12609e7060e8, type: 3}
+  - {fileID: 100000, guid: 0f5658a9e0d4eec4895683bbfec6c351, type: 3}
+  - {fileID: 100000, guid: f3b9818fbca2b6d46be5dcafb6f98d26, type: 3}

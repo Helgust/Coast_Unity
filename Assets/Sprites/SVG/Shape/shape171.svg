@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:author="http://www.sothink.com"
+width="29px" height="16px"
+xml:space="preserve">
+<g id="67" transform="matrix(1, 0, 0, 1, 10.35, 13.2)">
+<linearGradient
+id="LinearGradID_184" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.000213623, -0.00038147, 0.0080719, 0.00605774, -4.9, -8.65)" spreadMethod ="pad" x1="-819.2" y1="0" x2="819.2" y2="0" >
+<stop  offset="0" style="stop-color:#A7907A;stop-opacity:1" />
+<stop  offset="1" style="stop-color:#D9CFC6;stop-opacity:1" />
+</linearGradient>
+<path style="fill:url(#LinearGradID_184) " d="M1.55,-3.35L-10.35 -12.3L-10.35 -13.2L-7.1 -10.75L1.6 -4.2L1.9 -3.95L1.6 -3.45L1.55 -3.35" />
+<linearGradient
+id="LinearGradID_185" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-0.000137329, -0.000411987, 0.00994873, -0.00178528, 8.9, -5.15)" spreadMethod ="pad" x1="-819.2" y1="0" x2="819.2" y2="0" >
+<stop  offset="0" style="stop-color:#A7907A;stop-opacity:1" />
+<stop  offset="1" style="stop-color:#D9CFC6;stop-opacity:1" />
+</linearGradient>
+<path style="fill:url(#LinearGradID_185) " d="M16.95,-6.95L17 -6.75L17.15 -6.25L16.3 -6.1L1.6 -3.45L1.9 -3.95L1.6 -4.2L16.95 -6.95" />
+<linearGradient
+id="LinearGradID_186" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.000518799, 1.52588e-005, -7.62939e-005, 0.00535583, 16.65, -2.4)" spreadMethod ="pad" x1="-819.2" y1="0" x2="819.2" y2="0" >
+<stop  offset="0" style="stop-color:#A7907A;stop-opacity:1" />
+<stop  offset="1" style="stop-color:#D9CFC6;stop-opacity:1" />
+</linearGradient>
+<path style="fill:url(#LinearGradID_186) " d="M17.05,-2.15L16.95 -2.15L16.35 -1.85L16.25 -1.65L16.3 -6.1L17.15 -6.25L17 -6.75L17.2 -6.75L17.1 -2.15L17.05 -2.15M16.35,-0.2L16.85 0.15L16.85 0.25L17.05 0.25L17.05 1.35L16.85 1.35L16.85 1.25L16.35 0.9L16.25 0.7L16.2 2L16.25 -0.4L16.35 -0.2" />
+<path style="fill:#CC6666;fill-opacity:1" d="M17.05,0.15L16.55 -0.2L16.3 -0.8L16.2 -0.8L16.2 -1.05L16.3 -1.05L16.55 -1.85Q16.75 -2.1 17.05 -2.15L17.1 -2.15L17.15 -2.15L17.75 -1.85L18 -1.05L18.1 -1.05L18.1 -0.8L18 -0.8L17.75 -0.2L17.3 0.15L17.3 0.25L17.05 0.25L17.05 0.15M17.05,-1.05L17.05 -1.8L16.85 -1.65L16.8 -1.6L16.6 -1.05L16.85 -1.05L17.05 -1.05M17.65,-1.05L17.8 -1.05L17.85 -1.05L17.75 -1.4L17.65 -1.6L17.5 -1.75L17.3 -1.8L17.3 -1.7L17.3 -1.05L17.65 -1.05M17.3,-0.15L17.65 -0.4L17.75 -0.5L17.85 -0.8L17.8 -0.8L17.65 -0.8L17.3 -0.8L17.3 -0.25L17.3 -0.15M17.05,-0.15L17.05 -0.8L16.85 -0.8L16.6 -0.8L16.8 -0.4L16.85 -0.3L17.05 -0.15" />
+<path style="fill:#8B2E2E;fill-opacity:1" d="M16.25,-0.4L16.1 -0.8L16 -0.8L16 -1.05L16.1 -1.05L16.1 -1.15L16.25 -1.65L16.35 -1.85L16.95 -2.15L17.05 -2.15Q16.75 -2.1 16.55 -1.85L16.3 -1.05L16.2 -1.05L16.2 -0.8L16.3 -0.8L16.55 -0.2L17.05 0.15L17.05 0.25L16.85 0.25L16.85 0.15L16.35 -0.2L16.25 -0.4M16.85,-1.65L17.05 -1.8L17.05 -1.05L16.85 -1.05L16.85 -1.65M17.8,-1.05L17.65 -1.05L17.45 -1.6L17.35 -1.7L17.3 -1.7L17.3 -1.8L17.5 -1.75L17.65 -1.6L17.75 -1.4L17.8 -1.05M17.75,-0.5L17.65 -0.4L17.3 -0.15L17.3 -0.25L17.45 -0.4L17.65 -0.8L17.8 -0.8L17.75 -0.5M16.85,-0.8L17.05 -0.8L17.05 -0.15L16.85 -0.3L16.85 -0.8" />
+</g>
+</svg>

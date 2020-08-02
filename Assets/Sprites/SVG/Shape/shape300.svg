@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:author="http://www.sothink.com"
+width="26px" height="25px"
+xml:space="preserve">
+<g id="149" transform="matrix(1, 0, 0, 1, 12.5, 12.5)">
+<path style="fill:#977859;fill-opacity:1" d="M-12.5,9.5L-12.5 -12.5L9.5 -12.5L9.5 -12.45L-12.45 -12.45L-12.45 9.5L-12.5 9.5" />
+<path style="fill:#42AEBD;fill-opacity:1" d="M-9.7,9.55L-9.7 9.5L9.5 9.5L9.5 -9.85L9.55 -9.85L9.65 -9.85L9.65 -12.45L9.55 -12.45L9.5 -12.45L9.5 -12.5L12.55 -12.5L12.55 12.5L-12.45 12.5L-12.45 9.55L-9.8 9.55L-9.7 9.55" />
+<path style="fill:#42AEBD;fill-opacity:0.6" d="M-9.8,9.55L-9.8 -9.85L9.5 -9.85L9.5 9.5L-9.7 9.5L-9.7 9.55L-9.8 9.55" />
+<path style="fill:#D1EAED;fill-opacity:1" d="M9.5,-9.85L-9.8 -9.85L-9.8 9.55L-12.45 9.55L-12.45 9.5L-12.45 -12.45L9.5 -12.45L9.55 -12.45L9.55 -9.85L9.5 -9.85" />
+<path style="fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3;stroke:#0033CC;stroke-opacity:1" d="M-5.5,0L5.75 0" />
+</g>
+</svg>

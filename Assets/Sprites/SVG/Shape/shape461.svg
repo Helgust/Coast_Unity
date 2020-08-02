@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:author="http://www.sothink.com"
+width="114px" height="61px"
+xml:space="preserve">
+<g id="224" transform="matrix(1, 0, 0, 1, 57.05, 30.45)">
+<linearGradient
+id="LinearGradID_710" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.0613708, 0, 0, 0.0289917, -0.35, -0.8)" spreadMethod ="pad" x1="-819.2" y1="0" x2="819.2" y2="0" >
+<stop  offset="0" style="stop-color:#D5DAF1;stop-opacity:0.6" />
+<stop  offset="1" style="stop-color:#8E9DCA;stop-opacity:0.6" />
+</linearGradient>
+<path style="fill:url(#LinearGradID_710) " d="M-17.25,-18.05L-17.25 -18.1L-16.25 -18.1L-16.25 -18.05L-17.25 -18.05M-15.25,16.25L-17.25 16.25L-17.25 16.2L-15.25 16.2L-15.25 16.25" />
+<path style="fill:#374777;fill-opacity:1" d="M56.35,7.55L56.6 30.05L56.2 30.05L56.35 7.55" />
+<path style="fill:#8E9DCA;fill-opacity:1" d="M-56.5,-29.95L-56.5 -30.05L50.05 -30.05L50.05 -29.95L-56.5 -29.95" />
+<path style="fill:#9DD6DD;fill-opacity:0.6" d="M50,22.9L50 22.95L-50.55 22.95L-50.55 22.9L-50.55 -24.5L50 -24.5L50 22.9M-1.6,-2.05L-9.45 -2.05L-9.45 2.55L-1.6 2.55L-1.6 8.65L6.9 0.15L-1.6 -8.3L-1.6 -2.05M-16.25,-18.05L-16.25 -18.1L-17.25 -18.1L-17.25 -18.05L-16.25 -18.05M-15.25,16.2L-17.25 16.2L-17.25 16.25L-15.25 16.25L-15.25 16.2" />
+<path style="fill:#D1EAED;fill-opacity:1" d="M56.2,30.05L-56.55 30.05L-56.55 -29.95L-56.5 -29.95L-56.5 22.9L-50.55 22.9L-50.55 22.95L50 22.95L50 22.9L50.05 22.9L50.05 -29.95L56.15 -29.95L56.35 7.55L56.2 30.05" />
+<path style="fill:#42AEBD;fill-opacity:1" d="M50,-24.5L-50.55 -24.5L-50.55 22.9L-56.5 22.9L-56.5 -29.95L50.05 -29.95L50.05 22.9L50 22.9L50 -24.5" />
+<path style="fill:#FF9900;fill-opacity:1" d="M-1.6,-8.3L6.9 0.15L-1.6 8.65L-1.6 2.55L-9.45 2.55L-9.45 -2.05L-1.6 -2.05L-1.6 -8.3" />
+<path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3;stroke:#FFFFFF;stroke-opacity:1" d="M56.2,30.05L-56.55 30.05L-56.55 -29.95L-56.5 -29.95L50.05 -29.95L56.15 -29.95L56.35 7.55L56.2 30.05z" />
+<path style="fill:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3;stroke:#FF9900;stroke-opacity:1" d="M-1.6,-2.05L-9.45 -2.05L-9.45 2.55L-1.6 2.55L-1.6 8.65L6.9 0.15L-1.6 -8.3L-1.6 -2.05M-3.75,-5.25L-3.75 -12.25L12.75 -12.25L12.75 14.25L-3.75 14.25L-3.75 5.5M-15.25,16.25L-15.25 16.2L-15.25 -16.05L19 -16.05L19 18.2L-15.25 18.2L-15.25 16.25" />
+</g>
+</svg>

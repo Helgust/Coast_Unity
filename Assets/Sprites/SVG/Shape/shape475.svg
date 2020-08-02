@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:author="http://www.sothink.com"
+width="50px" height="30px"
+xml:space="preserve">
+<g id="231" transform="matrix(1, 0, 0, 1, 24.95, 15)">
+<path style="fill:#977859;fill-opacity:1" d="M-24.95,-15L-24.9 -15L21.95 -15L21.95 -14.95L-24.95 -14.95L-24.95 -15" />
+<path style="fill:#9DD6DD;fill-opacity:0.6" d="M-22.1,12L-22.1 -12.3L21.95 -12.3L21.95 12L-22.1 12" />
+<path style="fill:#D1EAED;fill-opacity:1" d="M21.95,12L21.95 12.05L-24.9 12.05L-24.95 12.05L-24.95 -14.95L21.95 -14.95L21.95 -12.3L-22.1 -12.3L-22.1 12L21.95 12" />
+<path style="fill:#42AEBD;fill-opacity:1" d="M21.95,-15L-24.9 -15L25 -15L25 15L-24.9 15L-24.9 12.05L21.95 12.05L21.95 12L21.95 -12.3L21.95 -14.95L21.95 -15" />
+<path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3;stroke:#046B81;stroke-opacity:1" d="M-4.85,-2.45Q-0.4 0.45 -0.15 5.35Q2.35 -4.6 4.95 -5.45M7.95,8L-8 8L-8 -8L7.95 -8L7.95 8" />
+</g>
+</svg>

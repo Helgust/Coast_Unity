@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:author="http://www.sothink.com"
+width="9px" height="9px"
+xml:space="preserve">
+<g id="23" transform="matrix(1, 0, 0, 1, 0, 0)">
+<path style="fill:#808080;fill-opacity:1" d="M5,1Q3.35 1 2.2 2.2Q1 3.35 1 5Q1 6.75 2.2 7.85L1.5 8.55Q0 7.15 0 5Q0 2.95 1.45 1.45Q2.95 0 5 0Q7.05 0 8.55 1.5L7.85 2.2Q6.55 1 5 1" />
+</g>
+</svg>

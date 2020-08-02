@@ -2,7 +2,7 @@
     "paperfactory" : 
     {
          "capital": 500 ,
-         "ivestments": 0 ,
+         "investments": 0 ,
          "production": 0,
          "amortization": 0,
          "income": 0,
@@ -22,7 +22,7 @@
     "fish" : 
     {
          "capital": 500 ,
-         "ivestments": 0 ,
+         "investments": 0 ,
          "production": 0,
          "amortization": 0,
          "income": 0,
@@ -43,7 +43,7 @@
     "aquaCulture" : 
     {
          "capital": 200 ,
-         "ivestments": 0 ,
+         "investments": 0 ,
          "production": 0,
          "amortization": 0,
          "income": 0,
@@ -64,7 +64,7 @@
     "agroCulture" : 
     {
          "capital": 200 ,
-         "ivestments": 0 ,
+         "investments": 0 ,
          "production": 0,
          "amortization": 0,
          "income": 0,
@@ -85,7 +85,7 @@
     "tourism" : 
     {
          "capital": 100 ,
-         "ivestments": 0 ,
+         "investments": 0 ,
          "production": 0,
          "amortization": 0,
          "income": 0,
@@ -107,7 +107,7 @@
     "chemCleaning" : 
     {
          "capital": 50 ,
-         "ivestments": 0 ,
+         "investments": 0 ,
          "production": 0,
          "amortization": 0,
          "income": 0,
@@ -126,7 +126,7 @@
     "bioCleaning":
     {
         "capital": 50 ,
-        "ivestments": 0 ,
+        "investments": 0 ,
         "production": 0,
         "amortization": 0,
         "income": 0,

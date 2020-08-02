@@ -11,12 +11,12 @@ public class GameManager : MonoBehaviour
 	
 	public int currentYear;
 	private DB DBScript;
-	//private BoardManager BoardScript;
+	private BoardManager BoardScript;
 	//public bool enable;
 
 
 	private string configJSON = "Assets/Configs/config2.json";
-	private string configMapJSON = "Assets/Configs/config2Map.json";
+	private string configMapJSON = "Assets/Configs/config2Map.json"; 
 	
 	
 	//Awake is always called before any Start functions
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 	{
 
 		DBScript = GetComponent<DB>();
-		//BoardScript = GetComponent<BoardManager>();
+		BoardScript = GetComponent<BoardManager>();
 		InitGame();
 	}
 
@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 		currentYear=0;
 		DBScript.InitDB(configJSON);
 		DBScript.InitBoard(configMapJSON);
+		BoardScript.SetupScene();
 		currentYear=1;
 	}
 
