@@ -34,6 +34,7 @@ public class Board
 
 /*
 10 - Кораблик
+11 - маленький кораблик
 1 - Outer Waters
 2 - Middle Waters (Чуть светлее )
 3 - Inner Waters (Вода у берега)
@@ -43,5 +44,7 @@ public class Board
 15 - FActory
 14 - planes (луга)
 13 - туризм
+12 - туризм на пляже
+
 
 */

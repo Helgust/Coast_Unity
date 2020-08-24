@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dbe1fd4bcda1818429d714dfcd1a3efc
+guid: 5a03ec3a07703f54a91e8d6a5cef1b69
 ScriptedImporter:
   fileIDToRecycleName:
-    100000: gameObject/shape228
-    400000: gameObject/shape228/Transform
-    21200000: gameObject/shape228/SpriteRenderer
+    100002: gameObject/SmallShip
+    400002: gameObject/SmallShip/Transform
+    21200002: gameObject/SmallShip/SpriteRenderer
     21300000: sprite
     100100000: gameObject
   externalObjects: {}
@@ -53,5 +53,5 @@ ScriptedImporter:
         y: 0
         width: 0
         height: 0
-      spriteID: 249998d3b800f8e4dbe194554da36466
+      spriteID: 42b7a704692580a4aa1e403e4b20957d
     PhysicsOutlines: []

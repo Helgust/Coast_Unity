@@ -14,48 +14,54 @@ public class Year
     public ChemCleaning chemCleaning;
     public BioCleaning bioCleaning; 
 
-    public int fishAmount;
-    public int ejectEColi; // ejection of E. Coli
-    public int ejectOrg; // ejection of Organic matter
-    public int ejectPhs; // ejection of Phosphates
-    public int residueEColi; // residue of E. Coli
-    public int residueOrg; // residue of Organic 
-    public int residuePhs; // residue  of Phosphates
-    public int degr;
-    public int degrLand;
-    public int degrSea;
+    public float fishAmount;
+    public float ejectEColi; // ejection of E. Coli
+    public float ejectOrg; // ejection of Organic matter
+    public float ejectPhs; // ejection of Phosphates
+    public float residueEColi; // residue of E. Coli
+    public float residueOrg; // residue of Organic 
+    public float residuePhs; // residue  of Phosphates
+    public float degr;
+    public float degrLand;
+    public float degrSea;
     
-    public int budget;
-    public int moneySpend;//Распределение суммы денег в периоде 
-    public int moneyLeft;//Не распределенный остаток денег в бюджете
-    public int incomeSum;//Суммарный доход всех отраслей (без очистных)
-    public int capitalSum;//Сумма всех капиталов
-    public int incomeSumPerHum;//Суммарный доход всех отраслей (без очистных сооружений) на душу населения
-    public int population;//Численность населения 
-    public int employmentRate;//Уровень Занятости %
-    public int unemploymentRate;//Уровень Безработицы %
-    public int jobsAmSum;//Число рабочих мест общее
-    public int jobsReqSum;//Суммарное число требуемых рабочих мест
-    public int ablePopSum;//Суммарное число трудоспособного населения 
+    public float budget;
+    public float moneySpend;//Распределение суммы денег в периоде 
+    public float moneyLeft;//Не распределенный остаток денег в бюджете
+    public float incomeSum;//Суммарный доход всех отраслей (без очистных)
+    public float capitalSum;//Сумма всех капиталов
+    public float incomeSumPerHum;//Суммарный доход всех отраслей (без очистных сооружений) на душу населения
+    public float population;//Численность населения 
+    public float employmentRate;//Уровень Занятости %
+    public float unemploymentRate;//Уровень Безработицы %
+    public float jobsAmSum;//Число рабочих мест общее
+    public float jobsReqSum;//Суммарное число требуемых рабочих мест
+    public float ablePopSum;//Суммарное число трудоспособного населения 
 
-    public int lifespan; //Продолжительность жизни
-    public int humDevInd; //Индекс развития общества
-    public int qualityOfEnv;//Качество окружающей среды
+    public float lifespan; //Продолжительность жизни
+    public float humDevInd; //Индекс развития общества
+    public float qualityOfEnv;//Качество окружающей среды
+
+    public float pop_incM; // реальный прирост
 
 
     // параметры модели
     public float POP_INC; // show how fast population is growing %
-    public int ABLE_TO_LABOR; // prosent of population how can work
-    public int BASE_COST_INC; //Base cost increase per year, %
-    public int PROFIT_TAX; // налог на прибыль %
-    public int FISH_INC; //
+    public float ABLE_TO_LABOR; // prosent of population how can work
+    public float BASE_COST_INC; //Base cost increase per year, %
+    public float PROFIT_TAX; // налог на прибыль %
+    public float FISH_INC; //
 
-    public int BANK_PROCENT; 
+    public float BANK_PROCENT; 
 
-    public int E_COL_OTH_POP;// остатки кишечной палочки от населения
-    public int ORG_OTH_POP; // остатки орагники от населения
+    public float E_COL_OTH_POP;// остатки кишечной палочки от населения
+    public float ORG_OTH_POP; // остатки орагники от населения
 
-    public int shipUCap;
-    public int agroUCap;
-    public int turUCap;
+    public float shipUCap;
+    public float agroUCap;
+    public float turUCap;
+
+    
 };
+
+

@@ -164,6 +164,7 @@
     "capitalSum": 0 , 
     "ablePopSum": 0, 
     "difDirt": 0,
+    "pop_incM" : 0,
     "BUDGET" : 10000,
     "POP_INC" : 5,
     "ABLE_TO_LABOR" : 40,

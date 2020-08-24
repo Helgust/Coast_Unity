@@ -14,12 +14,15 @@ using Random = UnityEngine.Random; 		//Tells Random to use the Unity Engine rand
 		private DB DBScript;
 
 		public GameObject[] ShipTiles;									//Array of floor prefabs.
+		public GameObject[] SmallShipTiles;									//Array of floor prefabs.
 		public GameObject[] OuterWaterTiles;									//Array of wall prefabs.
 		public GameObject[] MiddleWaterTiles;									//Array of food prefabs.
 		public GameObject[] InnerWaterTiles;									//Array of enemy prefabs.
 		public GameObject[] ForestTiles;								//Array of outer tile prefabs.
 		public GameObject[] AgroCultureTiles;								//Array of outer tile prefabs.
 		public GameObject[] TourismTiles;								//Array of outer tile prefabs.
+		public GameObject[] BeachTourismTiles;								//Array of outer tile prefabs.
+		
 		public GameObject[] FactoryTiles;								//Array of outer tile prefabs.
 		public GameObject[] PlaneTiles;								//Array of outer tile prefabs.
 
@@ -62,15 +65,13 @@ using Random = UnityEngine.Random; 		//Tells Random to use the Unity Engine rand
 		}
 		
 		
-		void BoardSetup ()
+		void BoardSetup ( Board gameBoard )
 		{ 
-			DBScript = GetComponent<DB>();
-			gameBoard = DBScript.board;
-
 			gameBoard.array2d.Reverse(); // make reverse for correct drawing on gamingBoard
 
 			//Instantiate Board and set boardHolder to its transform.
 			boardHolder = new GameObject ("Board").transform;
+			boardHolder.tag = "gameBoard";
 			//Loop along x axis, starting from -1 (to fill corner) with floor or outerwall edge tiles.
 			for(int x = 0; x < gameBoard.columns; x++)
 			{
@@ -78,7 +79,7 @@ using Random = UnityEngine.Random; 		//Tells Random to use the Unity Engine rand
 				for(int y = 0; y < gameBoard.rows; y++)
 				{
 					//Debug.Log(gameBoard.array2d[y][x]);
-					Debug.Log(x+" "+y);
+					//Debug.Log(x+" "+y);
 					GameObject toInstantiate;
 
 
@@ -118,6 +119,15 @@ using Random = UnityEngine.Random; 		//Tells Random to use the Unity Engine rand
 					{
 						toInstantiate = TourismTiles[Random.Range (0,TourismTiles.Length)];
 					}
+					else if (gameBoard.array2d[y][x] == 12) 
+					{
+						toInstantiate = BeachTourismTiles[Random.Range (0,BeachTourismTiles.Length)];
+					}
+					else if (gameBoard.array2d[y][x] == 11) 
+					{
+						toInstantiate = SmallShipTiles[Random.Range (0,SmallShipTiles.Length)];
+					}
+					
 					else
 					{
 						toInstantiate = DirtTiles[Random.Range (0,DirtTiles.Length)];
@@ -132,6 +142,9 @@ using Random = UnityEngine.Random; 		//Tells Random to use the Unity Engine rand
 					instance.transform.SetParent (boardHolder);
 				}
 			}
+
+			gameBoard.array2d.Reverse(); // make reverse for correct drawing on gamingBoard
+
 		}
 
 		 /* void BoardSetup ()
@@ -164,10 +177,10 @@ using Random = UnityEngine.Random; 		//Tells Random to use the Unity Engine rand
 		} */ 
 		
 		
-		public void SetupScene ()
+		public void SetupScene (Board gameBoard)
 		{
 			//Creates the outer walls and floor.
-			BoardSetup ();
+			BoardSetup (gameBoard);
 			
 			//Reset our list of gridpositions.
 			InitialiseList ();

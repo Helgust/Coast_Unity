@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5a03ec3a07703f54a91e8d6a5cef1b69
+guid: dbe1fd4bcda1818429d714dfcd1a3efc
 ScriptedImporter:
   fileIDToRecycleName:
-    100000: gameObject/shape226
-    400000: gameObject/shape226/Transform
-    21200000: gameObject/shape226/SpriteRenderer
+    100000: gameObject/Umbrella
+    400000: gameObject/Umbrella/Transform
+    21200000: gameObject/Umbrella/SpriteRenderer
     21300000: sprite
     100100000: gameObject
   externalObjects: {}
@@ -53,5 +53,5 @@ ScriptedImporter:
         y: 0
         width: 0
         height: 0
-      spriteID: 42b7a704692580a4aa1e403e4b20957d
+      spriteID: 249998d3b800f8e4dbe194554da36466
     PhysicsOutlines: []

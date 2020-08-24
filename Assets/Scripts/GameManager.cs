@@ -2,16 +2,25 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using Newtonsoft.Json;
+using UnityEngine.UI;
 
 using System.Collections.Generic;		//Allows us to use Lists. 
 //using UnityEngine.UI;					//Allows us to use UI.
 
 public class GameManager : MonoBehaviour
 {
-	
 	public int currentYear;
+	
+   	public int finalYear=30;
 	private DB DBScript;
 	private BoardManager BoardScript;
+	
+	public GameObject IHObject;
+	
+	public GameObject NextMoveButtons;
+
+	private InputHandler IHScript;
+	
 	//public bool enable;
 
 
@@ -25,6 +34,7 @@ public class GameManager : MonoBehaviour
 
 		DBScript = GetComponent<DB>();
 		BoardScript = GetComponent<BoardManager>();
+		IHScript = IHObject.GetComponent<InputHandler>();
 		InitGame();
 	}
 
@@ -35,32 +45,52 @@ public class GameManager : MonoBehaviour
 	void InitGame()
 	{
 		currentYear=0;
-		DBScript.InitDB(configJSON);
+		DBScript.InitDB(configJSON,finalYear);
 		DBScript.InitBoard(configMapJSON);
-		BoardScript.SetupScene();
+		BoardScript.SetupScene(DBScript.board);
 		currentYear=1;
 	}
 
 	void CheckGameOver()
 	{
-		if(currentYear > 19) 
-		{
-			enabled = false;
-		}
+
 	}
 
-	void Update() 
+	/*  void Update() 
 	{
-		CheckGameOver();
-		bool down = Input.GetKeyDown(KeyCode.Space);
-		if(down)
+		//bool down = Input.GetKeyDown(KeyCode.Space);
+		if(currentYear > finalYear - 1 )
 		{
-			Debug.Log("Check");
+			enabled = false;
+			NextMoveButtons.SetActive(false);
+		}
+		else
+		{
 			DBScript.AbsCalc(currentYear);
 			DBScript.MapCalc(currentYear);
 			currentYear +=1;
+			Destroy(GameObject.FindWithTag("gameBoard"));
+			BoardScript.SetupScene(DBScript.board);
 		}
 		
+		
+	}  */
+
+	public void NextMove()
+	{
+		if(currentYear > finalYear - 1 )
+		{
+			enabled = false;
+			NextMoveButtons.SetActive(false);
+		}
+		else
+		{
+			List<int> UIText = IHScript.FromUIToDB();
+			DBScript.NextMoveDB(currentYear,UIText);
+			currentYear +=1;
+			Destroy(GameObject.FindWithTag("gameBoard"));
+			BoardScript.SetupScene(DBScript.board);
+		}
 		
 	}
 	
