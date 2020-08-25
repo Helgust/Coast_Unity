@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 {
 	public int currentYear;
 	
-   	public int finalYear=30;
+   	public int finalYear;
 	private DB DBScript;
 	private BoardManager BoardScript;
 	
@@ -76,9 +76,20 @@ public class GameManager : MonoBehaviour
 		
 	}  */
 
+	private void PrintList(List<int> L)
+	{
+		Debug.Log("--------");
+		for (int i=0; i < L.Count; i++)
+		{
+			Debug.Log(L[i]);
+		}
+		Debug.Log("--------");
+		
+	}
 	public void NextMove()
 	{
-		if(currentYear > finalYear - 1 )
+		Debug.Log("IS_OVER: " + DBScript.is_over);
+		if((currentYear > finalYear - 1 ) || (DBScript.is_over == true)  )
 		{
 			enabled = false;
 			NextMoveButtons.SetActive(false);
@@ -86,6 +97,8 @@ public class GameManager : MonoBehaviour
 		else
 		{
 			List<int> UIText = IHScript.FromUIToDB();
+
+			//PrintList(UIText);
 			DBScript.NextMoveDB(currentYear,UIText);
 			currentYear +=1;
 			Destroy(GameObject.FindWithTag("gameBoard"));

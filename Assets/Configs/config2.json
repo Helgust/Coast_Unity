@@ -13,10 +13,11 @@
 
 
           "CAP_LIFE_TIME" : 5 ,
-          "NUM_JOB_PER_CAP":0.050000, 
+          "NUM_JOB_PER_CAP":0.05, 
           "AVG_LABOR_PROD": 5, 
-          "BASE_COST": 5,
-          "VAR_COSTS": 0.05 
+          "BASE_COST": 10,
+          "VAR_COSTS": 0.05,
+          "ORG_OTH" : 10
     },
 
     "fish" : 
@@ -33,11 +34,12 @@
 
 
           "CAP_LIFE_TIME" : 5 ,
-          "NUM_JOB_PER_CAP":0.050000, 
+          "NUM_JOB_PER_CAP":0.05, 
           "AVG_LABOR_PROD": 5, 
-          "BASE_COST": 5,
+          "BASE_COST": 10,
           "VAR_COSTS": 0.05 ,
-          "E_COL_OTH" : 10
+          "E_COL_OTH" : 10,
+          "ORG_OTH" : 10
     },
 
     "aquaCulture" : 
@@ -54,11 +56,12 @@
 
 
           "CAP_LIFE_TIME" : 5 ,
-          "NUM_JOB_PER_CAP":0.050000, 
+          "NUM_JOB_PER_CAP":0.05, 
           "AVG_LABOR_PROD": 5, 
-          "BASE_COST": 5,
+          "BASE_COST": 10,
           "VAR_COSTS": 0.05 ,
-          "ORG_OTH" : 10
+          "ORG_OTH" : 10,
+          "PHS_OTH" : 10
     },
 
     "agroCulture" : 
@@ -75,11 +78,13 @@
 
 
           "CAP_LIFE_TIME" : 5 ,
-          "NUM_JOB_PER_CAP":0.050000, 
+          "NUM_JOB_PER_CAP":0.05, 
           "AVG_LABOR_PROD": 5, 
-          "BASE_COST": 5,
+          "BASE_COST": 10,
           "VAR_COSTS": 0.05 ,
-          "ORG_OTH" : 10
+          "ORG_OTH" : 10,
+          "E_COL_OTH" : 10,
+          "PHS_OTH" : 10
     },
 
     "tourism" : 
@@ -96,12 +101,12 @@
 
 
           "CAP_LIFE_TIME" : 5 ,
-          "NUM_JOB_PER_CAP":0.050000, 
+          "NUM_JOB_PER_CAP":0.05, 
           "AVG_LABOR_PROD": 5, 
-          "BASE_COST": 5,
+          "BASE_COST": 10,
           "VAR_COSTS": 0.05 ,
           "E_COL_OTH" : 10,
-          "PHS_OTH" : 10
+          "ORG_OTH" : 10
     },
 
     "chemCleaning" : 
@@ -118,7 +123,7 @@
 
 
           "CAP_LIFE_TIME" : 5 ,
-          "NUM_JOB_PER_CAP":0.050000, 
+          "NUM_JOB_PER_CAP":0.005, 
           "AVG_LABOR_PROD": 100, 
           "CHEM_CLEAN_FACT" : 100
     },
@@ -137,7 +142,7 @@
 
 
          "CAP_LIFE_TIME" : 5 ,
-         "NUM_JOB_PER_CAP":5, 
+         "NUM_JOB_PER_CAP":0.005, 
          "AVG_LABOR_PROD": 100, 
          "BIO_CLEAN_FACT" : 100
    },

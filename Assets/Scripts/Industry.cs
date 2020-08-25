@@ -28,6 +28,7 @@ public class PaperFact : Industry
     public float BASE_COST;
     
     public float VAR_COSTS; //variable costs
+    public float ORG_OTH;
 
 };
 
@@ -42,10 +43,7 @@ public class Fish : Industry
     public float VAR_COSTS; //variable costs
 
     public float E_COL_OTH; //Процент кишечных палочек от объема продукции во второй отрасли (Ловля рыбы)
-
-
-
-
+    public float ORG_OTH;
 };
 
 [System.Serializable]
@@ -59,6 +57,7 @@ public class AquaCulture : Industry
     public float VAR_COSTS; //variable costs
 
     public float ORG_OTH; //Процент органических отходов от объема продукции в третьей отрасли (Аквакультура)
+    public float PHS_OTH;
 
 };
 
@@ -73,6 +72,8 @@ public class AgroCulture : Industry
     public float VAR_COSTS; //variable costs
 
     public float ORG_OTH; //Процент органических отходов от объема продукции в третьей отрасли (Сельское)
+    public float PHS_OTH;
+    public float E_COL_OTH;
 
 };
 
@@ -86,7 +87,7 @@ public class Tourism : Industry
     
     public float VAR_COSTS; //variable costs
     public float E_COL_OTH; //Процент кишечных палочек от объема продукции в пятой отрасли (Туризм)
-    public float PHS_OTH; //Процент фосфатных отходов от объема продукции в пятой отрасли (Туризм)
+    public float ORG_OTH; //Процент фосфатных отходов от объема продукции в пятой отрасли (Туризм)
 
 };
 
