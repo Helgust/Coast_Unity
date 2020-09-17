@@ -24,6 +24,17 @@ public class DB : MonoBehaviour
 		
 	}
 
+    private void PrintList2(List<(int,int)> L)
+	{
+		Debug.Log("--------");
+		for (int i=0; i < L.Count; i++)
+		{
+			Debug.Log(L[i]);
+		}
+		Debug.Log("--------");
+		
+	}
+
     // private void FillUpBoard_OldWithZero(int rows, int columns)
     // {
     //     for(int i = 0; i < rows; i++)
@@ -384,13 +395,13 @@ private void AbleToJobPopCalc(int currentYear)
 
     private void HumDevIndCacl(int currentYear)
     {
-        float Res =  33 * yearDataBase[currentYear].qualityOfEnv + 33 * (yearDataBase[currentYear].incomeSumPerHum / 25) + 33 * (yearDataBase[currentYear].employmentRate / 100);
+        float Res =  33.0f * yearDataBase[currentYear].qualityOfEnv + 33.0f * (yearDataBase[currentYear].incomeSumPerHum / 25.0f) + 33.0f * (yearDataBase[currentYear].employmentRate / 100.0f);
         yearDataBase[currentYear].humDevInd = Res ;
     }
 
     private void QualEnvCalc(int currentYear) // TODO Rewrite
     {
-        
+        float Res = 0;
         int Sea_good = 0;
         int Sea_bad = 0;
         int Land_good = 0;
@@ -408,6 +419,7 @@ private void AbleToJobPopCalc(int currentYear)
         AnMMap(7);
         Sea_bad = Sea_bad + array_old.Count;
         AnMMap(6);
+        PrintList2(array_old);
         Land_good = Land_good + array_old.Count;
         AnMMap(4);
         Land_good = Land_good + array_old.Count;
@@ -425,10 +437,11 @@ private void AbleToJobPopCalc(int currentYear)
         Land_bad = Land_bad + array_old.Count;
 
         Debug.Log("Sea_G: " + Sea_good + " Sea_B: " + Sea_bad + " Land_G: " + Land_good + " Lang_B: " + Land_bad);
-        float Res = (Sea_good - Sea_bad) / Sea_good * 0.100000f + (Land_good - Land_bad) / Land_good * 0.900000f;
+        Res += (((float)Sea_good - (float)Sea_bad) / (float)Sea_good) * 0.10000f   + (((float)Land_good - (float)Land_bad) / (float)Land_good) * 0.90000f;
+        Debug.Log("Res: " + Res);
         
         //return (int(Math.pow(Res, 3) * 100) / 100);
-        yearDataBase[currentYear].qualityOfEnv = Mathf.Pow(Res, 3);
+        yearDataBase[currentYear].qualityOfEnv = (float)Mathf.Pow(Res, 3);
     }
 
     private void IncomeSumPerHumanCalc(int currentYear)
@@ -529,7 +542,7 @@ private void AbleToJobPopCalc(int currentYear)
 
     private void LifespanCalc(int currentYear)
     {
-         yearDataBase[currentYear].lifespan = (75 * yearDataBase[currentYear].qualityOfEnv);
+         yearDataBase[currentYear].lifespan = (75.0f * yearDataBase[currentYear].qualityOfEnv);
     }
 
     private void DegrCalc(int currentYear)
@@ -574,28 +587,28 @@ private void AbleToJobPopCalc(int currentYear)
     {
         
         float loc2 = yearDataBase[currentYear].degr - yearDataBase[currentYear-1].degr;
-        //DegrR(_loc2);
+        //DegrR(_loc2); ToDo reaction
         if (loc2 > 0)
         {
-            float  Melk = (float)(loc2 * 0.25);
-            float  Plag = (float)(loc2 * 0.25);
-            float  Sea = (float)(loc2 * 0.25);
-            float  PrirF = (float)(loc2 * 0.12);
+            float  Melk = (float)(loc2 * 0.25f);
+            float  Plag = (float)(loc2 * 0.25f);
+            float  Sea = (float)(loc2 * 0.25f);
+            float  PrirF = (float)(loc2 * 0.12f);
             float  PrirL = loc2 - Sea - Melk - Plag - PrirF;
             int ost = ModifMMap(2, 7, (int)Melk);
-            yearDataBase[currentYear].degrSea = yearDataBase[currentYear-1].degrSea + (Melk - ost);
-            Plag = Plag + ost;
+            yearDataBase[currentYear].degrSea = yearDataBase[currentYear-1].degrSea + (Melk - (float)ost);
+            Plag = Plag + (float)ost;
             ost = ModifMMap(3, 8, (int)Plag);
-            yearDataBase[currentYear].degrLand = yearDataBase[currentYear-1].degrLand + (Plag - ost);
-            Sea = Sea + ost;
+            yearDataBase[currentYear].degrLand = yearDataBase[currentYear-1].degrLand + (Plag - (float)ost);
+            Sea = Sea + (float)ost;
             ost = ModifMMap(1, 6, (int)Sea);
-            yearDataBase[currentYear].degrSea = yearDataBase[currentYear-1].degrSea + (Sea - ost);
-            PrirF = PrirF + ost;
+            yearDataBase[currentYear].degrSea = yearDataBase[currentYear-1].degrSea + (Sea - (float)ost);
+            PrirF = PrirF + (float)ost;
             ost = ModifMMap(4, 9, (int)PrirF);
-            yearDataBase[currentYear].degrLand = yearDataBase[currentYear-1].degrLand + (PrirF - ost);
-            PrirL = PrirL + ost;
+            yearDataBase[currentYear].degrLand = yearDataBase[currentYear-1].degrLand + (PrirF - (float)ost);
+            PrirL = PrirL + (float)ost;
             ost = ModifMMap(14, 9, (int)PrirL);
-            yearDataBase[currentYear].degrLand = yearDataBase[currentYear-1].degrLand + (PrirL - ost);
+            yearDataBase[currentYear].degrLand = yearDataBase[currentYear-1].degrLand + (PrirL - (float)ost);
             //Debug.Log("ost_for_forest=" + ost);
             if (ost > 0)
             {
@@ -614,10 +627,10 @@ private void AbleToJobPopCalc(int currentYear)
         else
         {
             loc2 = Mathf.Abs(loc2);
-            var Melk = (int)(loc2 * 0.250000);
-            var Plag = (int)(loc2 * 0.250000);
-            var Sea = (int)(loc2 * 0.250000);
-            var PrirF = (int)(loc2 * 0.120000);
+            var Melk = (float)(loc2 * 0.250000);
+            var Plag = (float)(loc2 * 0.250000);
+            var Sea = (float)(loc2 * 0.250000);
+            var PrirF = (float)(loc2 * 0.120000);
             var PrirL = loc2 - Sea - Melk - Plag - PrirF;
             int ost = ModifMMap(7, 2, (int)(Mathf.Abs(Melk)));
            // trace ("Melk=" + Melk + "  ost=" + ost);
@@ -664,6 +677,7 @@ private void AbleToJobPopCalc(int currentYear)
         } // end else if
         float Agro =(yearDataBase[currentYear].agroCulture.capital - yearDataBase[currentYear - 1].agroCulture.capital) / yearDataBase[currentYear].agroUCap;
         //AgroR(Agro);
+        Debug.Log("AGRO= "+ Agro);
         if (Agro > 0)
         {
             int ost = ModifMMap(14, 5, (int)(Agro));
@@ -759,6 +773,7 @@ private void AbleToJobPopCalc(int currentYear)
         while (count > 0)
         {
             AnMMap(old_index);
+            
             if (array_old.Count == 0) //
             {
                 break;
@@ -775,7 +790,7 @@ private void AbleToJobPopCalc(int currentYear)
     
     private void AnMMap(int old_index)
     {
-       //array_old.Clear();
+       array_old.Clear();
         for (int i = 0; i < board.rows; i++)
         {
             for (int j = 0; j < board.columns; j++)

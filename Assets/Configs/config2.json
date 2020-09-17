@@ -172,7 +172,7 @@
     "ablePopSum": 240,
     "lifespan" : 75,
     "humDevInd": 50, 
-    "qualityOfEnv": 1,
+    "qualityOfEnv": 1.0,
     "POP_INC" : 4.5,
     "ABLE_TO_LABOR" : 40,
     "BASE_COST_INC" : 2,
