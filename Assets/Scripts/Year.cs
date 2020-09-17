@@ -10,9 +10,9 @@ public class Year
     public Fish fish;
     public AquaCulture aquaCulture;
     public AgroCulture agroCulture;
-    public Tourism tourism;  
+    public Tourism tourism;
     public ChemCleaning chemCleaning;
-    public BioCleaning bioCleaning; 
+    public BioCleaning bioCleaning;
 
     public float fishAmount;
     public float ejectEColi; // ejection of E. Coli
@@ -24,7 +24,7 @@ public class Year
     public float degr;
     public float degrLand;
     public float degrSea;
-    
+
     public float budget;
     public float moneySpend;//Распределение суммы денег в периоде 
     public float moneyLeft;//Не распределенный остаток денег в бюджете
@@ -52,7 +52,7 @@ public class Year
     public float PROFIT_TAX; // налог на прибыль %
     public float FISH_INC; //
 
-    public float BANK_PROCENT; 
+    public float BANK_PROCENT;
 
     public float E_COL_OTH_POP;// остатки кишечной палочки от населения
     public float ORG_OTH_POP; // остатки орагники от населения
@@ -61,7 +61,7 @@ public class Year
     public float agroUCap;
     public float turUCap;
 
-    
+
 };
 
 

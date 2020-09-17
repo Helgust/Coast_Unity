@@ -8,7 +8,7 @@ public class Board
     public int columns;
     public int rows;
 
-   public List<List<int>> array2d;
+    public List<List<int>> array2d;
 };
 
 // "board" : [[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
