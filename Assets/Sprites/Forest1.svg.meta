@@ -1,14 +1,27 @@
 fileFormatVersion: 2
 guid: 7a07b78dfd12ddb4d94f56f41513464d
 ScriptedImporter:
-  fileIDToRecycleName:
-    100002: gameObject/Forest1
-    400002: gameObject/Forest1/Transform
-    2800000: texAtlas
-    21200002: gameObject/Forest1/SpriteRenderer
-    21300000: sprite
-    100100000: gameObject
+  internalIDToNameTable:
+  - first:
+      1: 100002
+    second: gameObject/Forest1
+  - first:
+      4: 400002
+    second: gameObject/Forest1/Transform
+  - first:
+      28: 2800000
+    second: texAtlas
+  - first:
+      212: 21200002
+    second: gameObject/Forest1/SpriteRenderer
+  - first:
+      213: 21300000
+    second: sprite
+  - first:
+      1001: 100100000
+    second: gameObject
   externalObjects: {}
+  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -20,6 +33,7 @@ ScriptedImporter:
   alignment: 0
   customPivot: {x: 0, y: 0}
   generatePhysicsShape: 0
+  viewportOptions: 0
   preserveViewport: 0
   advancedMode: 0
   predefinedResolutionIndex: 1
@@ -55,4 +69,5 @@ ScriptedImporter:
         width: 0
         height: 0
       spriteID: 165b9a66c78bb74409906adee5d4e929
+      internalID: 0
     PhysicsOutlines: []

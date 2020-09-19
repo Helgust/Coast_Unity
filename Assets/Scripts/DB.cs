@@ -50,7 +50,7 @@ public class DB : MonoBehaviour
     public void InitDB(string jsonString, int finalYear)
     {
         //yearDataBase.Add(new Year());
-        // for current moment size og list is locked by dev TODO: made it modifiable()
+        // for current moment size og list is locked by dev TODO: made it modifiable(пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 
         Debug.Log("InitDB: File Exists: " + File.Exists(jsonString));
         string json = File.ReadAllText(jsonString);
@@ -90,12 +90,12 @@ public class DB : MonoBehaviour
     private float InvSumCalc(int currentYear)
     {
         return yearDataBase[currentYear].paperfactory.investments +
-                                                yearDataBase[currentYear].fish.investments +
-                                                yearDataBase[currentYear].aquaCulture.investments +
-                                                yearDataBase[currentYear].agroCulture.investments +
-                                                yearDataBase[currentYear].tourism.investments +
-                                                yearDataBase[currentYear].chemCleaning.investments +
-                                                yearDataBase[currentYear].bioCleaning.investments;
+                                            yearDataBase[currentYear].fish.investments +
+                                            yearDataBase[currentYear].aquaCulture.investments +
+                                            yearDataBase[currentYear].agroCulture.investments +
+                                            yearDataBase[currentYear].tourism.investments +
+                                            yearDataBase[currentYear].chemCleaning.investments +
+                                            yearDataBase[currentYear].bioCleaning.investments;
     }
 
     public void AbsCalc(int currentYear)
@@ -205,7 +205,7 @@ public class DB : MonoBehaviour
 
     }
 
-    //    
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void AmorCacl(int currentYear)
     {
         yearDataBase[currentYear].paperfactory.amortization = yearDataBase[currentYear - 1].paperfactory.capital / yearDataBase[currentYear - 1].paperfactory.CAP_LIFE_TIME;
@@ -220,7 +220,7 @@ public class DB : MonoBehaviour
 
 
 
-    //      
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     private void CapCalc(int currentYear)
     {
         yearDataBase[currentYear].paperfactory.capital = (yearDataBase[currentYear - 1].paperfactory.capital + yearDataBase[currentYear].paperfactory.investments) - yearDataBase[currentYear].paperfactory.amortization;
@@ -243,7 +243,7 @@ public class DB : MonoBehaviour
                                                 yearDataBase[currentYear].bioCleaning.capital;
     }
 
-    //Расчет требуемого количества рабочих мест на конкретном предприятии
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void JobsReqCalc(int currentYear)
     {
         yearDataBase[currentYear].paperfactory.reqJobs = (yearDataBase[currentYear].paperfactory.NUM_JOB_PER_CAP * yearDataBase[currentYear].paperfactory.capital);
@@ -294,7 +294,7 @@ public class DB : MonoBehaviour
         }
     }
 
-    //Расчет требуемого количества востребованных рабочих мест на конкретном предприятии
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void JobsAmCalc(int currentYear)
     {
         yearDataBase[currentYear].paperfactory.numJobs = yearDataBase[currentYear].paperfactory.reqJobs * yearDataBase[currentYear].jobsAmSum / yearDataBase[currentYear].jobsReqSum;
@@ -311,8 +311,8 @@ public class DB : MonoBehaviour
 
     {
         float Res;
-        //ProdRez - Производственный резерв
-        //VolRes - Объем сырья
+        //ProdRez - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+        //VolRes - пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         if (ProdRez > VolRes)
         {
             Res = VolRes;
@@ -324,7 +324,7 @@ public class DB : MonoBehaviour
         return Res;
     }
 
-    //Расчет объема производства без учета количества доступного сырья
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     private void ProdCalc(int currentYear)
     {
         float temp1 = yearDataBase[currentYear].fish.AVG_LABOR_PROD * yearDataBase[currentYear].fish.numJobs;
@@ -352,7 +352,7 @@ public class DB : MonoBehaviour
 
 
 
-    //Расчет доходов в этом году
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
     private void IncomeCalc(int currentYear)
     {
@@ -441,7 +441,7 @@ public class DB : MonoBehaviour
         yearDataBase[currentYear].incomeSumPerHum = yearDataBase[currentYear].incomeSum / yearDataBase[currentYear].population;
     }
 
-    //Расчет суммарного дохода все отраслей (без очистных сооружений)
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
     private void IncomeSumCalc(int currentYear)
     {
         yearDataBase[currentYear].incomeSum = yearDataBase[currentYear].paperfactory.income +
@@ -453,8 +453,8 @@ public class DB : MonoBehaviour
 
     private void NewBudgetCalc(int currentYear)
     {
-        //Debug.Log("NEW budget");
-        yearDataBase[currentYear].budget = yearDataBase[currentYear].moneyLeft * (1 + yearDataBase[currentYear].BANK_PROCENT) +
+        Debug.Log("NEW budget " + (1 + yearDataBase[currentYear].BANK_PROCENT));
+        yearDataBase[currentYear].budget = yearDataBase[currentYear].moneyLeft * (1.0f + yearDataBase[currentYear].BANK_PROCENT) +
                                            yearDataBase[currentYear].paperfactory.toBudget +
                                            yearDataBase[currentYear].fish.toBudget +
                                            yearDataBase[currentYear].aquaCulture.toBudget +
@@ -463,12 +463,12 @@ public class DB : MonoBehaviour
     }
 
 
-    //     
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
 
-    //   
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-    //      ( )
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
     private float ChemSens(int currentYear)
     {
         if (yearDataBase[currentYear - 1].residueOrg < yearDataBase[currentYear].chemCleaning.CHEM_CLEAN_FACT)
@@ -481,7 +481,7 @@ public class DB : MonoBehaviour
         }
     }
 
-    //Поправка на чуствительность технологии к переработке (Биологическая очистка)
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
     private float BioSens(int currentYear)
     {
         if (yearDataBase[currentYear - 1].residueEColi < yearDataBase[currentYear].bioCleaning.BIO_CLEAN_FACT)
@@ -494,18 +494,18 @@ public class DB : MonoBehaviour
         }
     }
 
-    //Расчет уровня занятости, %
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, %
     private void EmployRateCalc(int currentYear)
     {
         yearDataBase[currentYear].employmentRate = (yearDataBase[currentYear].jobsAmSum / yearDataBase[currentYear].ablePopSum * 100);
     }
-    //  , %
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, %
     private void UnEmployRateCalc(int currentYear)
     {
         yearDataBase[currentYear].unemploymentRate = 100 - yearDataBase[currentYear].employmentRate;
     }
 
-    //Расчет выброса загрязнителей
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void DirtEjectCacl(int currentYear) // Watch Carefully
     {
         yearDataBase[currentYear].ejectEColi = (yearDataBase[currentYear].fish.production * yearDataBase[currentYear].fish.E_COL_OTH / 100) +

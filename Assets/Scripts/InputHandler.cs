@@ -52,7 +52,7 @@ public class InputHandler : MonoBehaviour
         InputField7.GetComponent<InputField>().placeholder.GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * 0.05f).ToString();
     }
 
-     public void InitPlaceholder()
+    public void InitPlaceholder()
     {
         InputField6.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "50";
         InputField7.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "50";

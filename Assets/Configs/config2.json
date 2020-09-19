@@ -176,7 +176,7 @@
     "POP_INC" : 4.5,
     "ABLE_TO_LABOR" : 40,
     "BASE_COST_INC" : 2,
-    "BANK_PROCENT" : 5,
+    "BANK_PROCENT" : 0.05,
     "PROFIT_TAX" : 40,
     "FISH_INC" : 5,
     "E_COL_OTH_POP" : 1,
