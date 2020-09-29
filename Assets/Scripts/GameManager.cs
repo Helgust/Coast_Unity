@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         DBScript.InitDB(configJSON, finalYear);
         DBScript.InitBoard(configMapJSON);
         BoardScript.SetupScene(DBScript.board);
-        IHScript.InitPlaceholder();
+        IHScript.InitTextUI();
         currentYear = 1;
     }
 
@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
             currentYear += 1;
             Destroy(GameObject.FindWithTag("gameBoard"));
             BoardScript.SetupScene(DBScript.board);
-            IHScript.UpdatePlaceholder();
+            //IHScript.UpdatePlaceholder();
         }
 
     }
