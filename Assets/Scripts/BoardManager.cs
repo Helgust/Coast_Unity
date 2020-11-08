@@ -11,6 +11,7 @@ public class BoardManager : MonoBehaviour
 {
 
     public Board gameBoard;
+    public Board BGBoard;
     private DB DBScript;
 
     public GameObject[] ShipTiles;                                  //Array of floor prefabs.
@@ -29,7 +30,8 @@ public class BoardManager : MonoBehaviour
     public GameObject[] DirtTiles;                              //Array of outer tile prefabs.
 
 
-    private Transform boardHolder;                                  //A variable to store a reference to the transform of our Board object.
+    private Transform boardHolder;                                  //A variable to store a reference to the transform of our Board object
+    private Transform boardBGHolder;
     private List<Vector3> gridPositions = new List<Vector3>();  //A list of possible locations to place tiles.
 
 
@@ -51,7 +53,6 @@ public class BoardManager : MonoBehaviour
     {
         //Clear our list gridPositions.
         gridPositions.Clear();
-
         //Loop through x axis (columns).
         for (int x = 0; x < gameBoard.columns; x++)
         {
@@ -136,7 +137,7 @@ public class BoardManager : MonoBehaviour
 
                 //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
                 GameObject instance =
-                    Instantiate(toInstantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
+                    Instantiate(toInstantiate, new Vector3(x, y, -1.0f), Quaternion.identity) as GameObject;
 
                 //Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
                 instance.transform.SetParent(boardHolder);
@@ -147,40 +148,73 @@ public class BoardManager : MonoBehaviour
 
     }
 
-    /* void BoardSetup ()
-   {
-       //Instantiate Board and set boardHolder to its transform.
-       boardHolder = new GameObject ("Board").transform;
-       //Debug.Log(gameBoard.array2d[]);
+   void BoardBackGroundSetup(Board BGBoard)
+    {
+        BGBoard.array2d.Reverse(); // make reverse for correct drawing on gamingBoard
 
-       //Loop along x axis, starting from -1 (to fill corner) with floor or outerwall edge tiles.
-       for(int x = -1; x < gameBoard.columns + 1; x++)
-       {
-           //Loop along y axis, starting from -1 to place floor or outerwall tiles.
-           for(int y = -1; y < gameBoard.rows + 1; y++)
-           {
-               //Choose a random tile from our array of floor tile prefabs and prepare to instantiate it.
-               GameObject toInstantiate = ForestTiles[Random.Range (0,ForestTiles.Length)];
+        //Instantiate Board and set boardHolder to its transform.
+        boardBGHolder = new GameObject("BoardBG").transform;
+        boardBGHolder.tag = "gameBoardBG";
+        //Loop along x axis, starting from -1 (to fill corner) with floor or outerwall edge tiles.
+        for (int x = 0; x < BGBoard.columns; x++)
+        {
+            //Loop along y axis, starting from -1 to place floor or outerwall tiles.
+            for (int y = 0; y < BGBoard.rows; y++)
+            {
+                //Debug.Log(gameBoard.array2d[y][x]);
+                //Debug.Log(x+" "+y);
+                GameObject toInstantiate;
 
-               //Check if we current position is at board edge, if so choose a random outer wall prefab from our array of outer wall tiles.
-               if(x == -1 || x == gameBoard.columns || y == -1 || y == gameBoard.rows)
-                   toInstantiate = OuterWaterTiles [Random.Range (0, OuterWaterTiles.Length)];
+                if (BGBoard.array2d[y][x] == 1) //outer waters
+                {
+                    toInstantiate = OuterWaterTiles[Random.Range(0, OuterWaterTiles.Length)];
+                }
+                else if (BGBoard.array2d[y][x] == 2)
+                {
+                    toInstantiate = MiddleWaterTiles[Random.Range(0, MiddleWaterTiles.Length)];
+                }
+                else if (BGBoard.array2d[y][x] == 3)
+                {
+                    toInstantiate = InnerWaterTiles[Random.Range(0, InnerWaterTiles.Length)];
+                }
+                else if (BGBoard.array2d[y][x] == 15)
+                {
+                    toInstantiate = FactoryTiles[Random.Range(0, FactoryTiles.Length)];
+                }
+                else if (BGBoard.array2d[y][x] == 14)
+                {
+                    toInstantiate = PlaneTiles[Random.Range(0, PlaneTiles.Length)];
+                }
+                else
+                {
+                    toInstantiate = DirtTiles[Random.Range(0, DirtTiles.Length)];
+                }
 
-               //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
-               GameObject instance =
-                   Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
 
-               //Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
-               instance.transform.SetParent (boardHolder);
-           }
-       }
-   } */
+                //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
+                GameObject instance = Instantiate(toInstantiate, new Vector3(x,y, 0f), Quaternion.identity) as GameObject;
+
+                //Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
+                instance.transform.SetParent(boardBGHolder);
+            }
+        }
+
+    }
+
 
 
     public void SetupScene(Board gameBoard)
     {
         //Creates the outer walls and floor.
         BoardSetup(gameBoard);
+
+        //Reset our list of gridpositions.
+        InitialiseList();
+    }
+    public void SetupBGScene(Board BGBoard)
+    {
+        //Creates the outer walls and floor.
+        BoardBackGroundSetup(BGBoard);
 
         //Reset our list of gridpositions.
         InitialiseList();

@@ -11,6 +11,7 @@ public class DB : MonoBehaviour
     public bool is_over = false;
     public List<Year> yearDataBase = new List<Year>();
     public Board board;
+    public Board boardBG;
     public List<(int, int)> array_old = new List<(int, int)>();
 
     private void PrintList(List<float> L)
@@ -68,6 +69,17 @@ public class DB : MonoBehaviour
         Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
         string json = File.ReadAllText(jsonString);
         board = JsonConvert.DeserializeObject<Board>(json);
+        /* for (int i = 0; i < 20; i++)
+        {
+            Debug.Log(board.array2d[19][i]);
+        } */
+
+    }
+    public void InitBG(string jsonString)
+    {
+        Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
+        string json = File.ReadAllText(jsonString);
+        boardBG = JsonConvert.DeserializeObject<Board>(json);
         /* for (int i = 0; i < 20; i++)
         {
             Debug.Log(board.array2d[19][i]);

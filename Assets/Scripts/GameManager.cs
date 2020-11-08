@@ -9,6 +9,9 @@ using System.Collections.Generic;		//Allows us to use Lists.
 
 public class GameManager : MonoBehaviour
 {
+    public bool ShiftBool;
+    public bool CtrlBool;
+
     public int currentYear;
 
     public int finalYear;
@@ -27,6 +30,8 @@ public class GameManager : MonoBehaviour
 
     private string configJSON = "Assets/Configs/config2.json";
     private string configMapJSON = "Assets/Configs/config2Map.json";
+     private string configBGJSON = "Assets/Configs/config2BG.json";
+
 
 
     //Awake is always called before any Start functions
@@ -48,6 +53,8 @@ public class GameManager : MonoBehaviour
         currentYear = 0;
         DBScript.InitDB(configJSON, finalYear);
         DBScript.InitBoard(configMapJSON);
+        DBScript.InitBG(configBGJSON);
+        BoardScript.SetupBGScene(DBScript.boardBG);
         BoardScript.SetupScene(DBScript.board);
         IHScript.InitTextUI();
         currentYear = 1;
@@ -58,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    /*  void Update() 
+    /* void Update() 
 	{
 		//bool down = Input.GetKeyDown(KeyCode.Space);
 		if(currentYear > finalYear - 1 )
@@ -105,7 +112,7 @@ public class GameManager : MonoBehaviour
             currentYear += 1;
             Destroy(GameObject.FindWithTag("gameBoard"));
             BoardScript.SetupScene(DBScript.board);
-            //IHScript.UpdatePlaceholder();
+            IHScript.InitNextMove();
         }
 
     }
