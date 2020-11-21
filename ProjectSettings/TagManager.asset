@@ -43,9 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Elems
-    uniqueID: 1949063851
-    locked: 0
   - name: Floor
     uniqueID: 837879943
+    locked: 0
+  - name: Elems
+    uniqueID: 1949063851
     locked: 0

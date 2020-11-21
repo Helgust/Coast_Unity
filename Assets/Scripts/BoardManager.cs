@@ -74,10 +74,12 @@ public class BoardManager : MonoBehaviour
         boardHolder = new GameObject("Board").transform;
         boardHolder.tag = "gameBoard";
         //Loop along x axis, starting from -1 (to fill corner) with floor or outerwall edge tiles.
-        for (int x = 0; x < gameBoard.columns; x++)
+        float dx=0f;
+        for (int y = 0; y < gameBoard.columns; y++)
         {
+            float z=0f;
             //Loop along y axis, starting from -1 to place floor or outerwall tiles.
-            for (int y = 0; y < gameBoard.rows; y++)
+            for (int x = 0; x < gameBoard.rows; x++)
             {
                 //Debug.Log(gameBoard.array2d[y][x]);
                 //Debug.Log(x+" "+y);
@@ -90,15 +92,18 @@ public class BoardManager : MonoBehaviour
                 }
                 else if (gameBoard.array2d[y][x] == 1) //outer waters
                 {
-                    toInstantiate = OuterWaterTiles[Random.Range(0, OuterWaterTiles.Length)];
+                    continue;
+                    //toInstantiate = OuterWaterTiles[Random.Range(0, OuterWaterTiles.Length)];
                 }
                 else if (gameBoard.array2d[y][x] == 2)
                 {
-                    toInstantiate = MiddleWaterTiles[Random.Range(0, MiddleWaterTiles.Length)];
+                    continue;
+                    //toInstantiate = MiddleWaterTiles[Random.Range(0, MiddleWaterTiles.Length)];
                 }
                 else if (gameBoard.array2d[y][x] == 3)
                 {
-                    toInstantiate = InnerWaterTiles[Random.Range(0, InnerWaterTiles.Length)];
+                    continue;
+                    //toInstantiate = InnerWaterTiles[Random.Range(0, InnerWaterTiles.Length)];
                 }
                 else if (gameBoard.array2d[y][x] == 4)
                 {
@@ -114,7 +119,8 @@ public class BoardManager : MonoBehaviour
                 }
                 else if (gameBoard.array2d[y][x] == 14)
                 {
-                    toInstantiate = PlaneTiles[Random.Range(0, PlaneTiles.Length)];
+                    continue;
+                    //toInstantiate = PlaneTiles[Random.Range(0, PlaneTiles.Length)];
                 }
                 else if (gameBoard.array2d[y][x] == 13)
                 {
@@ -136,12 +142,12 @@ public class BoardManager : MonoBehaviour
 
 
                 //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
-                GameObject instance =
-                    Instantiate(toInstantiate, new Vector3(x, y, -1.0f), Quaternion.identity) as GameObject;
+                GameObject instance = Instantiate(toInstantiate, new Vector3((x*0.68000f)+dx, (y*0.32000f), z), Quaternion.identity) as GameObject;
 
                 //Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
                 instance.transform.SetParent(boardHolder);
             }
+            dx+=0.32f;
         }
 
         gameBoard.array2d.Reverse(); // make reverse for correct drawing on gamingBoard
@@ -156,13 +162,17 @@ public class BoardManager : MonoBehaviour
         boardBGHolder = new GameObject("BoardBG").transform;
         boardBGHolder.tag = "gameBoardBG";
         //Loop along x axis, starting from -1 (to fill corner) with floor or outerwall edge tiles.
-        for (int x = 0; x < BGBoard.columns; x++)
+        
+        float dx=0f;
+        Debug.Log(BGBoard.rows);
+        for (int y = 0; y < BGBoard.columns; y++)
         {
+            float z=0f;
             //Loop along y axis, starting from -1 to place floor or outerwall tiles.
-            for (int y = 0; y < BGBoard.rows; y++)
+            for (int x = 0; x < BGBoard.rows; x++)
             {
                 //Debug.Log(gameBoard.array2d[y][x]);
-                //Debug.Log(x+" "+y);
+                //Debug.Log(x+" "+y+" "+z);
                 GameObject toInstantiate;
 
                 if (BGBoard.array2d[y][x] == 1) //outer waters
@@ -176,6 +186,7 @@ public class BoardManager : MonoBehaviour
                 else if (BGBoard.array2d[y][x] == 3)
                 {
                     toInstantiate = InnerWaterTiles[Random.Range(0, InnerWaterTiles.Length)];
+                    z=0.1f;
                 }
                 else if (BGBoard.array2d[y][x] == 15)
                 {
@@ -183,6 +194,7 @@ public class BoardManager : MonoBehaviour
                 }
                 else if (BGBoard.array2d[y][x] == 14)
                 {
+                    z=0.2f;
                     toInstantiate = PlaneTiles[Random.Range(0, PlaneTiles.Length)];
                 }
                 else
@@ -190,13 +202,14 @@ public class BoardManager : MonoBehaviour
                     toInstantiate = DirtTiles[Random.Range(0, DirtTiles.Length)];
                 }
 
-
+                
                 //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
-                GameObject instance = Instantiate(toInstantiate, new Vector3(x,y, 0.0f), Quaternion.identity) as GameObject;
+                GameObject instance = Instantiate(toInstantiate, new Vector3((x*0.68000f)+dx, (y*0.32000f), z), Quaternion.identity) as GameObject;
 
                 //Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
                 instance.transform.SetParent(boardBGHolder);
             }
+            dx+=0.32f;
         }
 
     }
