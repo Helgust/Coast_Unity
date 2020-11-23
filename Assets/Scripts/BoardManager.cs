@@ -164,7 +164,6 @@ public class BoardManager : MonoBehaviour
         //Loop along x axis, starting from -1 (to fill corner) with floor or outerwall edge tiles.
         
         float dx=0f;
-        Debug.Log(BGBoard.rows);
         for (int y = 0; y < BGBoard.columns; y++)
         {
             float z=0f;
