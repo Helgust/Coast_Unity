@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Helgust\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Helgust\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Coast_Unity.177348882.00" t="ExcludeRecursive" />
+    <e p="G:\Repos\Coast_Unity" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="AdditionScriptsDeleteBeforeLaunch" t="Include">
+          <e p="BasicController.cs" t="Include" />
+          <e p="BasicTargetMover.cs" t="Include" />
+          <e p="Controller.cs" t="Include" />
+          <e p="GameManager_2.cs" t="Include" />
+          <e p="MouseLooker.cs" t="Include" />
+          <e p="NextLevel.cs" t="Include" />
+          <e p="PlayAgain.cs" t="Include" />
+          <e p="Rotate.cs" t="Include" />
+          <e p="Shooter.cs" t="Include" />
+          <e p="SpawnGameObjects.cs" t="Include" />
+          <e p="TargetBehavior.cs" t="Include" />
+          <e p="TargetExit.cs" t="Include" />
+          <e p="TargetMover.cs" t="Include" />
+          <e p="TimedObjectDestructor.cs" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Board.cs" t="Include" />
+          <e p="BoardManager.cs" t="Include" />
+          <e p="DB.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="Industry.cs" t="Include" />
+          <e p="InputHandler.cs" t="Include" />
+          <e p="UI_StatWindows.cs" t="Include" />
+          <e p="Window_graph.cs" t="Include" />
+          <e p="Year.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Coast_Unity.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

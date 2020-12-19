@@ -30,9 +30,9 @@ public class Window_graph : MonoBehaviour
 
 
         //List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33, 50, 45, 10, 50, 10,34,21,4,6,2,43,1,23};
-        List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 34, 21, 4, 6, 2, 43, 1, 23 };
-        IGraphVisual graphVisual = new LineGraphVisual(graphContainer, circleSprite, Color.green, new Color(1, 1, 1, .5f));
-        ShowGraph(valueList, graphVisual, -1, (int _i) => "Year " + (_i + 1), (float _f) => "$" + Mathf.RoundToInt(_f));
+        //List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 34, 21, 4, 6, 2, 43, 1, 23 };
+        //IGraphVisual graphVisual = new LineGraphVisual(graphContainer, circleSprite, Color.green, new Color(1, 1, 1, .5f));
+        //ShowGraph(valueList, graphVisual, -1, (int _i) => "Year " + (_i + 1), (float _f) => "$" + Mathf.RoundToInt(_f));
     }
 
 
@@ -49,8 +49,12 @@ public class Window_graph : MonoBehaviour
         return gameObject;
     }
 
-    private void ShowGraph(List<int> valueList, IGraphVisual graphVisual, int maxVisibleAmontValues = -1, Func<int, string> getAxisLabelX = null, Func<float, string> getAxisLabelY = null)
+    public void ShowGraph(List<float> valueList, IGraphVisual graphVisual = null, int maxVisibleAmontValues = -1, Func<int, string> getAxisLabelX = null, Func<float, string> getAxisLabelY = null)
     {
+        if (graphVisual == null)
+        {
+            graphVisual = new LineGraphVisual(graphContainer, circleSprite, Color.green, new Color(1, 1, 1, .5f));
+        }
         if (getAxisLabelX == null)
         {
             getAxisLabelX = delegate (int _i) { return _i.ToString(); };
@@ -58,7 +62,7 @@ public class Window_graph : MonoBehaviour
 
         if (getAxisLabelY == null)
         {
-            getAxisLabelY = delegate (float _f) { return Mathf.RoundToInt(_f).ToString(); };
+            getAxisLabelY = delegate (float _f) { return Math.Round(_f,2).ToString(); };
         }
 
         if (maxVisibleAmontValues <= 0)
@@ -81,7 +85,7 @@ public class Window_graph : MonoBehaviour
 
         for (int i = Mathf.Max((valueList.Count - maxVisibleAmontValues), 0); i < valueList.Count; i++)
         {
-            int value = valueList[i];
+            float value = valueList[i];
             if (value > yMaximum)
             {
                 yMaximum = value;
@@ -145,6 +149,33 @@ public class Window_graph : MonoBehaviour
             GameObject bg = toolT.transform.Find("backgroung").gameObject;
             bg.GetComponent<RectTransform>().sizeDelta = backgroundSize;
             toolT.transform.SetAsLastSibling();
+            gameObjectList.Add(toolT);
+
+            xIndex++;
+        }
+
+        xIndex = 0;
+        for (int i = Mathf.Max((valueList.Count - maxVisibleAmontValues), 0); i < valueList.Count; i++)
+        {
+            float xPosition = xSize + xIndex * xSize;
+            float yPosition = ((valueList[i] - yMinimum) / (yMaximum - yMinimum)) * graphHeight;
+
+            string toolTipText = getAxisLabelY(valueList[i]);
+
+            GameObject toolT = Instantiate(tooltipGameObject);
+            toolT.SetActive(true);
+            toolT.transform.SetParent(graphContainer, false);
+            toolT.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, yPosition);
+            float textPaddingSize = 4f;
+            toolT.transform.Find("text").GetComponent<Text>().text = toolTipText;
+             Vector2 backgroundSize = new Vector2(
+                    toolT.transform.Find("text").GetComponent<Text>().preferredWidth + textPaddingSize * 2f,
+                    toolT.transform.Find("text").GetComponent<Text>().preferredHeight + textPaddingSize * 2f
+            );
+            GameObject bg = toolT.transform.Find("backgroung").gameObject;
+            bg.GetComponent<RectTransform>().sizeDelta = backgroundSize;
+            toolT.transform.SetAsLastSibling();
+            gameObjectList.Add(toolT);
 
             xIndex++;
         }
@@ -249,7 +280,7 @@ public class Window_graph : MonoBehaviour
         }
     }
 
-    private interface IGraphVisual
+    public interface IGraphVisual
     {
         List<GameObject> AddGraphVisual(Vector2 graphPosition, float graphPositonWidth);
     }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - gameBoard
   - gameBoardBG
+  - windowGraph
   layers:
   - Default
   - TransparentFX

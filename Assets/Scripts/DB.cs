@@ -14,6 +14,8 @@ public class DB : MonoBehaviour
     public Board boardBG;
     public List<(int, int)> array_old = new List<(int, int)>();
 
+    private Dictionary<string, List<float>> statDict = new Dictionary<string, List<float>>();
+
     private void PrintList(List<float> L)
     {
         Debug.Log("--------");
@@ -57,7 +59,11 @@ public class DB : MonoBehaviour
         string json = File.ReadAllText(jsonString);
         yearDataBase[0] = JsonConvert.DeserializeObject<Year>(json);
 
+        InitDict();
         PreCalc();
+        PutAllInfoToDict(0);
+        
+        //PutAllInfoToDict(0);
         //yearDataBase.Add(new Year());
         Debug.Log("InitDB: Size of list: " + yearDataBase.Count);
 
@@ -96,6 +102,8 @@ public class DB : MonoBehaviour
         InvestCalc(currentYear, UIText);
         AbsCalc(currentYear);
         MapCalc(currentYear);
+        PutAllInfoToDict(currentYear);
+        //PutAllInfoToDict(currentYear);
     }
 
 
@@ -818,4 +826,215 @@ public class DB : MonoBehaviour
         board.array2d[column][row] = new_index;
         // eval(base + "." + column + "." + row + "." + "icon").gotoAndStop(new_index);
     } // End of the function
+
+    public List<float> GetValueStatList(string param)
+    {
+
+        return statDict[param];
+    }
+    private void InitDict()
+    {
+        statDict["pf_capital"] = new List<float>();
+        statDict["pf_invest"] = new List<float>();
+        statDict["pf_production"] = new List<float>();
+        statDict["pf_amortization"] = new List<float>();
+        statDict["pf_income"] = new List<float>();
+        statDict["pf_profit"] = new List<float>();
+        statDict["pf_toBudget"] = new List<float>();
+        statDict["pf_numJobs"] = new List<float>();
+        statDict["pf_reqJobs"] = new List<float>();
+
+        statDict["f_capital"] = new List<float>();
+        statDict["f_invest"] = new List<float>();
+        statDict["f_production"] = new List<float>();
+        statDict["f_amortization"] = new List<float>();
+        statDict["f_income"] = new List<float>();
+        statDict["f_profit"] = new List<float>();
+        statDict["f_toBudget"] = new List<float>();
+        statDict["f_numJobs"] = new List<float>();
+        statDict["f_reqJobs"] = new List<float>();
+
+        statDict["aq_capital"] = new List<float>();
+        statDict["aq_invest"] = new List<float>();
+        statDict["aq_production"] = new List<float>();
+        statDict["aq_amortization"] = new List<float>();
+        statDict["aq_income"] = new List<float>();
+        statDict["aq_profit"] = new List<float>();
+        statDict["aq_toBudget"] = new List<float>();
+        statDict["aq_numJobs"] = new List<float>();
+        statDict["aq_reqJobs"] = new List<float>();
+
+        statDict["ag_capital"] = new List<float>();
+        statDict["ag_invest"] = new List<float>();
+        statDict["ag_production"] = new List<float>();
+        statDict["ag_amortization"] = new List<float>();
+        statDict["ag_income"] = new List<float>();
+        statDict["ag_profit"] = new List<float>();
+        statDict["ag_toBudget"] = new List<float>();
+        statDict["ag_numJobs"] = new List<float>();
+        statDict["ag_reqJobs"] = new List<float>();
+
+
+
+        statDict["t_capital"] = new List<float>();
+        statDict["t_invest"] = new List<float>();
+        statDict["t_production"] = new List<float>();
+        statDict["t_amortization"] = new List<float>();
+        statDict["t_income"] = new List<float>();
+        statDict["t_profit"] = new List<float>();
+        statDict["t_toBudget"] = new List<float>();
+        statDict["t_numJobs"] = new List<float>();
+        statDict["t_reqJobs"] = new List<float>();
+
+
+        statDict["chem_capital"] = new List<float>();
+        statDict["chem_invest"] = new List<float>();
+        statDict["chem_production"] = new List<float>();
+        statDict["chem_amortization"] = new List<float>();
+        statDict["chem_income"] = new List<float>();
+        statDict["chem_profit"] = new List<float>();
+        statDict["chem_toBudget"] = new List<float>();
+        statDict["chem_numJobs"] = new List<float>();
+        statDict["chem_reqJobs"] = new List<float>();
+
+
+        statDict["bio_capital"] = new List<float>();
+        statDict["bio_invest"] = new List<float>();
+        statDict["bio_production"] = new List<float>();
+        statDict["bio_amortization"] = new List<float>();
+        statDict["bio_income"] = new List<float>();
+        statDict["bio_profit"] = new List<float>();
+        statDict["bio_toBudget"] = new List<float>();
+        statDict["bio_numJobs"] = new List<float>();
+        statDict["bio_reqJobs"] = new List<float>();
+
+        statDict["fishAmount"] = new List<float>();
+        statDict["ejectEColi"] = new List<float>();
+        statDict["ejectOrg"] = new List<float>();
+        statDict["ejectPhs"] = new List<float>();
+        statDict["residueEColi"] = new List<float>();
+        statDict["residueOrg"] = new List<float>();
+        statDict["residuePhs"] = new List<float>();
+        statDict["degr"] = new List<float>();
+        statDict["degrLand"] = new List<float>();
+        statDict["degrSea"] = new List<float>();
+        statDict["budget"] = new List<float>();
+        statDict["moneySpend"] = new List<float>();
+        statDict["moneyLeft"] = new List<float>();
+        statDict["incomeSum"] = new List<float>();
+        statDict["capitalSum"] = new List<float>();
+        statDict["incomeSumPerHum"] = new List<float>();
+        statDict["population"] = new List<float>();
+        statDict["employmentRate"] = new List<float>();
+        statDict["unemploymentRate"] = new List<float>();
+        statDict["jobsAmSum"] = new List<float>();
+        statDict["JobsReqSum"] = new List<float>();
+        statDict["ablePopSum"] = new List<float>();
+        statDict["lifespan"] = new List<float>();
+        statDict["humDevInd"] = new List<float>();
+        statDict["qualityOfEnv"] = new List<float>();
+    }
+    private void PutAllInfoToDict(int currentYear)
+    {
+        statDict["pf_capital"].Add(yearDataBase[currentYear].paperfactory.capital);
+        statDict["pf_invest"].Add(yearDataBase[currentYear].paperfactory.investments);
+        statDict["pf_production"].Add(yearDataBase[currentYear].paperfactory.production);
+        statDict["pf_amortization"].Add(yearDataBase[currentYear].paperfactory.amortization);
+        statDict["pf_income"].Add(yearDataBase[currentYear].paperfactory.income);
+        statDict["pf_profit"].Add(yearDataBase[currentYear].paperfactory.profit);
+        statDict["pf_toBudget"].Add(yearDataBase[currentYear].paperfactory.toBudget);
+        statDict["pf_numJobs"].Add(yearDataBase[currentYear].paperfactory.numJobs);
+        statDict["pf_reqJobs"].Add(yearDataBase[currentYear].paperfactory.reqJobs);
+
+        statDict["f_capital"].Add(yearDataBase[currentYear].fish.capital);
+        statDict["f_invest"].Add(yearDataBase[currentYear].fish.investments);
+        statDict["f_production"].Add(yearDataBase[currentYear].fish.production);
+        statDict["f_amortization"].Add(yearDataBase[currentYear].fish.amortization);
+        statDict["f_income"].Add(yearDataBase[currentYear].fish.income);
+        statDict["f_profit"].Add(yearDataBase[currentYear].fish.profit);
+        statDict["f_toBudget"].Add(yearDataBase[currentYear].fish.toBudget);
+        statDict["f_numJobs"].Add(yearDataBase[currentYear].fish.numJobs);
+        statDict["f_reqJobs"].Add(yearDataBase[currentYear].fish.reqJobs);
+
+        statDict["aq_capital"].Add(yearDataBase[currentYear].aquaCulture.capital);
+        statDict["aq_invest"].Add(yearDataBase[currentYear].aquaCulture.investments);
+        statDict["aq_production"].Add(yearDataBase[currentYear].aquaCulture.production);
+        statDict["aq_amortization"].Add(yearDataBase[currentYear].aquaCulture.amortization);
+        statDict["aq_income"].Add(yearDataBase[currentYear].aquaCulture.income);
+        statDict["aq_profit"].Add(yearDataBase[currentYear].aquaCulture.profit);
+        statDict["aq_toBudget"].Add(yearDataBase[currentYear].aquaCulture.toBudget);
+        statDict["aq_numJobs"].Add(yearDataBase[currentYear].aquaCulture.numJobs);
+        statDict["aq_reqJobs"].Add(yearDataBase[currentYear].aquaCulture.reqJobs);
+
+        statDict["ag_capital"].Add(yearDataBase[currentYear].agroCulture.capital);
+        statDict["ag_invest"].Add(yearDataBase[currentYear].agroCulture.investments);
+        statDict["ag_production"].Add(yearDataBase[currentYear].agroCulture.production);
+        statDict["ag_amortization"].Add(yearDataBase[currentYear].agroCulture.amortization);
+        statDict["ag_income"].Add(yearDataBase[currentYear].agroCulture.income);
+        statDict["ag_profit"].Add(yearDataBase[currentYear].agroCulture.profit);
+        statDict["ag_toBudget"].Add(yearDataBase[currentYear].agroCulture.toBudget);
+        statDict["ag_numJobs"].Add(yearDataBase[currentYear].agroCulture.numJobs);
+        statDict["ag_reqJobs"].Add(yearDataBase[currentYear].agroCulture.reqJobs);
+
+
+
+        statDict["t_capital"].Add(yearDataBase[currentYear].tourism.capital);
+        statDict["t_invest"].Add(yearDataBase[currentYear].tourism.investments);
+        statDict["t_production"].Add(yearDataBase[currentYear].tourism.production);
+        statDict["t_amortization"].Add(yearDataBase[currentYear].tourism.amortization);
+        statDict["t_income"].Add(yearDataBase[currentYear].tourism.income);
+        statDict["t_profit"].Add(yearDataBase[currentYear].tourism.profit);
+        statDict["t_toBudget"].Add(yearDataBase[currentYear].tourism.toBudget);
+        statDict["t_numJobs"].Add(yearDataBase[currentYear].tourism.numJobs);
+        statDict["t_reqJobs"].Add(yearDataBase[currentYear].tourism.reqJobs);
+
+
+        statDict["chem_capital"].Add(yearDataBase[currentYear].chemCleaning.capital);
+        statDict["chem_invest"].Add(yearDataBase[currentYear].chemCleaning.investments);
+        statDict["chem_production"].Add(yearDataBase[currentYear].chemCleaning.production);
+        statDict["chem_amortization"].Add(yearDataBase[currentYear].chemCleaning.amortization);
+        statDict["chem_income"].Add(yearDataBase[currentYear].chemCleaning.income);
+        statDict["chem_profit"].Add(yearDataBase[currentYear].chemCleaning.profit);
+        statDict["chem_toBudget"].Add(yearDataBase[currentYear].chemCleaning.toBudget);
+        statDict["chem_numJobs"].Add(yearDataBase[currentYear].chemCleaning.numJobs);
+        statDict["chem_reqJobs"].Add(yearDataBase[currentYear].chemCleaning.reqJobs);
+
+
+        statDict["bio_capital"].Add(yearDataBase[currentYear].bioCleaning.capital);
+        statDict["bio_invest"].Add(yearDataBase[currentYear].bioCleaning.investments);
+        statDict["bio_production"].Add(yearDataBase[currentYear].bioCleaning.production);
+        statDict["bio_amortization"].Add(yearDataBase[currentYear].bioCleaning.amortization);
+        statDict["bio_income"].Add(yearDataBase[currentYear].bioCleaning.income);
+        statDict["bio_profit"].Add(yearDataBase[currentYear].bioCleaning.profit);
+        statDict["bio_toBudget"].Add(yearDataBase[currentYear].bioCleaning.toBudget);
+        statDict["bio_numJobs"].Add(yearDataBase[currentYear].bioCleaning.numJobs);
+        statDict["bio_reqJobs"].Add(yearDataBase[currentYear].bioCleaning.reqJobs);
+
+        statDict["fishAmount"].Add(yearDataBase[currentYear].fishAmount);
+        statDict["ejectEColi"].Add(yearDataBase[currentYear].ejectEColi);
+        statDict["ejectOrg"].Add(yearDataBase[currentYear].ejectOrg);
+        statDict["ejectPhs"].Add(yearDataBase[currentYear].ejectPhs);
+        statDict["residueEColi"].Add(yearDataBase[currentYear].residueEColi);
+        statDict["residueOrg"].Add(yearDataBase[currentYear].residueOrg);
+        statDict["residuePhs"].Add(yearDataBase[currentYear].residuePhs);
+        statDict["degr"].Add(yearDataBase[currentYear].degr);
+        statDict["degrLand"].Add(yearDataBase[currentYear].degrLand);
+        statDict["degrSea"].Add(yearDataBase[currentYear].degrSea);
+        statDict["budget"].Add(yearDataBase[currentYear].budget);
+        statDict["moneySpend"].Add(yearDataBase[currentYear].moneySpend);
+        statDict["moneyLeft"].Add(yearDataBase[currentYear].moneyLeft);
+        statDict["incomeSum"].Add(yearDataBase[currentYear].incomeSum);
+        statDict["capitalSum"].Add(yearDataBase[currentYear].capitalSum);
+        statDict["incomeSumPerHum"].Add(yearDataBase[currentYear].incomeSumPerHum);
+        statDict["population"].Add(yearDataBase[currentYear].population);
+        statDict["employmentRate"].Add(yearDataBase[currentYear].employmentRate);
+        statDict["unemploymentRate"].Add(yearDataBase[currentYear].unemploymentRate);
+        statDict["jobsAmSum"].Add(yearDataBase[currentYear].jobsAmSum);
+        statDict["JobsReqSum"].Add(yearDataBase[currentYear].jobsReqSum);
+        statDict["ablePopSum"].Add(yearDataBase[currentYear].ablePopSum);
+        statDict["lifespan"].Add(yearDataBase[currentYear].lifespan);
+        statDict["humDevInd"].Add(yearDataBase[currentYear].humDevInd);
+        statDict["qualityOfEnv"].Add(yearDataBase[currentYear].qualityOfEnv);
+    }
 }
+
