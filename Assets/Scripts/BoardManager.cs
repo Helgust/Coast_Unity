@@ -24,7 +24,10 @@ public class BoardManager : MonoBehaviour
     public GameObject[] TourismTiles;                               //Array of outer tile prefabs.
     public GameObject[] BeachTourismTiles;                              //Array of outer tile prefabs.
 
-    public GameObject[] FactoryTiles;                               //Array of outer tile prefabs.
+    public GameObject[] PaperFactoryTiles;                               //Array of outer tile prefabs.
+    public GameObject[] MariCultureFactoryTiles;
+    public GameObject[] ChemFactoryTiles;
+    public GameObject[] BioFactoryTiles;
     public GameObject[] PlaneTiles;                             //Array of outer tile prefabs.
 
     public GameObject[] DirtTiles;                              //Array of outer tile prefabs.
@@ -64,7 +67,8 @@ public class BoardManager : MonoBehaviour
             }
         }
     }
-
+    
+    // For future try to fix that for tile was assing sprite only once, not every step
 
     void BoardSetup(Board gameBoard)
     {
@@ -107,20 +111,37 @@ public class BoardManager : MonoBehaviour
                 }
                 else if (gameBoard.array2d[y][x] == 4)
                 {
-                    toInstantiate = ForestTiles[Random.Range(0, ForestTiles.Length)];
+                    toInstantiate = ForestTiles[Random.Range(0, 1)];
                 }
                 else if (gameBoard.array2d[y][x] == 5)
                 {
-                    toInstantiate = AgroCultureTiles[Random.Range(0, AgroCultureTiles.Length)];
+                    toInstantiate = AgroCultureTiles[Random.Range(0, 1)];
                 }
                 else if (gameBoard.array2d[y][x] == 15)
                 {
-                    toInstantiate = FactoryTiles[Random.Range(0, FactoryTiles.Length)];
+                    //toInstantiate = FactoryTiles[Random.Range(0, FactoryTiles.Length)];
+                    continue;
+                }
+                else if (gameBoard.array2d[y][x] == 91)
+                {
+                    toInstantiate = PaperFactoryTiles[Random.Range(0, PaperFactoryTiles.Length)];
+                }
+                else if (gameBoard.array2d[y][x] == 92)
+                {
+                    toInstantiate = MariCultureFactoryTiles[Random.Range(0, MariCultureFactoryTiles.Length)];
+                }
+                else if (gameBoard.array2d[y][x] == 93)
+                {
+                    toInstantiate = ChemFactoryTiles[Random.Range(0, ChemFactoryTiles.Length)];
+                }
+                else if (gameBoard.array2d[y][x] == 94)
+                {
+                    toInstantiate = BioFactoryTiles[Random.Range(0, BioFactoryTiles.Length)];
                 }
                 else if (gameBoard.array2d[y][x] == 14)
                 {
-                    continue;
-                    //toInstantiate = PlaneTiles[Random.Range(0, PlaneTiles.Length)];
+                    //continue;
+                    toInstantiate = PlaneTiles[Random.Range(0, 1)];
                 }
                 else if (gameBoard.array2d[y][x] == 13)
                 {
@@ -137,7 +158,7 @@ public class BoardManager : MonoBehaviour
 
                 else
                 {
-                    toInstantiate = DirtTiles[Random.Range(0, DirtTiles.Length)];
+                    toInstantiate = DirtTiles[Random.Range(0, 1)];
                 }
 
 
@@ -181,16 +202,18 @@ public class BoardManager : MonoBehaviour
                 else if (BGBoard.array2d[y][x] == 2)
                 {
                     toInstantiate = MiddleWaterTiles[Random.Range(0, MiddleWaterTiles.Length)];
+                    z=0.02f;
                 }
                 else if (BGBoard.array2d[y][x] == 3)
                 {
                     toInstantiate = InnerWaterTiles[Random.Range(0, InnerWaterTiles.Length)];
                     z=0.1f;
                 }
-                else if (BGBoard.array2d[y][x] == 15)
+                /*else if (BGBoard.array2d[y][x] == 15)
                 {
-                    toInstantiate = FactoryTiles[Random.Range(0, FactoryTiles.Length)];
-                }
+                    //toInstantiate = FactoryTiles[Random.Range(0, FactoryTiles.Length)];
+                    continue;
+                }*/
                 else if (BGBoard.array2d[y][x] == 14)
                 {
                     z=0.2f;

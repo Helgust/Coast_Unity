@@ -79,8 +79,8 @@ public class Window_graph : MonoBehaviour
         float graphWidth = graphContainer.sizeDelta.x;
         float graphHeight = graphContainer.sizeDelta.y;
         float yMaximum = valueList[0];
-        //float yMinimum = valueList[0];
-        float yMinimum = 0;
+        float yMinimum = valueList[0];
+        //float yMinimum = 0;
 
 
         for (int i = Mathf.Max((valueList.Count - maxVisibleAmontValues), 0); i < valueList.Count; i++)
@@ -91,10 +91,10 @@ public class Window_graph : MonoBehaviour
                 yMaximum = value;
             }
 
-            /*  if(value<yMinimum) decomment for dynamic bottom border
+              if(value<yMinimum) //decomment for dynamic bottom border
              {
                  yMinimum=value;
-             } */
+             } 
         }
         float yDifference = yMaximum - yMinimum;
         if (yDifference <= 0)
@@ -102,7 +102,7 @@ public class Window_graph : MonoBehaviour
             yDifference = 5f;
         }
         yMaximum = yMaximum + (yDifference * 0.2f);
-        //yMinimum = yMinimum - ((yMaximum-yMinimum)*0.2f); decomment for dynamic bottom border
+        yMinimum = yMinimum - ((yMaximum-yMinimum)*0.2f); //decomment for dynamic bottom border
         float xSize = graphWidth / (maxVisibleAmontValues + 1);
         int xIndex = 0;
         //GameObject lastCircleGameObject = null;
@@ -136,9 +136,13 @@ public class Window_graph : MonoBehaviour
             dashY.anchoredPosition = new Vector2(xPosition, -3f);
             gameObjectList.Add(dashY.gameObject);
 
-            GameObject toolT = Instantiate(tooltipGameObject);
+            /*GameObject toolT = Instantiate(tooltipGameObject);
             toolT.SetActive(true);
             toolT.transform.SetParent(graphContainer, false);
+            if (yPosition > yMinimum + 20)
+            {
+                yPosition -= 20f;
+            }
             toolT.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, yPosition);
             float textPaddingSize = 4f;
             toolT.transform.Find("text").GetComponent<Text>().text = toolTipText;
@@ -149,7 +153,7 @@ public class Window_graph : MonoBehaviour
             GameObject bg = toolT.transform.Find("backgroung").gameObject;
             bg.GetComponent<RectTransform>().sizeDelta = backgroundSize;
             toolT.transform.SetAsLastSibling();
-            gameObjectList.Add(toolT);
+            gameObjectList.Add(toolT);*/
 
             xIndex++;
         }
@@ -157,6 +161,7 @@ public class Window_graph : MonoBehaviour
         xIndex = 0;
         for (int i = Mathf.Max((valueList.Count - maxVisibleAmontValues), 0); i < valueList.Count; i++)
         {
+            float fristElemOnVis = valueList[Mathf.Max((valueList.Count - maxVisibleAmontValues), 0)];
             float xPosition = xSize + xIndex * xSize;
             float yPosition = ((valueList[i] - yMinimum) / (yMaximum - yMinimum)) * graphHeight;
 
@@ -165,6 +170,7 @@ public class Window_graph : MonoBehaviour
             GameObject toolT = Instantiate(tooltipGameObject);
             toolT.SetActive(true);
             toolT.transform.SetParent(graphContainer, false);
+            yPosition -= 25f;
             toolT.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, yPosition);
             float textPaddingSize = 4f;
             toolT.transform.Find("text").GetComponent<Text>().text = toolTipText;

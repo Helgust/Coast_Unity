@@ -17,6 +17,8 @@ public class InputHandler : MonoBehaviour
     public GameObject InputPar5;
     public GameObject InputPar6;
     public GameObject InputPar7;
+    public GameObject SumPar;
+    public GameObject YearCounter;
 
     private int ProcPar1 = 0;
     private int ProcPar2 = 0;
@@ -25,10 +27,15 @@ public class InputHandler : MonoBehaviour
     private int ProcPar5 = 0;
     private int ProcPar6 = 5;
     private int ProcPar7 = 5;
+    //private int SumProc = 10;
 
     private int ProcTotal;
 
     private int FuncProcTotal()
+    {
+        return ProcPar1 + ProcPar2 + ProcPar3 + ProcPar4  + ProcPar5 + ProcPar6 + ProcPar7;
+    }
+    private int FuncMoneyTotal()
     {
         return ProcPar1 + ProcPar2 + ProcPar3 + ProcPar4  + ProcPar5 + ProcPar6 + ProcPar7;
     }
@@ -86,6 +93,8 @@ public class InputHandler : MonoBehaviour
         InputPar5.transform.GetChild(0).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar5/100.0f).ToString();
         InputPar6.transform.GetChild(0).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar6/100.0f).ToString();
         InputPar7.transform.GetChild(0).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar7/100.0f).ToString();
+        SumPar.transform.GetChild(0).GetComponent<Text>().text =
+            (DBScript.GetComponent<DB>().yearDataBase[c_year - 1].budget * (float) FuncProcTotal() / 100.0f).ToString();
 
         //index 1 its Proc Par
         InputPar1.transform.GetChild(1).GetComponent<Text>().text = ProcPar1.ToString();
@@ -95,6 +104,8 @@ public class InputHandler : MonoBehaviour
         InputPar5.transform.GetChild(1).GetComponent<Text>().text = ProcPar5.ToString();
         InputPar6.transform.GetChild(1).GetComponent<Text>().text = ProcPar6.ToString();
         InputPar7.transform.GetChild(1).GetComponent<Text>().text = ProcPar7.ToString();
+        SumPar.transform.GetChild(1).GetComponent<Text>().text = FuncProcTotal().ToString();
+        YearCounter.transform.GetComponent<Text>().text = c_year.ToString();
     }
 
     public void InitTextUI()
@@ -116,6 +127,7 @@ public class InputHandler : MonoBehaviour
         InputPar5.transform.GetChild(1).GetComponent<Text>().text = "0";
         InputPar6.transform.GetChild(1).GetComponent<Text>().text = "5";
         InputPar7.transform.GetChild(1).GetComponent<Text>().text = "5";
+        SumPar.transform.GetChild(1).GetComponent<Text>().text = "10";
     }
 
     public void PlusClickPar1()
