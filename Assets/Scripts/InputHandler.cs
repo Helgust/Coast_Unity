@@ -9,6 +9,7 @@ public class InputHandler : MonoBehaviour
 {
     private string value;
     public GameObject DBObject;
+    public GameObject UIObject;
     private DB DBScript;
     public GameObject InputPar1;
     public GameObject InputPar2;
@@ -49,8 +50,8 @@ public class InputHandler : MonoBehaviour
 	{
         c_year  = GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentYear;
 		DBScript = DBObject.GetComponent<DB>();
-        
-	}
+
+    }
 
     public List<float> FromUIToDB()
     {
@@ -106,6 +107,12 @@ public class InputHandler : MonoBehaviour
         InputPar7.transform.GetChild(1).GetComponent<Text>().text = ProcPar7.ToString();
         SumPar.transform.GetChild(1).GetComponent<Text>().text = FuncProcTotal().ToString();
         YearCounter.transform.GetComponent<Text>().text = c_year.ToString();
+
+        if ((Input.GetKey(KeyCode.Escape)))
+        {
+            Debug.Log("ESCAPE");
+            UIObject.GetComponent<UIManager>().PauseMenu.SetActive(true);
+        }
     }
 
     public void InitTextUI()
@@ -274,7 +281,7 @@ public class InputHandler : MonoBehaviour
             {
                 ProcPar1 -= 10;
             }
-            else if((Input.GetKey(KeyCode.LeftShift)) && ((ProcPar1-25)>=0))
+            else if((Input.GetKey(KeyCode.LeftShift)) && ((ProcPar1-25)>0))
             {
                 //Debug.Log("PINK");
                 ProcPar1 -= 25;
@@ -327,11 +334,11 @@ public class InputHandler : MonoBehaviour
     {
         if (ProcPar4 > 0)
         {
-            if((Input.GetKey(KeyCode.LeftControl)) && ((ProcPar3-10)>0)) 
+            if((Input.GetKey(KeyCode.LeftControl)) && ((ProcPar4-10)>0)) 
             {
                 ProcPar4 -= 10;
             }
-            else if((Input.GetKey(KeyCode.LeftShift)) && ((ProcPar3-25)>0)) 
+            else if((Input.GetKey(KeyCode.LeftShift)) && ((ProcPar4-25)>0)) 
             {
                 //Debug.Log("PINK");
                 ProcPar4 -= 25;
@@ -346,11 +353,11 @@ public class InputHandler : MonoBehaviour
     {
         if (ProcPar5 > 0)
         {
-            if((Input.GetKey(KeyCode.LeftControl)) && ((ProcPar3-10)>0)) 
+            if((Input.GetKey(KeyCode.LeftControl)) && ((ProcPar5-10)>0)) 
             {
                 ProcPar5 -= 10;
             }
-            else if((Input.GetKey(KeyCode.LeftShift)) && ((ProcPar3-25)>0)) 
+            else if((Input.GetKey(KeyCode.LeftShift)) && ((ProcPar5-25)>0)) 
             {
                 //Debug.Log("PINK");
                 ProcPar5 -= 25;
@@ -366,11 +373,11 @@ public class InputHandler : MonoBehaviour
     {
         if (ProcPar6 > 0)
         {
-            if((Input.GetKey(KeyCode.LeftControl)) && ((ProcPar3-10)>0)) 
+            if((Input.GetKey(KeyCode.LeftControl)) && ((ProcPar6-10)>0)) 
             {
                 ProcPar6 -= 10;
             }
-            else if((Input.GetKey(KeyCode.LeftShift)) && ((ProcPar3-25)>0)) 
+            else if((Input.GetKey(KeyCode.LeftShift)) && ((ProcPar6-25)>0)) 
             {
                 //Debug.Log("PINK");
                 ProcPar6 -= 25;
@@ -385,11 +392,11 @@ public class InputHandler : MonoBehaviour
     {
         if (ProcPar7 > 0)
         {
-            if((Input.GetKey(KeyCode.LeftControl)) && ((ProcPar3-10)>0)) 
+            if((Input.GetKey(KeyCode.LeftControl)) && ((ProcPar7-10)>0)) 
             {
                 ProcPar7 -= 10;
             }
-            else if((Input.GetKey(KeyCode.LeftShift)) && ((ProcPar3-25)>0)) 
+            else if((Input.GetKey(KeyCode.LeftShift)) && ((ProcPar7-25)>0)) 
             {
                 //Debug.Log("PINK");
                 ProcPar7 -= 25;

@@ -30,6 +30,7 @@
           <e p="Industry.cs" t="Include" />
           <e p="InputHandler.cs" t="Include" />
           <e p="UI_StatWindows.cs" t="Include" />
+          <e p="UIManager.cs" t="Include" />
           <e p="Window_graph.cs" t="Include" />
           <e p="Year.cs" t="Include" />
         </e>
