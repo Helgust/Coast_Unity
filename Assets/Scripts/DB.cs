@@ -50,14 +50,14 @@ public class DB : MonoBehaviour
     // }
 
 
-    public void InitDB(string jsonString, int finalYear)
+    public void InitDB(TextAsset jsonAsset, int finalYear)
     {
         //yearDataBase.Add(new Year());
         // for current moment size og list is locked by dev TODO: made it modifiable(����������)
 
-        Debug.Log("InitDB: File Exists: " + File.Exists(jsonString));
-        string json = File.ReadAllText(jsonString);
-        yearDataBase[0] = JsonConvert.DeserializeObject<Year>(json);
+        //Debug.Log("InitDB: File Exists: " + File.Exists(jsonString));
+        //string json = File.ReadAllText(jsonString);
+        yearDataBase[0] = JsonConvert.DeserializeObject<Year>(jsonAsset.text);
 
         InitDict();
         PreCalc();
@@ -70,22 +70,22 @@ public class DB : MonoBehaviour
 
     }
 
-    public void InitBoard(string jsonString)
+    public void InitBoard(TextAsset jsonAsset)
     {
-        Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
-        string json = File.ReadAllText(jsonString);
-        board = JsonConvert.DeserializeObject<Board>(json);
+        //Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
+        //string json = File.ReadAllText(jsonString);
+        board = JsonConvert.DeserializeObject<Board>(jsonAsset.text);
         /* for (int i = 0; i < 20; i++)
         {
             Debug.Log(board.array2d[19][i]);
         } */
 
     }
-    public void InitBG(string jsonString)
+    public void InitBG(TextAsset jsonAsset)
     {
-        Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
-        string json = File.ReadAllText(jsonString);
-        boardBG = JsonConvert.DeserializeObject<Board>(json);
+        //Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
+        //string json = File.ReadAllText(jsonString);
+        boardBG = JsonConvert.DeserializeObject<Board>(jsonAsset.text);
         /* for (int i = 0; i < 20; i++)
         {
             Debug.Log(board.array2d[19][i]);

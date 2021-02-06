@@ -26,17 +26,23 @@ public class GameManager : MonoBehaviour
     //public bool enable;
 
 
-    private string configJSON = "Assets/Configs/config2.json";
-    private string configMapJSON = "Assets/Configs/config2Map.json";
-    private string configBGJSON = "Assets/Configs/config2BG.json";
+    private TextAsset configJSON;
+    private TextAsset configMapJSON;
+    private TextAsset configBGJSON;
 
+    void GetConfig()
+    {
+	    configJSON = Resources.Load <TextAsset> ("config2");
+	    configMapJSON = Resources.Load <TextAsset> ("config2Map");
+	    configBGJSON = Resources.Load <TextAsset> ("config2BG");
+    }
 
 
     //Awake is always called before any Start functions
     void Awake() // here was Awake
     {
-
-        DBScript = DBObject.GetComponent<DB>();
+	    GetConfig();
+	    DBScript = DBObject.GetComponent<DB>();
         BoardScript = GetComponent<BoardManager>();
         IHScript = IHObject.GetComponent<InputHandler>();
         InitGame();
