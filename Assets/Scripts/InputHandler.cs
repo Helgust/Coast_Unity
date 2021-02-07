@@ -20,6 +20,7 @@ public class InputHandler : MonoBehaviour
     public GameObject InputPar7;
     public GameObject SumPar;
     public GameObject YearCounter;
+    public GameObject ResourceBar;
 
     private int ProcPar1 = 0;
     private int ProcPar2 = 0;
@@ -86,28 +87,35 @@ public class InputHandler : MonoBehaviour
             c_year = 1; // remove it AFAP(As Fast As Possible)
         }
 
-        // index 0 its Money Par
-        InputPar1.transform.GetChild(0).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar1/100.0f).ToString();
-        InputPar2.transform.GetChild(0).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar2/100.0f).ToString();
-        InputPar3.transform.GetChild(0).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar3/100.0f).ToString();
-        InputPar4.transform.GetChild(0).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar4/100.0f).ToString();
-        InputPar5.transform.GetChild(0).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar5/100.0f).ToString();
-        InputPar6.transform.GetChild(0).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar6/100.0f).ToString();
-        InputPar7.transform.GetChild(0).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar7/100.0f).ToString();
-        SumPar.transform.GetChild(0).GetComponent<Text>().text =
+        // index 2 its Money Par
+        InputPar1.transform.GetChild(2).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar1/100.0f).ToString();
+        InputPar2.transform.GetChild(2).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar2/100.0f).ToString();
+        InputPar3.transform.GetChild(2).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar3/100.0f).ToString();
+        InputPar4.transform.GetChild(2).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar4/100.0f).ToString();
+        InputPar5.transform.GetChild(2).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar5/100.0f).ToString();
+        InputPar6.transform.GetChild(2).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar6/100.0f).ToString();
+        InputPar7.transform.GetChild(2).GetComponent<Text>().text = (DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget * (float)ProcPar7/100.0f).ToString();
+        SumPar.transform.GetChild(1).GetComponent<Text>().text =
             (DBScript.GetComponent<DB>().yearDataBase[c_year - 1].budget * (float) FuncProcTotal() / 100.0f).ToString();
 
-        //index 1 its Proc Par
-        InputPar1.transform.GetChild(1).GetComponent<Text>().text = ProcPar1.ToString();
-        InputPar2.transform.GetChild(1).GetComponent<Text>().text = ProcPar2.ToString();
-        InputPar3.transform.GetChild(1).GetComponent<Text>().text = ProcPar3.ToString();
-        InputPar4.transform.GetChild(1).GetComponent<Text>().text = ProcPar4.ToString();
-        InputPar5.transform.GetChild(1).GetComponent<Text>().text = ProcPar5.ToString();
-        InputPar6.transform.GetChild(1).GetComponent<Text>().text = ProcPar6.ToString();
-        InputPar7.transform.GetChild(1).GetComponent<Text>().text = ProcPar7.ToString();
-        SumPar.transform.GetChild(1).GetComponent<Text>().text = FuncProcTotal().ToString();
+        //index 3 its Proc Par
+        InputPar1.transform.GetChild(3).GetComponent<Text>().text = ProcPar1.ToString();
+        InputPar2.transform.GetChild(3).GetComponent<Text>().text = ProcPar2.ToString();
+        InputPar3.transform.GetChild(3).GetComponent<Text>().text = ProcPar3.ToString();
+        InputPar4.transform.GetChild(3).GetComponent<Text>().text = ProcPar4.ToString();
+        InputPar5.transform.GetChild(3).GetComponent<Text>().text = ProcPar5.ToString();
+        InputPar6.transform.GetChild(3).GetComponent<Text>().text = ProcPar6.ToString();
+        InputPar7.transform.GetChild(3).GetComponent<Text>().text = ProcPar7.ToString();
+        SumPar.transform.GetChild(2).GetComponent<Text>().text = FuncProcTotal().ToString();
         YearCounter.transform.GetComponent<Text>().text = c_year.ToString();
 
+        ResourceBar.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = DBScript.GetComponent<DB>().yearDataBase[c_year-1].fishAmount.ToString("0,0");
+        ResourceBar.transform.GetChild(2).GetChild(1).GetComponent<Text>().text = DBScript.GetComponent<DB>().yearDataBase[c_year-1].population.ToString("0,0");
+        ResourceBar.transform.GetChild(3).GetChild(1).GetComponent<Text>().text = DBScript.GetComponent<DB>().yearDataBase[c_year-1].budget.ToString("0,0");
+        ResourceBar.transform.GetChild(4).GetChild(1).GetComponent<Text>().text = DBScript.GetComponent<DB>().yearDataBase[c_year-1].incomeSumPerHum.ToString("0.00");
+        ResourceBar.transform.GetChild(5).GetChild(1).GetComponent<Text>().text = DBScript.GetComponent<DB>().yearDataBase[c_year-1].qualityOfEnv.ToString("0.00");
+        ResourceBar.transform.GetChild(6).GetChild(1).GetComponent<Text>().text = DBScript.GetComponent<DB>().yearDataBase[c_year-1].humDevInd.ToString("0.0");
+        
         if ((Input.GetKey(KeyCode.Escape)))
         {
             Debug.Log("ESCAPE");
@@ -117,23 +125,23 @@ public class InputHandler : MonoBehaviour
 
     public void InitTextUI()
     {
-        // index 0 its Money Par
-        InputPar1.transform.GetChild(0).GetComponent<Text>().text = "0";
-        InputPar2.transform.GetChild(0).GetComponent<Text>().text = "0";
-        InputPar3.transform.GetChild(0).GetComponent<Text>().text = "0";
-        InputPar4.transform.GetChild(0).GetComponent<Text>().text = "0";
-        InputPar5.transform.GetChild(0).GetComponent<Text>().text = "0";
-        InputPar6.transform.GetChild(0).GetComponent<Text>().text = "50";
-        InputPar7.transform.GetChild(0).GetComponent<Text>().text = "50";
+        // index 2 its Money Par
+        InputPar1.transform.GetChild(2).GetComponent<Text>().text = "0";
+        InputPar2.transform.GetChild(2).GetComponent<Text>().text = "0";
+        InputPar3.transform.GetChild(2).GetComponent<Text>().text = "0";
+        InputPar4.transform.GetChild(2).GetComponent<Text>().text = "0";
+        InputPar5.transform.GetChild(2).GetComponent<Text>().text = "0";
+        InputPar6.transform.GetChild(2).GetComponent<Text>().text = "50";
+        InputPar7.transform.GetChild(2).GetComponent<Text>().text = "50";
 
-        //index 1 its Proc Par
-        InputPar1.transform.GetChild(1).GetComponent<Text>().text = "0";
-        InputPar2.transform.GetChild(1).GetComponent<Text>().text = "0";
-        InputPar3.transform.GetChild(1).GetComponent<Text>().text = "0";
-        InputPar4.transform.GetChild(1).GetComponent<Text>().text = "0";
-        InputPar5.transform.GetChild(1).GetComponent<Text>().text = "0";
-        InputPar6.transform.GetChild(1).GetComponent<Text>().text = "5";
-        InputPar7.transform.GetChild(1).GetComponent<Text>().text = "5";
+        //index 3 its Proc Par
+        InputPar1.transform.GetChild(3).GetComponent<Text>().text = "0";
+        InputPar2.transform.GetChild(3).GetComponent<Text>().text = "0";
+        InputPar3.transform.GetChild(3).GetComponent<Text>().text = "0";
+        InputPar4.transform.GetChild(3).GetComponent<Text>().text = "0";
+        InputPar5.transform.GetChild(3).GetComponent<Text>().text = "0";
+        InputPar6.transform.GetChild(3).GetComponent<Text>().text = "5";
+        InputPar7.transform.GetChild(3).GetComponent<Text>().text = "5";
         SumPar.transform.GetChild(1).GetComponent<Text>().text = "10";
     }
 
@@ -413,7 +421,7 @@ public class InputHandler : MonoBehaviour
 
     public float Invest1()
     {
-        value = InputPar1.transform.GetChild(0).GetComponent<Text>().text;
+        value = InputPar1.transform.GetChild(2).GetComponent<Text>().text;
         if (value != string.Empty){
             
             return float.Parse(value);
@@ -425,7 +433,7 @@ public class InputHandler : MonoBehaviour
     } 
     public float Invest2()
     {
-        value = InputPar2.transform.GetChild(0).GetComponent<Text>().text;
+        value = InputPar2.transform.GetChild(2).GetComponent<Text>().text;
 
         if (value != string.Empty){
             return float.Parse(value);
@@ -438,7 +446,7 @@ public class InputHandler : MonoBehaviour
     }
     public float Invest3()
     {
-        value = InputPar3.transform.GetChild(0).GetComponent<Text>().text;
+        value = InputPar3.transform.GetChild(2).GetComponent<Text>().text;
 
         if (value != string.Empty){
             return float.Parse(value);
@@ -450,7 +458,7 @@ public class InputHandler : MonoBehaviour
     }
     public float Invest4()
     {
-        value = InputPar4.transform.GetChild(0).GetComponent<Text>().text;
+        value = InputPar4.transform.GetChild(2).GetComponent<Text>().text;
         if (value != string.Empty){
             return float.Parse(value);
         }
@@ -461,7 +469,7 @@ public class InputHandler : MonoBehaviour
     }
     public float Invest5()
     {
-        value = InputPar5.transform.GetChild(0).GetComponent<Text>().text;
+        value = InputPar5.transform.GetChild(2).GetComponent<Text>().text;
         if (value != string.Empty){
             return float.Parse(value);
         }
@@ -472,7 +480,7 @@ public class InputHandler : MonoBehaviour
     }
     public float Invest6()
     {
-        value = InputPar6.transform.GetChild(0).GetComponent<Text>().text;
+        value = InputPar6.transform.GetChild(2).GetComponent<Text>().text;
         if (value != string.Empty){
             return float.Parse(value);
         }
@@ -483,7 +491,7 @@ public class InputHandler : MonoBehaviour
     }
     public float Invest7()
     {
-        value = InputPar7.transform.GetChild(0).GetComponent<Text>().text;
+        value = InputPar7.transform.GetChild(2).GetComponent<Text>().text;
         if (value != string.Empty){
             return float.Parse(value);
         }

@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de759657-e7b8-48fc-a140-a1531cbbf490" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Configs/config2Map.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Configs/config2Map.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/garbage_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/garbage_1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/garbage_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/garbage_2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/tourism_beach.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/tourism_beach.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/tourism_forest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/tourism_forest.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DB.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,14 +21,14 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/UI_StatWindows.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Configs/config2BG.json" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Configs/config2Map.json" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DB.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lsbLZ6lLN3T85LfSGhTvVajcLR" />
@@ -106,6 +96,7 @@
       <workItem from="1612120953542" duration="6033000" />
       <workItem from="1612264810668" duration="2988000" />
       <workItem from="1612604892628" duration="7118000" />
+      <workItem from="1612702105431" duration="5095000" />
     </task>
     <servers />
   </component>

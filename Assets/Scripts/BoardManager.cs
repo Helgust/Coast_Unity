@@ -242,6 +242,9 @@ public class BoardManager : MonoBehaviour
     {
         //Creates the outer walls and floor.
         BoardSetup(gameBoard);
+        boardHolder.localScale = new Vector3(0.8f, 0.8f, 1f);
+        
+        
 
         //Reset our list of gridpositions.
         InitialiseList();
@@ -250,6 +253,7 @@ public class BoardManager : MonoBehaviour
     {
         //Creates the outer walls and floor.
         BoardBackGroundSetup(BGBoard);
+        boardBGHolder.localScale = new Vector3(0.8f, 0.8f, 1f);
 
         //Reset our list of gridpositions.
         InitialiseList();
