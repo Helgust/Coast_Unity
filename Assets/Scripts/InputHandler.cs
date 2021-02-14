@@ -9,7 +9,6 @@ public class InputHandler : MonoBehaviour
 {
     private string value;
     public GameObject DBObject;
-    public GameObject UIObject;
     private DB DBScript;
     public GameObject InputPar1;
     public GameObject InputPar2;
@@ -32,6 +31,7 @@ public class InputHandler : MonoBehaviour
     //private int SumProc = 10;
 
     private int ProcTotal;
+    
 
     private int FuncProcTotal()
     {
@@ -81,7 +81,8 @@ public class InputHandler : MonoBehaviour
     
     public void Update()
     {
-        c_year  = GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentYear;
+        //c_year  = GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentYear;
+        c_year  = GameManager.instance.currentYear;
         if (c_year == 0)
         {
             c_year = 1; // remove it AFAP(As Fast As Possible)
@@ -116,10 +117,9 @@ public class InputHandler : MonoBehaviour
         ResourceBar.transform.GetChild(5).GetChild(1).GetComponent<Text>().text = DBScript.GetComponent<DB>().yearDataBase[c_year-1].qualityOfEnv.ToString("0.00");
         ResourceBar.transform.GetChild(6).GetChild(1).GetComponent<Text>().text = DBScript.GetComponent<DB>().yearDataBase[c_year-1].humDevInd.ToString("0.0");
         
-        if ((Input.GetKey(KeyCode.Escape)))
+        if ((Input.GetKeyDown(KeyCode.Escape)))
         {
-            Debug.Log("ESCAPE");
-            UIObject.GetComponent<UIManager>().PauseMenu.SetActive(true);
+           UIManager.instance.PauseMenuCheck();
         }
     }
 

@@ -4,14 +4,16 @@ using System.Collections;
 using Newtonsoft.Json;
 using UnityEngine.UI;
 
-using System.Collections.Generic;		//Allows us to use Lists. 
+using System.Collections.Generic;//Allows us to use Lists. 
 
 public class GameManager : MonoBehaviour
 {
+	public static GameManager instance;
     public bool ShiftBool;
     public bool CtrlBool;
 
     public int currentYear;
+    public int mapType = 1;
 
     public int finalYear;
     private DB DBScript;
@@ -32,15 +34,29 @@ public class GameManager : MonoBehaviour
 
     void GetConfig()
     {
-	    configJSON = Resources.Load <TextAsset> ("config2");
-	    configMapJSON = Resources.Load <TextAsset> ("config2Map");
-	    configBGJSON = Resources.Load <TextAsset> ("config2BG");
+	    configJSON = Resources.Load <TextAsset> ("Configs/config2");
+	    configMapJSON = Resources.Load <TextAsset> ("Configs/config2Map");
+	    configBGJSON = Resources.Load <TextAsset> ("Configs/config2BG");
     }
 
 
     //Awake is always called before any Start functions
     void Awake() // here was Awake
     {
+	    if(instance == null)
+	    {
+		    instance = this;
+	    }
+	    else
+	    {
+		    if(instance != this)
+		    {
+			    Destroy(gameObject);
+		    }
+	    }
+
+	    DontDestroyOnLoad(gameObject);
+	    
 	    GetConfig();
 	    DBScript = DBObject.GetComponent<DB>();
         BoardScript = GetComponent<BoardManager>();
@@ -89,6 +105,8 @@ public class GameManager : MonoBehaviour
 		
 	}  */
 
+    
+
     private void PrintList(List<int> L)
     {
         Debug.Log("--------");
@@ -119,5 +137,15 @@ public class GameManager : MonoBehaviour
             IHScript.InitNextMove();
         }
 
+    }
+    
+    public Save CreateSaveGameObject()
+    {
+	    Save save = new Save();
+	    save.saveName = UIManager.instance.CreatingSave.text;
+	    save.mapType = GameManager.instance.mapType;
+	    save.Listofyears = DBObject.GetComponent<DB>().yearDataBase;
+	    save.statDict = DBObject.GetComponent<DB>().statDict;
+	    return save;
     }
 }

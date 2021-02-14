@@ -4,22 +4,45 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class UIManager : MonoBehaviour
 {
+    public static UIManager instance;
     public GameObject DBObject; 
     public GameObject WGObject;
     public GameObject ResUIObject;
     public GameObject EconomUIObject;
     public GameObject SocUIObject;
     public GameObject EcologUIObject;
-    
-    
     public GameObject NextMoveButtons;
-    public GameObject ShowGraphButtons;
     public GameObject PauseMenu;
-    
-    private string stat_parametr;
+    public GameObject SavingDialog;
+    public InputField CreatingSave;
 
+    private string stat_parametr;
+    private bool pauseBool;
+    private bool saveWindowBool = false;
+    
+    
+    void Awake() // here was Awake
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            if(instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+    
+    
     public void ShowStatView()
     { 
         //List<int> valueList = new List<int>() {23,5,1,76,2,4,43,68,23,4,15,25};
@@ -110,43 +133,61 @@ public class UIManager : MonoBehaviour
         Window_graph script = WGObject.transform.Find("pfWindow_graph").GetComponent<Window_graph>();
         script.ShowGraph(valueList);
     }
+
+    public void PauseMenuCheck()
+    {
+        if (pauseBool == false && saveWindowBool == false)
+        {
+            PauseMenu.SetActive(true);
+            pauseBool = true;
+        }
+        else
+        {
+            pauseBool = false;
+            PauseMenu.SetActive(false);
+        } 
+    }
     
-    public void PressCountinueButton()
+    public void MenuPressCountinueButton()
     {
+        pauseBool = false;
         PauseMenu.SetActive(false);
-        
     }
-    public void PressSaveButton()
+    public void MenuPressSaveButton()
+    {
+        pauseBool = false;
+        saveWindowBool = true;
+        PauseMenu.SetActive(false);
+        SavingDialog.SetActive(true);
+    }
+    
+    public void MenuPressSettingButton()
     {
         
         
     }
-    public void PressSettingButton()
+    public void MenuPressExitMenuButton()
     {
         
         
     }
-    public void PressExitMenuButton()
-    {
-        
-        
-    }
-    public void PressExitDeskButton()
+    public void MenuPressExitDeskButton()
     {
         
         
     }
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void setPauseBool(bool new_bool)
     {
-        
+        pauseBool = new_bool;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void setSaveWinBool(bool new_bool)
     {
-        
+        saveWindowBool = new_bool;
     }
+    public bool getPauseBool()
+    {
+        return pauseBool;
+    }
+    
 }

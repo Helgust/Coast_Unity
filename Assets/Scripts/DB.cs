@@ -3,19 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using UnityEngine;
+using System.Runtime.Serialization.Formatters.Binary;
 
 [System.Serializable]
 public class DB : MonoBehaviour
 {
 
     public bool is_over = false;
-    public List<Year> yearDataBase = new List<Year>();
+    public  List<Year> yearDataBase = new List<Year>();
     public Board board;
     public Board boardBG;
     public List<(int, int)> array_old = new List<(int, int)>();
 
-    private Dictionary<string, List<float>> statDict = new Dictionary<string, List<float>>();
-
+    public Dictionary<string, List<float>> statDict = new Dictionary<string, List<float>>();
+    
+    
     private void PrintList(List<float> L)
     {
         Debug.Log("--------");
@@ -48,8 +50,6 @@ public class DB : MonoBehaviour
     //         }
     //     }
     // }
-
-
     public void InitDB(TextAsset jsonAsset, int finalYear)
     {
         //yearDataBase.Add(new Year());
