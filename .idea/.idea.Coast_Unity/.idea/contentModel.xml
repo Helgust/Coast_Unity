@@ -26,10 +26,12 @@
           <e p="Board.cs" t="Include" />
           <e p="BoardManager.cs" t="Include" />
           <e p="DB.cs" t="Include" />
+          <e p="ExistSaves.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Industry.cs" t="Include" />
           <e p="InputHandler.cs" t="Include" />
           <e p="Save.cs" t="Include" />
+          <e p="SaveItemScript.cs" t="Include" />
           <e p="ScreenDialog.cs" t="Include" />
           <e p="UI_StatWindows.cs" t="Include" />
           <e p="UIManager.cs" t="Include" />

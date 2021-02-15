@@ -23,8 +23,11 @@ public class UIManager : MonoBehaviour
     private string stat_parametr;
     private bool pauseBool;
     private bool saveWindowBool = false;
+    public bool isSaveDeSelected = false;
+    public string choosedSave = String.Empty;
+
     
-    
+
     void Awake() // here was Awake
     {
         if(instance == null)
@@ -189,5 +192,5 @@ public class UIManager : MonoBehaviour
     {
         return pauseBool;
     }
-    
+
 }

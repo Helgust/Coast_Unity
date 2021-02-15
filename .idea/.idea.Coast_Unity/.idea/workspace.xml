@@ -4,20 +4,14 @@
     <list default="true" id="de759657-e7b8-48fc-a140-a1531cbbf490" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Palletes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/config1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/config1.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/config2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/config2.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/config2BG.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/config2BG.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/config2Map.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/config2Map.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE14-02-2021-11-14-38.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE14-02-2021-11-14-38.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE14-02-2021-11-14-41.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE14-02-2021-11-14-41.data.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DB.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +32,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Save.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -53,8 +49,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" />
     </changedPaths>
   </component>
@@ -128,6 +126,7 @@
       <workItem from="1613235383506" duration="20268000" />
       <workItem from="1613291082618" duration="2759000" />
       <workItem from="1613327872416" duration="6274000" />
+      <workItem from="1613374723253" duration="10561000" />
     </task>
     <servers />
   </component>
