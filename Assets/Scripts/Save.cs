@@ -10,6 +10,10 @@ using System.IO;
 public class Save
 {
     public string saveName;
+    public int currentYear;
+    public Board board;
+    public bool is_over;
+    public Board boardBG;
     public int mapType;
     public List<Year> Listofyears;
     public Dictionary<string, List<float>> statDict;

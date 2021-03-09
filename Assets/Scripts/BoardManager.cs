@@ -72,7 +72,7 @@ public class BoardManager : MonoBehaviour
 
     void BoardSetup(Board gameBoard)
     {
-        gameBoard.array2d.Reverse(); // make reverse for correct drawing on gamingBoard
+        //gameBoard.array2d.Reverse(); // make reverse for correct drawing on gamingBoard
 
         //Instantiate Board and set boardHolder to its transform.
         boardHolder = new GameObject("Board").transform;
@@ -85,6 +85,7 @@ public class BoardManager : MonoBehaviour
             //Loop along y axis, starting from -1 to place floor or outerwall tiles.
             for (int x = 0; x < gameBoard.rows; x++)
             {
+                //int counter = 0;
                 //Debug.Log(gameBoard.array2d[y][x]);
                 //Debug.Log(x+" "+y);
                 GameObject toInstantiate;
@@ -167,17 +168,18 @@ public class BoardManager : MonoBehaviour
 
                 //Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
                 instance.transform.SetParent(boardHolder);
+
             }
             dx+=0.32f;
         }
 
-        gameBoard.array2d.Reverse(); // make reverse for correct drawing on gamingBoard
+        //gameBoard.array2d.Reverse(); // make reverse for correct drawing on gamingBoard
 
     }
 
    void BoardBackGroundSetup(Board BGBoard)
     {
-        BGBoard.array2d.Reverse(); // make reverse for correct drawing on gamingBoard
+        //BGBoard.array2d.Reverse(); // make reverse for correct drawing on gamingBoard
 
         //Instantiate Board and set boardHolder to its transform.
         boardBGHolder = new GameObject("BoardBG").transform;
@@ -223,17 +225,17 @@ public class BoardManager : MonoBehaviour
                 {
                     toInstantiate = DirtTiles[Random.Range(0, DirtTiles.Length)];
                 }
-
                 
                 //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
-                GameObject instance = Instantiate(toInstantiate, new Vector3((x*0.68000f)+dx, (y*0.32000f), z), Quaternion.identity) as GameObject;
+                GameObject instance = Instantiate(toInstantiate, new Vector3((x*0.68000f)+dx, (y*0.32000f), 0), Quaternion.identity) as GameObject;
 
                 //Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
                 instance.transform.SetParent(boardBGHolder);
+                instance.GetComponent<SpriteRenderer>().sortingOrder = x;
             }
             dx+=0.32f;
         }
-
+        //BGBoard.array2d.Reverse();
     }
 
 

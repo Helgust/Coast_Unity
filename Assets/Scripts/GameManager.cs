@@ -80,30 +80,17 @@ public class GameManager : MonoBehaviour
         currentYear = 1;
     }
 
+
+
     void CheckGameOver()
     {
 
     }
 
-    /* void Update() 
+     void Update() 
 	{
-		//bool down = Input.GetKeyDown(KeyCode.Space);
-		if(currentYear > finalYear - 1 )
-		{
-			enabled = false;
-			NextMoveButtons.SetActive(false);
-		}
-		else
-		{
-			DBScript.AbsCalc(currentYear);
-			DBScript.MapCalc(currentYear);
-			currentYear +=1;
-			Destroy(GameObject.FindWithTag("gameBoard"));
-			BoardScript.SetupScene(DBScript.board);
-		}
 		
-		
-	}  */
+	} 
 
     
 
@@ -142,10 +129,52 @@ public class GameManager : MonoBehaviour
     public Save CreateSaveGameObject()
     {
 	    Save save = new Save();
+	    save.currentYear = GameManager.instance.currentYear;
 	    save.saveName = UIManager.instance.CreatingSave.text;
-	    save.mapType = GameManager.instance.mapType;
+	    save.mapType = mapType;
 	    save.Listofyears = DBObject.GetComponent<DB>().yearDataBase;
 	    save.statDict = DBObject.GetComponent<DB>().statDict;
+	    save.board = DBObject.GetComponent<DB>().board;
+	    save.boardBG = DBObject.GetComponent<DB>().boardBG;
+	    save.is_over = DBObject.GetComponent<DB>().is_over;
 	    return save;
     }
+
+    public void LoadFromSave(Save new_save)
+    {
+	    Time.timeScale = 0;
+	    if (DBScript.yearDataBase.Count == 0)
+	    {
+		    DBScript.yearDataBase.Clear();
+		    DBScript.yearDataBase = new_save.Listofyears;
+		    DBScript.statDict = new_save.statDict;
+	    }
+	    else
+	    {
+		    Debug.Log("Enter2");
+		    
+		    Destroy(GameObject.FindWithTag("gameBoardBG"));
+		    Destroy(GameObject.FindWithTag("gameBoard"));
+
+		    
+		    DBScript.yearDataBase.Clear();
+		    DBScript.statDict.Clear();
+		    
+		    GameManager.instance.currentYear = new_save.currentYear;
+		    DBScript.yearDataBase = new_save.Listofyears;
+		    DBScript.statDict = new_save.statDict;
+		    DBScript.boardBG = new_save.boardBG;
+		    DBScript.board = new_save.board;
+		    DBScript.is_over = new_save.is_over;
+		    
+		    DBScript.board.array2d.Reverse();
+		    BoardScript.SetupBGScene(DBScript.boardBG);
+		    BoardScript.SetupScene(DBScript.board);
+		    GameObject.FindWithTag("gameBoardBG").SetActive(false);
+		    //todo 
+	    }
+	    
+    }
+    
+
 }

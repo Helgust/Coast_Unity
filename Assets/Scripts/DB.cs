@@ -75,6 +75,7 @@ public class DB : MonoBehaviour
         //Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
         //string json = File.ReadAllText(jsonString);
         board = JsonConvert.DeserializeObject<Board>(jsonAsset.text);
+        board.array2d.Reverse();
         /* for (int i = 0; i < 20; i++)
         {
             Debug.Log(board.array2d[19][i]);
@@ -83,13 +84,8 @@ public class DB : MonoBehaviour
     }
     public void InitBG(TextAsset jsonAsset)
     {
-        //Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
-        //string json = File.ReadAllText(jsonString);
         boardBG = JsonConvert.DeserializeObject<Board>(jsonAsset.text);
-        /* for (int i = 0; i < 20; i++)
-        {
-            Debug.Log(board.array2d[19][i]);
-        } */
+        boardBG.array2d.Reverse();
 
     }
 
@@ -103,7 +99,6 @@ public class DB : MonoBehaviour
         AbsCalc(currentYear);
         MapCalc(currentYear);
         PutAllInfoToDict(currentYear);
-        //PutAllInfoToDict(currentYear);
     }
 
 

@@ -4,14 +4,28 @@
     <list default="true" id="de759657-e7b8-48fc-a140-a1531cbbf490" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE14-02-2021-11-14-38.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE14-02-2021-11-14-38.data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE14-02-2021-11-14-41.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE14-02-2021-11-14-41.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/2.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/2.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/56.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/56.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-01-15-14.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-01-15-14.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-01-15-21.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-01-15-21.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-01-15-2163.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-01-15-2163.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-12-15-24.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-12-15-24.data.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DB.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +47,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Save.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -42,18 +55,20 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI_StatWindows.cs" />
       <option value="$PROJECT_DIR$/Assets/Configs/config2BG.json" />
       <option value="$PROJECT_DIR$/Assets/Configs/config2Map.json" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SavingSystem.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DB.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SaveDialog.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DB.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lsbLZ6lLN3T85LfSGhTvVajcLR" />
@@ -126,7 +141,10 @@
       <workItem from="1613235383506" duration="20268000" />
       <workItem from="1613291082618" duration="2759000" />
       <workItem from="1613327872416" duration="6274000" />
-      <workItem from="1613374723253" duration="10561000" />
+      <workItem from="1613374723253" duration="11192000" />
+      <workItem from="1613634761151" duration="6813000" />
+      <workItem from="1615308217428" duration="3538000" />
+      <workItem from="1615313987562" duration="8365000" />
     </task>
     <servers />
   </component>

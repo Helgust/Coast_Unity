@@ -18,13 +18,15 @@ public class UIManager : MonoBehaviour
     public GameObject NextMoveButtons;
     public GameObject PauseMenu;
     public GameObject SavingDialog;
+    public GameObject LoadingDialog;
     public InputField CreatingSave;
 
     private string stat_parametr;
     private bool pauseBool;
     private bool saveWindowBool = false;
-    public bool isSaveDeSelected = false;
+    public bool isSaveItemDeSelected = false;
     public string choosedSave = String.Empty;
+    public string saveName = String.Empty;
 
     
 

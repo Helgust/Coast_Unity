@@ -5,13 +5,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SaveItemScript : MonoBehaviour,IDeselectHandler
+public class SaveItemScript : MonoBehaviour,IDeselectHandler,ISelectHandler
 {
-
     public void OnDeselect(BaseEventData eventData)
     {
-        //Debug.Log("Deselected");
-        UIManager.instance.isSaveDeSelected = true;
-        //UIManager.instance.choosedSave = String.Empty;
+        UIManager.instance.isSaveItemDeSelected = true;
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        UIManager.instance.saveName = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text;
+        Debug.Log(UIManager.instance.saveName);
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ScreenDialog : MonoBehaviour
+public class SaveDialog : MonoBehaviour
 {
     public InputField inputField;
     public GameObject ExistSaveList;
@@ -20,7 +20,7 @@ public class ScreenDialog : MonoBehaviour
 
     private void Update()
     {
-        if (UIManager.instance.isSaveDeSelected == true)
+        if (UIManager.instance.isSaveItemDeSelected == true)
         {
             deleteButton.interactable = false;
         }
@@ -37,7 +37,6 @@ public class ScreenDialog : MonoBehaviour
     {
         Save save = GameManager.instance.CreateSaveGameObject();
         BinaryFormatter bf = new BinaryFormatter();
-        //FileStream fileStream = File.Create(Application.dataPath + "/Save/" + save.saveName + ".data");
         FileStream fileStream = File.Create(Application.dataPath + "/Save/" +save.saveName+ ".data");
         bf.Serialize(fileStream,save);
         fileStream.Close();
@@ -62,7 +61,7 @@ public class ScreenDialog : MonoBehaviour
             File.Delete(Application.dataPath + "/Save/" + UIManager.instance.choosedSave);
         }
         ExistSaveList.SetActive(false);
-        UIManager.instance.choosedSave = String.Empty;
+        UIManager.instance.choosedSave = string.Empty;
         ExistSaveList.SetActive(true);
     }
 
@@ -73,22 +72,10 @@ public class ScreenDialog : MonoBehaviour
         UIManager.instance.SavingDialog.SetActive(false);
     }
     
-    public void PressOnSave()
+    public void PressOnSaveItem()
     {
-        //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text);
         UIManager.instance.choosedSave = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text;
         deleteButton.interactable = true;
-        UIManager.instance.isSaveDeSelected = false;
-        //TO DO SHOW INFO ABOUT SAVE;
+        UIManager.instance.isSaveItemDeSelected = false;
     }
-
-    // private void CheckIfSaveDeSelected()
-    // {
-    //     foreach (var gameObject in _gameObjectList)
-    //     {
-    //         gameObject.GetComponent<Button>().OnDeselect();
-    //     }
-    // }
-
-
 }
