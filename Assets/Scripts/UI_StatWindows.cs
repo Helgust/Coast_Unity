@@ -26,6 +26,6 @@ public class UI_StatWindows : MonoBehaviour
     {
         Setup();
         List<float> valueList = new List<float>() {1,2,10,20,40,25};
-        windowGraph.ShowGraph(valueList);
+        //windowGraph.ShowGraph(valueList,Color.cyan);
     }
 }

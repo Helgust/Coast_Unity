@@ -293,9 +293,7 @@ public class DB : MonoBehaviour
 
     private void AbleToJobPopCalc(int currentYear)
     {
-
         yearDataBase[currentYear].ablePopSum = (yearDataBase[currentYear].population * (yearDataBase[currentYear].ABLE_TO_LABOR / 100));
-        //Debug.Log(yearDataBase[currentYear].ablePopSum);
     }
     private void JobsAmOrig(int currentYear)
     {
@@ -923,11 +921,12 @@ public class DB : MonoBehaviour
         statDict["employmentRate"] = new List<float>();
         statDict["unemploymentRate"] = new List<float>();
         statDict["jobsAmSum"] = new List<float>();
-        statDict["JobsReqSum"] = new List<float>();
+        statDict["jobsReqSum"] = new List<float>();
         statDict["ablePopSum"] = new List<float>();
         statDict["lifespan"] = new List<float>();
         statDict["humDevInd"] = new List<float>();
         statDict["qualityOfEnv"] = new List<float>();
+        statDict["pop_inc"] = new List<float>();
     }
     private void PutAllInfoToDict(int currentYear)
     {
@@ -971,8 +970,6 @@ public class DB : MonoBehaviour
         statDict["ag_numJobs"].Add(yearDataBase[currentYear].agroCulture.numJobs);
         statDict["ag_reqJobs"].Add(yearDataBase[currentYear].agroCulture.reqJobs);
 
-
-
         statDict["t_capital"].Add(yearDataBase[currentYear].tourism.capital);
         statDict["t_invest"].Add(yearDataBase[currentYear].tourism.investments);
         statDict["t_production"].Add(yearDataBase[currentYear].tourism.production);
@@ -983,7 +980,6 @@ public class DB : MonoBehaviour
         statDict["t_numJobs"].Add(yearDataBase[currentYear].tourism.numJobs);
         statDict["t_reqJobs"].Add(yearDataBase[currentYear].tourism.reqJobs);
 
-
         statDict["chem_capital"].Add(yearDataBase[currentYear].chemCleaning.capital);
         statDict["chem_invest"].Add(yearDataBase[currentYear].chemCleaning.investments);
         statDict["chem_production"].Add(yearDataBase[currentYear].chemCleaning.production);
@@ -993,7 +989,6 @@ public class DB : MonoBehaviour
         statDict["chem_toBudget"].Add(yearDataBase[currentYear].chemCleaning.toBudget);
         statDict["chem_numJobs"].Add(yearDataBase[currentYear].chemCleaning.numJobs);
         statDict["chem_reqJobs"].Add(yearDataBase[currentYear].chemCleaning.reqJobs);
-
 
         statDict["bio_capital"].Add(yearDataBase[currentYear].bioCleaning.capital);
         statDict["bio_invest"].Add(yearDataBase[currentYear].bioCleaning.investments);
@@ -1025,11 +1020,12 @@ public class DB : MonoBehaviour
         statDict["employmentRate"].Add(yearDataBase[currentYear].employmentRate);
         statDict["unemploymentRate"].Add(yearDataBase[currentYear].unemploymentRate);
         statDict["jobsAmSum"].Add(yearDataBase[currentYear].jobsAmSum);
-        statDict["JobsReqSum"].Add(yearDataBase[currentYear].jobsReqSum);
+        statDict["jobsReqSum"].Add(yearDataBase[currentYear].jobsReqSum);
         statDict["ablePopSum"].Add(yearDataBase[currentYear].ablePopSum);
         statDict["lifespan"].Add(yearDataBase[currentYear].lifespan);
         statDict["humDevInd"].Add(yearDataBase[currentYear].humDevInd);
         statDict["qualityOfEnv"].Add(yearDataBase[currentYear].qualityOfEnv);
+        statDict["pop_inc"].Add(yearDataBase[currentYear].pop_incM);
     }
 }
 

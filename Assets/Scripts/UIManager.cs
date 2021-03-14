@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -55,7 +55,8 @@ public class UIManager : MonoBehaviour
         HideAllStatButtons();
         WGObject.SetActive(true);
         ResPressButton();
-        PressFishRes();
+            //PressFishRes();
+        ShowGraph("fishAmount");
 
     }
     
@@ -93,52 +94,14 @@ public class UIManager : MonoBehaviour
         SocUIObject.SetActive(false);
     }
 
-    public void PressFishRes()
-    {
-        stat_parametr = "fishAmount";
-        ShowGraph(stat_parametr);
-        
-    }
-    public void PressPopRes()
-    {
-        stat_parametr = "population";
-        ShowGraph(stat_parametr);
-        
-    }
-    
-    public void PressBudgetRes()
-    {
-        stat_parametr = "budget";
-        ShowGraph(stat_parametr);
-        
-    }
-    public void PressIncPerCapitaRes()
-    {
-        stat_parametr = "incomeSumPerHum";
-        ShowGraph(stat_parametr);
-        
-    }
-    public void PressQualityOfEnvRes()
-    {
-        stat_parametr = "qualityOfEnv";
-        ShowGraph(stat_parametr);
-        
-    }
-    public void PressHumDevIndRes()
-    {
-        stat_parametr = "humDevInd";
-        ShowGraph(stat_parametr);
-        
-    }
-
     public void ShowGraph(string param)
     {
         List<float> valueList = new List<float>();
         valueList = DBObject.GetComponent<DB>().GetValueStatList(param);
         Window_graph script = WGObject.transform.Find("pfWindow_graph").GetComponent<Window_graph>();
-        script.ShowGraph(valueList);
+        script.ShowGraph(valueList,Color.green);
     }
-
+    
     public void PauseMenuCheck()
     {
         if (pauseBool == false && saveWindowBool == false)
@@ -168,17 +131,14 @@ public class UIManager : MonoBehaviour
     
     public void MenuPressSettingButton()
     {
-        
-        
+
     }
     public void MenuPressExitMenuButton()
     {
-        
-        
+
     }
     public void MenuPressExitDeskButton()
     {
-        
         
     }
 

@@ -27,6 +27,7 @@
           <e p="BoardManager.cs" t="Include" />
           <e p="DB.cs" t="Include" />
           <e p="ExistSaves.cs" t="Include" />
+          <e p="FunctionsForUIGraph.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Industry.cs" t="Include" />
           <e p="InputHandler.cs" t="Include" />
@@ -34,6 +35,7 @@
           <e p="Save.cs" t="Include" />
           <e p="SaveDialog.cs" t="Include" />
           <e p="SaveItemScript.cs" t="Include" />
+          <e p="toltipScript.cs" t="Include" />
           <e p="UI_StatWindows.cs" t="Include" />
           <e p="UIManager.cs" t="Include" />
           <e p="Window_graph.cs" t="Include" />

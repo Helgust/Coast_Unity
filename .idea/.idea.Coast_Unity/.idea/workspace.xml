@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="de759657-e7b8-48fc-a140-a1531cbbf490" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/2.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/2.data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/56.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/56.data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-01-15-14.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-01-15-14.data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-01-15-21.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-01-15-21.data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-01-15-2163.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-01-15-2163.data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-12-15-24.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE15-02-2021-12-15-24.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/pfWindow_graph.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/pfWindow_graph.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DB.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_StatWindows.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_StatWindows.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,30 +33,34 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Save.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/toltipScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI_StatWindows.cs" />
       <option value="$PROJECT_DIR$/Assets/Configs/config2BG.json" />
       <option value="$PROJECT_DIR$/Assets/Configs/config2Map.json" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SavingSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SaveDialog.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DB.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI_StatWindows.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/toltipScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DB.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lsbLZ6lLN3T85LfSGhTvVajcLR" />
@@ -88,6 +80,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -144,7 +137,11 @@
       <workItem from="1613374723253" duration="11192000" />
       <workItem from="1613634761151" duration="6813000" />
       <workItem from="1615308217428" duration="3538000" />
-      <workItem from="1615313987562" duration="8365000" />
+      <workItem from="1615313987562" duration="8736000" />
+      <workItem from="1615537628293" duration="1504000" />
+      <workItem from="1615674143191" duration="3528000" />
+      <workItem from="1615723748355" duration="9316000" />
+      <workItem from="1615739739053" duration="12004000" />
     </task>
     <servers />
   </component>
