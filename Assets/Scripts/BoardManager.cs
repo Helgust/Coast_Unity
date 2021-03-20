@@ -10,9 +10,9 @@ using Random = UnityEngine.Random;      //Tells Random to use the Unity Engine r
 public class BoardManager : MonoBehaviour
 {
 
+    
     public Board gameBoard;
     public Board BGBoard;
-    private DB DBScript;
 
     public GameObject[] ShipTiles;                                  //Array of floor prefabs.
     public GameObject[] SmallShipTiles;                                 //Array of floor prefabs.

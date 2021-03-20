@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     public int mapType = 1;
 
     public int finalYear;
-    private DB DBScript;
     private BoardManager BoardScript;
 
     public GameObject IHObject;
@@ -58,7 +57,7 @@ public class GameManager : MonoBehaviour
 	    DontDestroyOnLoad(gameObject);
 	    
 	    GetConfig();
-	    DBScript = DBObject.GetComponent<DB>();
+	    DB.instance = DBObject.GetComponent<DB>();
         BoardScript = GetComponent<BoardManager>();
         IHScript = IHObject.GetComponent<InputHandler>();
         InitGame();
@@ -71,11 +70,11 @@ public class GameManager : MonoBehaviour
     void InitGame()
     {
         currentYear = 0;
-        DBScript.InitDB(configJSON, finalYear);
-        DBScript.InitBoard(configMapJSON);
-        DBScript.InitBG(configBGJSON);
-        BoardScript.SetupBGScene(DBScript.boardBG);
-        BoardScript.SetupScene(DBScript.board);
+        DB.instance.InitDB(configJSON, finalYear);
+        DB.instance.InitBoard(configMapJSON);
+        DB.instance.InitBG(configBGJSON);
+        BoardScript.SetupBGScene(DB.instance.boardBG);
+        BoardScript.SetupScene(DB.instance.board);
         IHScript.InitTextUI();
         currentYear = 1;
     }
@@ -106,8 +105,8 @@ public class GameManager : MonoBehaviour
     }
     public void NextMove()
     {
-        Debug.Log("IS_OVER: " + DBScript.is_over);
-        if ((currentYear > finalYear - 1) || (DBScript.is_over == true))
+        Debug.Log("IS_OVER: " + DB.instance.is_over);
+        if ((currentYear > finalYear - 1) || (DB.instance.is_over == true))
         {
 	        enabled = false;
             UIObject.GetComponent<UIManager>().NextMoveButtons.SetActive(false);
@@ -117,10 +116,10 @@ public class GameManager : MonoBehaviour
             List<float> UIText = IHScript.FromUIToDB();
 
             //PrintList(UIText);
-            DBScript.NextMoveDB(currentYear, UIText);
+            DB.instance.NextMoveDB(currentYear, UIText);
             currentYear += 1;
             Destroy(GameObject.FindWithTag("gameBoard"));
-            BoardScript.SetupScene(DBScript.board);
+            BoardScript.SetupScene(DB.instance.board);
             IHScript.InitNextMove();
         }
 
@@ -143,11 +142,11 @@ public class GameManager : MonoBehaviour
     public void LoadFromSave(Save new_save)
     {
 	    Time.timeScale = 0;
-	    if (DBScript.yearDataBase.Count == 0)
+	    if (DB.instance.yearDataBase.Count == 0)
 	    {
-		    DBScript.yearDataBase.Clear();
-		    DBScript.yearDataBase = new_save.Listofyears;
-		    DBScript.statDict = new_save.statDict;
+		    DB.instance.yearDataBase.Clear();
+		    DB.instance.yearDataBase = new_save.Listofyears;
+		    DB.instance.statDict = new_save.statDict;
 	    }
 	    else
 	    {
@@ -157,19 +156,19 @@ public class GameManager : MonoBehaviour
 		    Destroy(GameObject.FindWithTag("gameBoard"));
 
 		    
-		    DBScript.yearDataBase.Clear();
-		    DBScript.statDict.Clear();
+		    DB.instance.yearDataBase.Clear();
+		    DB.instance.statDict.Clear();
 		    
 		    GameManager.instance.currentYear = new_save.currentYear;
-		    DBScript.yearDataBase = new_save.Listofyears;
-		    DBScript.statDict = new_save.statDict;
-		    DBScript.boardBG = new_save.boardBG;
-		    DBScript.board = new_save.board;
-		    DBScript.is_over = new_save.is_over;
+		    DB.instance.yearDataBase = new_save.Listofyears;
+		    DB.instance.statDict = new_save.statDict;
+		    DB.instance.boardBG = new_save.boardBG;
+		    DB.instance.board = new_save.board;
+		    DB.instance.is_over = new_save.is_over;
 		    
-		    DBScript.board.array2d.Reverse();
-		    BoardScript.SetupBGScene(DBScript.boardBG);
-		    BoardScript.SetupScene(DBScript.board);
+		    DB.instance.board.array2d.Reverse();
+		    BoardScript.SetupBGScene(DB.instance.boardBG);
+		    BoardScript.SetupScene(DB.instance.board);
 		    GameObject.FindWithTag("gameBoardBG").SetActive(false);
 		    //todo 
 	    }

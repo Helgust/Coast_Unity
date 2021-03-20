@@ -1,14 +1,17 @@
+using System;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
+using Random = UnityEngine.Random;
 
 [System.Serializable]
 public class DB : MonoBehaviour
 {
 
+    public static DB instance;
     public bool is_over = false;
     public  List<Year> yearDataBase = new List<Year>();
     public Board board;
@@ -16,8 +19,24 @@ public class DB : MonoBehaviour
     public List<(int, int)> array_old = new List<(int, int)>();
 
     public Dictionary<string, List<float>> statDict = new Dictionary<string, List<float>>();
-    
-    
+
+    public void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            if(instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void PrintList(List<float> L)
     {
         Debug.Log("--------");

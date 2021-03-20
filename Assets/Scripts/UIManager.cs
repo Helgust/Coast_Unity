@@ -19,11 +19,14 @@ public class UIManager : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject SavingDialog;
     public GameObject LoadingDialog;
+    public GameObject ExportDialog;
     public InputField CreatingSave;
 
     private string stat_parametr;
     private bool pauseBool;
+    private bool statWindowBool = false;
     private bool saveWindowBool = false;
+    private bool exportWindowBool = false;
     public bool isSaveItemDeSelected = false;
     public string choosedSave = String.Empty;
     public string saveName = String.Empty;
@@ -54,6 +57,7 @@ public class UIManager : MonoBehaviour
 
         HideAllStatButtons();
         WGObject.SetActive(true);
+        setStatWinBool(true);
         ResPressButton();
             //PressFishRes();
         ShowGraph("fishAmount");
@@ -63,6 +67,7 @@ public class UIManager : MonoBehaviour
     public void CloseGraph()
     {
         WGObject.SetActive(false);
+        setStatWinBool(false);
         //valueList[0]+=10;
     }
 
@@ -115,6 +120,24 @@ public class UIManager : MonoBehaviour
             PauseMenu.SetActive(false);
         } 
     }
+
+    public void pressExportData()
+    {
+        if (getStatWinBool()&&!getExportWinBool())
+        {
+            ExportDialog.SetActive(true);
+            setExportWinBool(true);
+            setPauseBool(false);
+        }
+        else
+        {
+            if (getStatWinBool() && getExportWinBool())
+            {
+                ExportDialog.SetActive(false);
+                setExportWinBool(false);
+            }
+        }
+    }
     
     public void MenuPressCountinueButton()
     {
@@ -141,7 +164,7 @@ public class UIManager : MonoBehaviour
     {
         
     }
-
+    
     public void setPauseBool(bool new_bool)
     {
         pauseBool = new_bool;
@@ -149,6 +172,22 @@ public class UIManager : MonoBehaviour
     public void setSaveWinBool(bool new_bool)
     {
         saveWindowBool = new_bool;
+    }
+    public void setExportWinBool(bool new_bool)
+    {
+        exportWindowBool = new_bool;
+    }
+    public bool getExportWinBool()
+    {
+        return exportWindowBool;
+    }
+    public void setStatWinBool(bool new_bool)
+    {
+        statWindowBool = new_bool;
+    }
+    public bool getStatWinBool()
+    {
+        return statWindowBool;
     }
     public bool getPauseBool()
     {

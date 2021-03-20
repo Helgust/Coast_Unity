@@ -25,8 +25,10 @@
         <e p="Scripts" t="Include">
           <e p="Board.cs" t="Include" />
           <e p="BoardManager.cs" t="Include" />
+          <e p="CSVParsing.cs" t="Include" />
           <e p="DB.cs" t="Include" />
           <e p="ExistSaves.cs" t="Include" />
+          <e p="ExportDialog.cs" t="Include" />
           <e p="FunctionsForUIGraph.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Industry.cs" t="Include" />
