@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
             }
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
     
     
@@ -164,7 +164,7 @@ public class UIManager : MonoBehaviour
     {
         
     }
-    
+
     public void setPauseBool(bool new_bool)
     {
         pauseBool = new_bool;

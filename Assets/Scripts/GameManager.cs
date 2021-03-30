@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using Newtonsoft.Json;
@@ -13,15 +14,17 @@ public class GameManager : MonoBehaviour
     public bool CtrlBool;
 
     public int currentYear;
-    public int mapType = 1;
+    public string mapType = String.Empty;
 
     public int finalYear;
+    //public bool inMainMenuState;
     private BoardManager BoardScript;
 
     public GameObject IHObject;
     public GameObject DBObject;
     public GameObject UIObject;
     private InputHandler IHScript;
+    
 
 
     //public bool enable;
@@ -54,17 +57,20 @@ public class GameManager : MonoBehaviour
 		    }
 	    }
 
-	    DontDestroyOnLoad(gameObject);
-	    
-	    GetConfig();
-	    DB.instance = DBObject.GetComponent<DB>();
-        BoardScript = GetComponent<BoardManager>();
-        IHScript = IHObject.GetComponent<InputHandler>();
-        InitGame();
+	    //DontDestroyOnLoad(gameObject);
+
+	    //inMainMenuState = true;
     }
 
     //This is called each time a scene is loaded.
-
+    private void Start()
+    {
+	    GetConfig();
+		    //DB.instance = DBObject.GetComponent<DB>();
+		    BoardScript = GetComponent<BoardManager>();
+		    IHScript = IHObject.GetComponent<InputHandler>();
+		    InitGame();
+    }
 
     //Initializes the game for each level.
     void InitGame()
@@ -78,9 +84,6 @@ public class GameManager : MonoBehaviour
         IHScript.InitTextUI();
         currentYear = 1;
     }
-
-
-
     void CheckGameOver()
     {
 
@@ -131,11 +134,11 @@ public class GameManager : MonoBehaviour
 	    save.currentYear = GameManager.instance.currentYear;
 	    save.saveName = UIManager.instance.CreatingSave.text;
 	    save.mapType = mapType;
-	    save.Listofyears = DBObject.GetComponent<DB>().yearDataBase;
-	    save.statDict = DBObject.GetComponent<DB>().statDict;
-	    save.board = DBObject.GetComponent<DB>().board;
-	    save.boardBG = DBObject.GetComponent<DB>().boardBG;
-	    save.is_over = DBObject.GetComponent<DB>().is_over;
+	    save.Listofyears = DB.instance.yearDataBase;
+	    save.statDict = DB.instance.statDict;
+	    save.board = DB.instance.board;
+	    save.boardBG = DB.instance.boardBG;
+	    save.is_over = DB.instance.is_over;
 	    return save;
     }
 

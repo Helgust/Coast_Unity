@@ -156,18 +156,21 @@ public class BoardManager : MonoBehaviour
                 {
                     toInstantiate = SmallShipTiles[Random.Range(0, SmallShipTiles.Length)];
                 }
-
                 else
                 {
-                    toInstantiate = DirtTiles[Random.Range(0, 1)];
+                   //toInstantiate = DirtTiles[Random.Range(0, 1)];
+                   return;
                 }
 
+                if (gameBoard.array2d[y][x] != 14)
+                {
+                    //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
+                    GameObject instance = Instantiate(toInstantiate, new Vector3((x*0.68000f)+dx, (y*0.32000f), z), Quaternion.identity) as GameObject;
 
-                //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
-                GameObject instance = Instantiate(toInstantiate, new Vector3((x*0.68000f)+dx, (y*0.32000f), z), Quaternion.identity) as GameObject;
-
-                //Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
-                instance.transform.SetParent(boardHolder);
+                    //Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
+                    instance.transform.SetParent(boardHolder);
+                }
+                
 
             }
             dx+=0.32f;
@@ -189,7 +192,6 @@ public class BoardManager : MonoBehaviour
         float dx=0f;
         for (int y = 0; y < BGBoard.columns; y++)
         {
-            float z=0f;
             //Loop along y axis, starting from -1 to place floor or outerwall tiles.
             for (int x = 0; x < BGBoard.rows; x++)
             {
@@ -204,12 +206,10 @@ public class BoardManager : MonoBehaviour
                 else if (BGBoard.array2d[y][x] == 2)
                 {
                     toInstantiate = MiddleWaterTiles[Random.Range(0, MiddleWaterTiles.Length)];
-                    z=0.02f;
                 }
                 else if (BGBoard.array2d[y][x] == 3)
                 {
                     toInstantiate = InnerWaterTiles[Random.Range(0, InnerWaterTiles.Length)];
-                    z=0.1f;
                 }
                 /*else if (BGBoard.array2d[y][x] == 15)
                 {
@@ -218,7 +218,6 @@ public class BoardManager : MonoBehaviour
                 }*/
                 else if (BGBoard.array2d[y][x] == 14)
                 {
-                    z=0.2f;
                     toInstantiate = PlaneTiles[Random.Range(0, PlaneTiles.Length)];
                 }
                 else

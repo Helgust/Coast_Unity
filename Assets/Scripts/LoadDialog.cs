@@ -21,10 +21,11 @@ public class LoadDialog : MonoBehaviour
 
     private void Update()
     {
-        if (UIManager.instance.isSaveItemDeSelected == true)
-        {
-            deleteButton.interactable = false;
-        }
+        
+        // if (UIManager.instance.isSaveItemDeSelected == true)
+        // {
+        //     deleteButton.interactable = false;
+        // }
         
     }
 

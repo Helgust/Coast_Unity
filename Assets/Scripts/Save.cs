@@ -14,7 +14,7 @@ public class Save
     public Board board;
     public bool is_over;
     public Board boardBG;
-    public int mapType;
+    public string mapType;
     public List<Year> Listofyears;
     public Dictionary<string, List<float>> statDict;
 }

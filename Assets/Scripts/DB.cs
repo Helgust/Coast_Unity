@@ -34,7 +34,7 @@ public class DB : MonoBehaviour
             }
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void PrintList(List<float> L)

@@ -6,12 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="de759657-e7b8-48fc-a140-a1531cbbf490" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DB.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,9 +35,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Save.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/toltipScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Basket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/7zO8F533BC2/CSVParsing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" root0="FORCE_HIGHLIGHTING" />
@@ -46,22 +49,25 @@
       <option value="$PROJECT_DIR$/Assets/Configs/config2Map.json" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SavingSystem.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ScreenDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SaveDialog.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI_StatWindows.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/toltipScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DB.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ExportDialog.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MenuManger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Basket.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DB.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lsbLZ6lLN3T85LfSGhTvVajcLR" />
@@ -143,7 +149,10 @@
       <workItem from="1615674143191" duration="3528000" />
       <workItem from="1615723748355" duration="9316000" />
       <workItem from="1615739739053" duration="12004000" />
-      <workItem from="1616239604763" duration="10540000" />
+      <workItem from="1616239604763" duration="10849000" />
+      <workItem from="1616864869053" duration="5466000" />
+      <workItem from="1616942188918" duration="2409000" />
+      <workItem from="1617085601611" duration="9198000" />
     </task>
     <servers />
   </component>
