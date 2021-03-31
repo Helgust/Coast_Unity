@@ -13541,8 +13541,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 836871470}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: PressExitMenuButton
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: MenuPressExitMenuButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17666,7 +17666,6 @@ MonoBehaviour:
   SavingDialog: {fileID: 1814724965}
   LoadingDialog: {fileID: 1100540027}
   ExportDialog: {fileID: 513430242}
-  MainMenu: {fileID: 0}
   CreatingSave: {fileID: 408913552}
   isSaveItemDeSelected: 0
   choosedSave: 

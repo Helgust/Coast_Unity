@@ -5,15 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de759657-e7b8-48fc-a140-a1531cbbf490" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Configs/map2Map.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/test.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/test.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Configs/config1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Configs/config1.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Configs/config2.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Configs/config2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Configs/config2.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Configs/config2.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Configs/config2BG.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Configs/config2BG.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Configs/config2Map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Configs/config2Map.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/config1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/config1.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/config2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/config2.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/config2BG.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/config2BG.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/config2Map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/config2Map.json.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Basket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Basket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DB.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,17 +77,23 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ExportDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MenuManger.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DB.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LoadinDialogInMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Basket.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialogInMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Configs/map1Map.json" />
+      <option value="$PROJECT_DIR$/Assets/Configs/map1BG.json" />
+      <option value="$PROJECT_DIR$/Assets/Configs/map2Map.json" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DB.cs" />
+      <option value="$PROJECT_DIR$/Assets/Configs/config2.json" />
+      <option value="$PROJECT_DIR$/Assets/Configs/map1.json" />
+      <option value="$PROJECT_DIR$/Assets/Configs/map2BG.json" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lsbLZ6lLN3T85LfSGhTvVajcLR" />
@@ -157,7 +180,8 @@
       <workItem from="1616942188918" duration="2409000" />
       <workItem from="1617085601611" duration="9199000" />
       <workItem from="1617208839802" duration="3163000" />
-      <workItem from="1617220226752" duration="5144000" />
+      <workItem from="1617220226752" duration="5402000" />
+      <workItem from="1617227099864" duration="4498000" />
     </task>
     <servers />
   </component>

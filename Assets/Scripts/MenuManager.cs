@@ -117,6 +117,7 @@ public class MenuManager : MonoBehaviour
     }
     public void MapDialogPressStart()
     {
+        Basket.instance.modeType = "NEW";
         SceneManager.LoadScene("Scenes/SampleScene");
     }
     public void setPauseBool(bool new_bool)

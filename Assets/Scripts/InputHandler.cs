@@ -52,6 +52,13 @@ public class InputHandler : MonoBehaviour
     {
         c_year = GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentYear;
         DBScript = DBObject.GetComponent<DB>();
+        ProcPar1 = 0;
+        ProcPar2 = 0;
+        ProcPar3 = 0;
+        ProcPar4 = 0;
+        ProcPar5 = 0;
+        ProcPar6 = 5;
+        ProcPar7 = 5;
     }
 
     public List<float> FromUIToDB()

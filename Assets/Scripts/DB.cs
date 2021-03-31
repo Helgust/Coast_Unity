@@ -72,7 +72,7 @@ public class DB : MonoBehaviour
     public void InitDB(TextAsset jsonAsset, int finalYear)
     {
         //yearDataBase.Add(new Year());
-        // for current moment size og list is locked by dev TODO: made it modifiable(����������)
+        // for current moment size og list is locked by dev TODO: made it modifiable
 
         //Debug.Log("InitDB: File Exists: " + File.Exists(jsonString));
         //string json = File.ReadAllText(jsonString);

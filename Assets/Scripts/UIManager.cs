@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -158,9 +159,18 @@ public class UIManager : MonoBehaviour
     }
     public void MenuPressExitMenuButton()
     {
-        Basket.instance.mapType = String.Empty;
-        Basket.instance.modeType = String.Empty;
-        //savedata empty
+        if (Basket.instance.modeType == "NEW")
+        {
+            Basket.instance.mapType = String.Empty;
+            Basket.instance.modeType = String.Empty;
+        }
+        else
+        { 
+            Basket.instance.mapType = String.Empty;
+            Basket.instance.modeType = String.Empty;
+            Basket.instance.saveData.Clear();
+        }
+        SceneManager.LoadScene("Scenes/MainMenu");
     }
     public void MenuPressExitDeskButton()
     {

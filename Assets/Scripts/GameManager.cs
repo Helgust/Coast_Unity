@@ -28,17 +28,15 @@ public class GameManager : MonoBehaviour
 
 
     //public bool enable;
-
-
     private TextAsset configJSON;
     private TextAsset configMapJSON;
     private TextAsset configBGJSON;
 
     void GetConfig()
     {
-	    configJSON = Resources.Load <TextAsset> ("Configs/config2");
-	    configMapJSON = Resources.Load <TextAsset> ("Configs/config2Map");
-	    configBGJSON = Resources.Load <TextAsset> ("Configs/config2BG");
+	    configJSON = Resources.Load <TextAsset> ("Configs/"+Basket.instance.mapType);
+	    configMapJSON = Resources.Load <TextAsset> ("Configs/"+Basket.instance.mapType+"Map");
+	    configBGJSON = Resources.Load <TextAsset> ("Configs/"+Basket.instance.mapType+"BG");
     }
 
 
@@ -71,10 +69,9 @@ public class GameManager : MonoBehaviour
 	    { 
 		    instance.LoadFromSave(Basket.instance.saveData);
 	    }
-	    else // "NEW"
+	    else // modeType == "NEW"
 	    {
 		    GetConfig();
-		    //DB.instance = DBObject.GetComponent<DB>();
 		    InitGame();
 	    }
 	    
@@ -83,7 +80,7 @@ public class GameManager : MonoBehaviour
     //Initializes the game for each level.
     void InitGame()
     {
-        currentYear = 0;
+	    currentYear = 0;
         DB.instance.InitDB(configJSON, finalYear);
         DB.instance.InitBoard(configMapJSON);
         DB.instance.InitBG(configBGJSON);
