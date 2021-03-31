@@ -35,6 +35,7 @@
           <e p="Industry.cs" t="Include" />
           <e p="InputHandler.cs" t="Include" />
           <e p="LoadDialog.cs" t="Include" />
+          <e p="LoadDialogInMenu.cs" t="Include" />
           <e p="MenuManager.cs" t="Include" />
           <e p="Save.cs" t="Include" />
           <e p="SaveDialog.cs" t="Include" />

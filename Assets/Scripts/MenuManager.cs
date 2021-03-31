@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -52,7 +54,33 @@ public class MenuManager : MonoBehaviour
 
     public void MMPressContinue()
     {
-        
+        DateTime last_modif_time = DateTime.MinValue;
+        String filename =String.Empty;
+        DirectoryInfo d = new DirectoryInfo(Application.dataPath + "/Save/");
+        FileInfo[] files = d.GetFiles("*.data");
+
+        foreach (var file in files)
+        {
+            if (file.CreationTimeUtc > last_modif_time)
+            {
+                last_modif_time = file.CreationTimeUtc;
+                filename = file.Name;
+            }
+        }
+        Debug.Log("Name " + filename);
+        string path = Application.dataPath +"/Save/" + filename;
+
+        if (File.Exists(path))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream fileStream = new FileStream(path, FileMode.Open);
+            Save data = bf.Deserialize(fileStream) as Save;
+            Basket.instance.modeType = "LOAD";
+            Basket.instance.saveData = data;
+            //GameManager.instance.LoadFromSave(data);
+            SceneManager.LoadScene("Scenes/SampleScene");
+            fileStream.Close();
+        }
     }
     public void MMPressNewGame()
     {
@@ -80,6 +108,8 @@ public class MenuManager : MonoBehaviour
     {
         Basket.instance.mapType = "map3";
     }
+    
+    
     
     public void MapDialogPressCancel()
     {

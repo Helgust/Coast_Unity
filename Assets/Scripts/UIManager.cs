@@ -158,7 +158,9 @@ public class UIManager : MonoBehaviour
     }
     public void MenuPressExitMenuButton()
     {
-
+        Basket.instance.mapType = String.Empty;
+        Basket.instance.modeType = String.Empty;
+        //savedata empty
     }
     public void MenuPressExitDeskButton()
     {

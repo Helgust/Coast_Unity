@@ -65,11 +65,19 @@ public class GameManager : MonoBehaviour
     //This is called each time a scene is loaded.
     private void Start()
     {
-	    GetConfig();
+	    BoardScript = GetComponent<BoardManager>();
+	    IHScript = IHObject.GetComponent<InputHandler>();
+	    if (Basket.instance.modeType == "LOAD")
+	    { 
+		    instance.LoadFromSave(Basket.instance.saveData);
+	    }
+	    else // "NEW"
+	    {
+		    GetConfig();
 		    //DB.instance = DBObject.GetComponent<DB>();
-		    BoardScript = GetComponent<BoardManager>();
-		    IHScript = IHObject.GetComponent<InputHandler>();
 		    InitGame();
+	    }
+	    
     }
 
     //Initializes the game for each level.
@@ -117,8 +125,6 @@ public class GameManager : MonoBehaviour
         else
         {
             List<float> UIText = IHScript.FromUIToDB();
-
-            //PrintList(UIText);
             DB.instance.NextMoveDB(currentYear, UIText);
             currentYear += 1;
             Destroy(GameObject.FindWithTag("gameBoard"));
@@ -169,10 +175,10 @@ public class GameManager : MonoBehaviour
 		    DB.instance.board = new_save.board;
 		    DB.instance.is_over = new_save.is_over;
 		    
-		    DB.instance.board.array2d.Reverse();
+		    //DB.instance.board.array2d.Reverse();
 		    BoardScript.SetupBGScene(DB.instance.boardBG);
 		    BoardScript.SetupScene(DB.instance.board);
-		    GameObject.FindWithTag("gameBoardBG").SetActive(false);
+		    GameObject.FindWithTag("gameBoardBG").SetActive(true);
 		    //todo 
 	    }
 	    

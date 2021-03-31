@@ -7,6 +7,8 @@ public class Basket : MonoBehaviour
 {
     public static Basket instance;
     public string mapType;
+    public string modeType; // could take some modeTypes Loading Game, or Createing New Game 
+    public Save saveData;
 
     private void Awake()
     {

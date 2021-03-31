@@ -158,8 +158,7 @@ public class BoardManager : MonoBehaviour
                 }
                 else
                 {
-                   //toInstantiate = DirtTiles[Random.Range(0, 1)];
-                   return;
+                   toInstantiate = DirtTiles[Random.Range(0, 1)];
                 }
 
                 if (gameBoard.array2d[y][x] != 14)
