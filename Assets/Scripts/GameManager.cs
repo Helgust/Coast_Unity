@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     void GetConfig()
     {
-	    configJSON = Resources.Load <TextAsset> ("Configs/"+Basket.instance.mapType);
+	    configJSON = Resources.Load <TextAsset> ("Configs/config");
 	    configMapJSON = Resources.Load <TextAsset> ("Configs/"+Basket.instance.mapType+"Map");
 	    configBGJSON = Resources.Load <TextAsset> ("Configs/"+Basket.instance.mapType+"BG");
     }
