@@ -14,6 +14,7 @@ public class MenuManager : MonoBehaviour
     public static MenuManager instance;
     public GameObject LoadingDialog;
     public GameObject ChoosingMapDialog;
+    public GameObject SettingsDialog;
     public GameObject MainMenu;
 
     private string stat_parametr;
@@ -37,8 +38,7 @@ public class MenuManager : MonoBehaviour
             }
         }
     }
-    
-    
+
     public void PressSettingButton()
     {
 
@@ -93,9 +93,14 @@ public class MenuManager : MonoBehaviour
     }
     public void MMPressSettings()
     {
-        
+        SettingsDialog.SetActive(true);
     }
-
+    
+    public void MMPressExit()
+    {
+        Application.Quit();
+    }
+    
     public void ChoosedMap1()
     {
         Basket.instance.mapType = "map1";

@@ -20,13 +20,20 @@ public class ExportDialog : MonoBehaviour
 
     private void OnEnable()
     {
-        inputField.text = "report-" + GetCurrentUserNameDateTime();
+        inputField.text = "report_" + GetCurrentUserNameDateTime();
     }
 
     // Start is called before the first frame update
     private void ExportProcess()
     {
-        string path = Application.dataPath + "/Reports/" + inputField.text + ".csv";
+        string path = Application.dataPath + "/Reports/";
+        if (!Directory.Exists(path))
+        {
+            Debug.Log("Dir not exist: " + path);
+            Directory.CreateDirectory(path);
+        } 
+        path = path + inputField.text + ".csv";
+        Debug.Log("PATH="+path);
         FileStream fileStream = File.Create(path);
         fileStream.Close();
         StreamWriter writer = new StreamWriter(path);
@@ -47,25 +54,21 @@ public class ExportDialog : MonoBehaviour
             line = String.Join(", ",tempList.ToArray());
             writer.WriteLine(line);
         }
-       
-        
-        
-        Debug.Log("Frist="+title);
         writer.Close();
-
         
+
     }
 
     private string GetCurrentUserNameDateTime()
     {
-        return Environment.MachineName + DateTime.UtcNow.ToLocalTime().ToString("dd-MM-yyyy-hh-dd-ss");
+        return Environment.UserName+"_" + DateTime.UtcNow.ToLocalTime().ToString("dd-MM-yyyy-hh-dd-ss");
     }
 
     public void PressExport()
     {
+        ExportProcess();
         UIManager.instance.setExportWinBool(false);
         UIManager.instance.ExportDialog.SetActive(false);
-        ExportProcess();
         UIManager.instance.setPauseBool(false);
     }
 

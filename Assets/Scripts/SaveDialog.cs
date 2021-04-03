@@ -43,7 +43,7 @@ public class SaveDialog : MonoBehaviour
     }
     private string GetCurrentUserNameDateTime()
     {
-        return Environment.MachineName + DateTime.UtcNow.ToLocalTime().ToString("dd-MM-yyyy-hh-dd-ss");
+        return Environment.UserName+"_"+ DateTime.UtcNow.ToLocalTime().ToString("dd-MM-yyyy-hh-dd-ss");
     }
 
     public void PressSave()

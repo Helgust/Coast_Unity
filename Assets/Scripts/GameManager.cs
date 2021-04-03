@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public int currentYear;
     public string mapType = String.Empty;
-
+    public bool gameStartFlag =false;
     public int finalYear;
     //public bool inMainMenuState;
     private BoardManager BoardScript;
@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 	    configJSON = Resources.Load <TextAsset> ("Configs/config");
 	    configMapJSON = Resources.Load <TextAsset> ("Configs/"+Basket.instance.mapType+"Map");
 	    configBGJSON = Resources.Load <TextAsset> ("Configs/"+Basket.instance.mapType+"BG");
+	    mapType = Basket.instance.mapType;
     }
 
 
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
     //This is called each time a scene is loaded.
     private void Start()
     {
+	    gameStartFlag = true;
 	    BoardScript = GetComponent<BoardManager>();
 	    IHScript = IHObject.GetComponent<InputHandler>();
 	    if (Basket.instance.modeType == "LOAD")
@@ -117,7 +119,8 @@ public class GameManager : MonoBehaviour
         if ((currentYear > finalYear - 1) || (DB.instance.is_over == true))
         {
 	        enabled = false;
-            UIObject.GetComponent<UIManager>().NextMoveButtons.SetActive(false);
+            UIManager.instance.NextMoveButtons.interactable = false;
+            UIManager.instance.FinalDialog.SetActive(true);
         }
         else
         {
@@ -156,7 +159,6 @@ public class GameManager : MonoBehaviour
 	    }
 	    else
 	    {
-		    Debug.Log("Enter2");
 		    
 		    Destroy(GameObject.FindWithTag("gameBoardBG"));
 		    Destroy(GameObject.FindWithTag("gameBoard"));

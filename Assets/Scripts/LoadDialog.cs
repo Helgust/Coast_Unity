@@ -68,6 +68,9 @@ public class LoadDialog : MonoBehaviour
         UIManager.instance.setPauseBool(false);
         ExistSaveList.SetActive(false);
         ExistSaveList.SetActive(true);
+        UIManager.instance.setLoadWinBool(false);
+        UIManager.instance.setPauseBool(false);
+        UIManager.instance.LoadingDialog.SetActive(false);
     }
     public void PressDelete()
     {
@@ -82,7 +85,7 @@ public class LoadDialog : MonoBehaviour
 
     public void PressCancel()
     {
-        UIManager.instance.setSaveWinBool(false);
+        UIManager.instance.setLoadWinBool(false);
         UIManager.instance.setPauseBool(false);
         UIManager.instance.LoadingDialog.SetActive(false);
     }

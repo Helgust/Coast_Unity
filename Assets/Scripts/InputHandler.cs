@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +18,7 @@ public class InputHandler : MonoBehaviour
     public GameObject InputPar6;
     public GameObject InputPar7;
     public GameObject SumPar;
-    public GameObject YearCounter;
+    public TMP_Text YearCounter;
     public GameObject ResourceBar;
 
     private int ProcPar1 = 0;
@@ -88,59 +89,64 @@ public class InputHandler : MonoBehaviour
 
     public void Update()
     {
-        //c_year  = GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentYear;
-        c_year = GameManager.instance.currentYear;
-        if (c_year == 0)
+        if (GameManager.instance.gameStartFlag)
         {
-            c_year = 1; // remove it AFAP(As Fast As Possible)
-        }
+            //c_year  = GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentYear;
+            c_year = GameManager.instance.currentYear;
+            if (c_year == 0)
+            {
+                c_year = 1; // remove it AFAP(As Fast As Possible)
+            }
 
-        // index 2 its Money Par
-        InputPar1.transform.GetChild(2).GetComponent<Text>().text =
-            (DBScript.GetComponent<DB>().yearDataBase[c_year - 1].budget * (float) ProcPar1 / 100.0f).ToString();
-        InputPar2.transform.GetChild(2).GetComponent<Text>().text =
-            (DBScript.GetComponent<DB>().yearDataBase[c_year - 1].budget * (float) ProcPar2 / 100.0f).ToString();
-        InputPar3.transform.GetChild(2).GetComponent<Text>().text =
-            (DBScript.GetComponent<DB>().yearDataBase[c_year - 1].budget * (float) ProcPar3 / 100.0f).ToString();
-        InputPar4.transform.GetChild(2).GetComponent<Text>().text =
-            (DBScript.GetComponent<DB>().yearDataBase[c_year - 1].budget * (float) ProcPar4 / 100.0f).ToString();
-        InputPar5.transform.GetChild(2).GetComponent<Text>().text =
-            (DBScript.GetComponent<DB>().yearDataBase[c_year - 1].budget * (float) ProcPar5 / 100.0f).ToString();
-        InputPar6.transform.GetChild(2).GetComponent<Text>().text =
-            (DBScript.GetComponent<DB>().yearDataBase[c_year - 1].budget * (float) ProcPar6 / 100.0f).ToString();
-        InputPar7.transform.GetChild(2).GetComponent<Text>().text =
-            (DBScript.GetComponent<DB>().yearDataBase[c_year - 1].budget * (float) ProcPar7 / 100.0f).ToString();
-        SumPar.transform.GetChild(1).GetComponent<Text>().text =
-            (DBScript.GetComponent<DB>().yearDataBase[c_year - 1].budget * (float) FuncProcTotal() / 100.0f)
-            .ToString();
+            // index 2 its Money Par
+            InputPar1.transform.GetChild(2).GetComponent<Text>().text =
+                (DB.instance.yearDataBase[c_year - 1].budget * (float) ProcPar1 / 100.0f).ToString();
+            InputPar2.transform.GetChild(2).GetComponent<Text>().text =
+                (DB.instance.yearDataBase[c_year - 1].budget * (float) ProcPar2 / 100.0f).ToString();
+            InputPar3.transform.GetChild(2).GetComponent<Text>().text =
+                (DB.instance.yearDataBase[c_year - 1].budget * (float) ProcPar3 / 100.0f).ToString();
+            InputPar4.transform.GetChild(2).GetComponent<Text>().text =
+                (DB.instance.yearDataBase[c_year - 1].budget * (float) ProcPar4 / 100.0f).ToString();
+            InputPar5.transform.GetChild(2).GetComponent<Text>().text =
+                (DB.instance.yearDataBase[c_year - 1].budget * (float) ProcPar5 / 100.0f).ToString();
+            InputPar6.transform.GetChild(2).GetComponent<Text>().text =
+                (DB.instance.yearDataBase[c_year - 1].budget * (float) ProcPar6 / 100.0f).ToString();
+            InputPar7.transform.GetChild(2).GetComponent<Text>().text =
+                (DB.instance.yearDataBase[c_year - 1].budget * (float) ProcPar7 / 100.0f).ToString();
+            SumPar.transform.GetChild(1).GetComponent<Text>().text =
+                (DB.instance.yearDataBase[c_year - 1].budget * (float) FuncProcTotal() / 100.0f)
+                .ToString();
 
-        //index 3 its Proc Par
-        InputPar1.transform.GetChild(3).GetComponent<Text>().text = ProcPar1.ToString();
-        InputPar2.transform.GetChild(3).GetComponent<Text>().text = ProcPar2.ToString();
-        InputPar3.transform.GetChild(3).GetComponent<Text>().text = ProcPar3.ToString();
-        InputPar4.transform.GetChild(3).GetComponent<Text>().text = ProcPar4.ToString();
-        InputPar5.transform.GetChild(3).GetComponent<Text>().text = ProcPar5.ToString();
-        InputPar6.transform.GetChild(3).GetComponent<Text>().text = ProcPar6.ToString();
-        InputPar7.transform.GetChild(3).GetComponent<Text>().text = ProcPar7.ToString();
-        SumPar.transform.GetChild(2).GetComponent<Text>().text = FuncProcTotal().ToString();
-        YearCounter.transform.GetComponent<Text>().text = c_year.ToString();
+            //index 3 its Proc Par
+            InputPar1.transform.GetChild(3).GetComponent<Text>().text = ProcPar1.ToString();
+            InputPar2.transform.GetChild(3).GetComponent<Text>().text = ProcPar2.ToString();
+            InputPar3.transform.GetChild(3).GetComponent<Text>().text = ProcPar3.ToString();
+            InputPar4.transform.GetChild(3).GetComponent<Text>().text = ProcPar4.ToString();
+            InputPar5.transform.GetChild(3).GetComponent<Text>().text = ProcPar5.ToString();
+            InputPar6.transform.GetChild(3).GetComponent<Text>().text = ProcPar6.ToString();
+            InputPar7.transform.GetChild(3).GetComponent<Text>().text = ProcPar7.ToString();
+            SumPar.transform.GetChild(2).GetComponent<Text>().text = FuncProcTotal().ToString();
+            YearCounter.text = c_year.ToString();
 
-        ResourceBar.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = DBScript.GetComponent<DB>()
-            .yearDataBase[c_year - 1].fishAmount.ToString("0,0");
-        ResourceBar.transform.GetChild(2).GetChild(1).GetComponent<Text>().text = DBScript.GetComponent<DB>()
-            .yearDataBase[c_year - 1].population.ToString("0,0");
-        ResourceBar.transform.GetChild(3).GetChild(1).GetComponent<Text>().text =
-            DBScript.GetComponent<DB>().yearDataBase[c_year - 1].budget.ToString("0,0");
-        ResourceBar.transform.GetChild(4).GetChild(1).GetComponent<Text>().text = DBScript.GetComponent<DB>()
-            .yearDataBase[c_year - 1].incomeSumPerHum.ToString("0.00");
-        ResourceBar.transform.GetChild(5).GetChild(1).GetComponent<Text>().text = DBScript.GetComponent<DB>()
-            .yearDataBase[c_year - 1].qualityOfEnv.ToString("0.00");
-        ResourceBar.transform.GetChild(6).GetChild(1).GetComponent<Text>().text =
-            DBScript.GetComponent<DB>().yearDataBase[c_year - 1].humDevInd.ToString("0.0");
+            ResourceBar.transform.GetChild(0).GetChild(2).GetComponent<TMP_Text>().text =
+                DB.instance.yearDataBase[c_year - 1].fishAmount.ToString("0,0");
+            ResourceBar.transform.GetChild(1).GetChild(2).GetComponent<TMP_Text>().text = DB.instance
+                .yearDataBase[c_year - 1].population.ToString("0,0");
+            ResourceBar.transform.GetChild(2).GetChild(2).GetComponent<TMP_Text>().text =
+                DB.instance.yearDataBase[c_year - 1].budget.ToString("0,0");
+            ResourceBar.transform.GetChild(3).GetChild(2).GetComponent<TMP_Text>().text = DB.instance
+                .yearDataBase[c_year - 1].incomeSumPerHum.ToString("0.00");
+            ResourceBar.transform.GetChild(4).GetChild(2).GetComponent<TMP_Text>().text = DB.instance
+                .yearDataBase[c_year - 1].qualityOfEnv.ToString("0.00");
+            ResourceBar.transform.GetChild(5).GetChild(2).GetComponent<TMP_Text>().text =
+                DB.instance.yearDataBase[c_year - 1].humDevInd.ToString("0.0");
 
-        if ((Input.GetKeyDown(KeyCode.Escape)))
-        {
-            UIManager.instance.PauseMenuCheck();
+            if ((Input.GetKeyDown(KeyCode.Escape)))
+            {
+                UIManager.instance.PauseMenuCheck();
+            }
+            
+            
         }
     }
 
@@ -523,7 +529,7 @@ public class InputHandler : MonoBehaviour
         }
         else
         {
-            return DBScript.GetComponent<DB>().yearDataBase[c_year - 1].budget * 0.05f;
+            return DB.instance.yearDataBase[c_year - 1].budget * 0.05f;
         }
     }
 

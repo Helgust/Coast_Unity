@@ -16,17 +16,20 @@ public class UIManager : MonoBehaviour
     public GameObject EconomUIObject;
     public GameObject SocUIObject;
     public GameObject EcologUIObject;
-    public GameObject NextMoveButtons;
+    public Button NextMoveButtons;
     public GameObject PauseMenu;
     public GameObject SavingDialog;
     public GameObject LoadingDialog;
     public GameObject ExportDialog;
+    public GameObject SettingsDialog;
+    public GameObject FinalDialog;
     public InputField CreatingSave;
 
     private string stat_parametr;
     private bool pauseBool;
     private bool statWindowBool = false;
     private bool saveWindowBool = false;
+    private bool loadWindowBool = false;
     private bool exportWindowBool = false;
     public bool isSaveItemDeSelected = false;
     public string choosedSave = String.Empty;
@@ -152,13 +155,24 @@ public class UIManager : MonoBehaviour
         PauseMenu.SetActive(false);
         SavingDialog.SetActive(true);
     }
+    public void MenuPressLoadButton()
+    {
+        pauseBool = false;
+        loadWindowBool = true;
+        PauseMenu.SetActive(false);
+        LoadingDialog.SetActive(true);
+    }
     
     public void MenuPressSettingButton()
     {
-
+        pauseBool = false;
+        PauseMenu.SetActive(false);
+        SettingsDialog.SetActive(true);
+        
     }
     public void MenuPressExitMenuButton()
     {
+        GameManager.instance.gameStartFlag = false;
         if (Basket.instance.modeType == "NEW")
         {
             Basket.instance.mapType = String.Empty;
@@ -174,7 +188,12 @@ public class UIManager : MonoBehaviour
     }
     public void MenuPressExitDeskButton()
     {
-        
+        Application.Quit();
+    }
+
+    public void SettingDialogPressClose()
+    { 
+        SettingsDialog.SetActive(false);
     }
 
     public void setPauseBool(bool new_bool)
@@ -184,6 +203,10 @@ public class UIManager : MonoBehaviour
     public void setSaveWinBool(bool new_bool)
     {
         saveWindowBool = new_bool;
+    }
+    public void setLoadWinBool(bool new_bool)
+    {
+        loadWindowBool = new_bool;
     }
     public void setExportWinBool(bool new_bool)
     {

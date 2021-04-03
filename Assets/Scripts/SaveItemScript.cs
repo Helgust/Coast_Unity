@@ -15,6 +15,5 @@ public class SaveItemScript : MonoBehaviour,IDeselectHandler,ISelectHandler
     public void OnSelect(BaseEventData eventData)
     {
         UIManager.instance.saveName = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text;
-        Debug.Log(UIManager.instance.saveName);
     }
 }
