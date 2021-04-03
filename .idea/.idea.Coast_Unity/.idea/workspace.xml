@@ -5,58 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de759657-e7b8-48fc-a140-a1531cbbf490" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/BasicController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/BasicController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/BasicTargetMover.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/BasicTargetMover.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/Controller.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/Controller.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/GameManager_2.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/GameManager_2.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/MouseLooker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/MouseLooker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/NextLevel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/NextLevel.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/PlayAgain.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/PlayAgain.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/Rotate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/Rotate.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/Shooter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/Shooter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/SpawnGameObjects.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/SpawnGameObjects.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/TargetBehavior.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/TargetBehavior.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/TargetExit.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/TargetExit.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/TargetMover.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/TargetMover.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/TimedObjectDestructor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdditionScriptsDeleteBeforeLaunch/TimedObjectDestructor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New_sprite/mariculture.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New_sprite/mariculture.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/33252.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/33252.data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE31-03-2021-10-31-36.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/DESKTOP-GR6H8TE31-03-2021-10-31-36.data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/TEd.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/TEd.data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/test.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save/test.data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExportDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ExportDialog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveDialog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,6 +167,7 @@
       <workItem from="1617301912455" duration="2795000" />
       <workItem from="1617355778493" duration="11025000" />
       <workItem from="1617460604122" duration="6716000" />
+      <workItem from="1617467746850" duration="662000" />
     </task>
     <servers />
   </component>

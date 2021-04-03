@@ -6,8 +6,8 @@ using UnityEngine.UIElements;
 
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
-    private Vector2 borderLimit = new Vector2(15f, 8f);
+    private float moveSpeed = 80f;
+    private Vector2 borderLimit = new Vector2(18f, 8f);
     [SerializeField] private float scrollSpeed = 5;
 
     private Camera _camera;
@@ -25,6 +25,10 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1; //CAUTION
+        }
         float size = _camera.orthographicSize;
         if (_camera.orthographic)
         {
@@ -42,8 +46,8 @@ public class CameraMovement : MonoBehaviour
         {
             if (Input.GetAxis("Mouse X") != 0)
             {
-                pos -= new Vector3(Input.GetAxisRaw("Mouse X") * Time.fixedDeltaTime * moveSpeed,
-                    Input.GetAxisRaw("Mouse Y") * Time.fixedDeltaTime * moveSpeed, 0.0f);
+                pos -= new Vector3(Input.GetAxisRaw("Mouse X") * Time.deltaTime * moveSpeed,
+                    Input.GetAxisRaw("Mouse Y") * Time.deltaTime * moveSpeed, 0.0f);
                 pos.x = Mathf.Clamp(pos.x,  -borderLimit.x + centerPos.x, borderLimit.x + centerPos.x);
                 pos.y = Mathf.Clamp(pos.y,  -borderLimit.y + centerPos.y, borderLimit.y + centerPos.y);
                transform.position = pos;
