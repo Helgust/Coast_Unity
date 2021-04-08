@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de759657-e7b8-48fc-a140-a1531cbbf490" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +68,6 @@
       <option value="$PROJECT_DIR$/Assets/Resources/Configs/map3BG.json" />
       <option value="$PROJECT_DIR$/Assets/Resources/Configs/map3Map.json" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SaveDialog.cs" />
@@ -72,6 +76,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ZoomWithMouseWheel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" />
     </changedPaths>
@@ -167,7 +172,8 @@
       <workItem from="1617301912455" duration="2795000" />
       <workItem from="1617355778493" duration="11025000" />
       <workItem from="1617460604122" duration="6716000" />
-      <workItem from="1617467746850" duration="662000" />
+      <workItem from="1617467746850" duration="873000" />
+      <workItem from="1617565146138" duration="847000" />
     </task>
     <servers />
   </component>

@@ -8797,9 +8797,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1221514824}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: PressChancel
+      - m_Target: {fileID: 904619251}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: SettingsPressClose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class CameraMovement : MonoBehaviour
 {
-    private float moveSpeed = 80f;
+    private float moveSpeed = 10f;
     private Vector2 borderLimit = new Vector2(18f, 8f);
     [SerializeField] private float scrollSpeed = 5;
 

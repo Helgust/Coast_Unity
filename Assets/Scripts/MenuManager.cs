@@ -38,20 +38,7 @@ public class MenuManager : MonoBehaviour
             }
         }
     }
-
-    public void PressSettingButton()
-    {
-
-    }
-    public void PressExitMenuButton()
-    {
-
-    }
-    public void PressExitDeskButton()
-    {
-        
-    }
-
+    
     public void MMPressContinue()
     {
         DateTime last_modif_time = DateTime.MinValue;
@@ -136,5 +123,10 @@ public class MenuManager : MonoBehaviour
     public bool getPauseBool()
     {
         return pauseBool;
+    }
+
+    public void SettingsPressClose()
+    {
+        SettingsDialog.SetActive(false);
     }
 }
