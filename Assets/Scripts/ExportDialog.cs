@@ -2,11 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+
 
 public class ExportDialog : MonoBehaviour
 {
@@ -32,31 +31,25 @@ public class ExportDialog : MonoBehaviour
             Debug.Log("Dir not exist: " + path);
             Directory.CreateDirectory(path);
         } 
-        path = path + inputField.text + ".csv";
-        Debug.Log("PATH="+path);
-        FileStream fileStream = File.Create(path);
+        string filePath = path + inputField.text + ".csv";
+        Debug.Log("PATH="+filePath);
+        FileStream fileStream = File.Create(filePath);
         fileStream.Close();
-        StreamWriter writer = new StreamWriter(path);
-        string title;
-        title = String.Join(", ",DB.instance.statDict.Keys.ToArray());
-        title = "year," + title;
-        writer.WriteLine(title);
-        
+        StreamWriter writer = new StreamWriter(filePath);
+        string title = "year";
         for (int i = 0; i < GameManager.instance.currentYear; i++)
         {
-            string line;
-            List<float> tempList = new List<float>();
-            tempList.Add(i+1);
-            foreach (var key in DB.instance.statDict.Keys)
-            {
-                tempList.Add(DB.instance.statDict[key][i]);
-            }
-            line = String.Join(", ",tempList.ToArray());
+            title = String.Concat(title,";",i+1);
+        }
+        writer.WriteLine(title);
+        foreach (var pair in DB.instance.statDict)
+        {
+            string line = String.Empty;
+            line = line + pair.Key;
+            line = line + ";"+String.Join(";",pair.Value.ToArray());
             writer.WriteLine(line);
         }
         writer.Close();
-        
-
     }
 
     private string GetCurrentUserNameDateTime()

@@ -649,7 +649,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: SOCEmplAqua
+        m_MethodName: SOCEmplAquaFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1173,7 +1173,7 @@ RectTransform:
   m_Children:
   - {fileID: 1830535445}
   m_Father: {fileID: 2064896249}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -1266,7 +1266,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: RESPopRes
+        m_MethodName: RESPopResFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1722,6 +1722,138 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75051793}
   m_CullTransparentMesh: 0
+--- !u!1 &75145927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75145928}
+  - component: {fileID: 75145931}
+  - component: {fileID: 75145930}
+  - component: {fileID: 75145929}
+  m_Layer: 5
+  m_Name: ClearAllButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &75145928
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75145927}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1975466415}
+  m_Father: {fileID: 2064896249}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 500, y: 50}
+  m_SizeDelta: {x: 250, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &75145929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75145927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 75145930}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 836871471}
+        m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
+        m_MethodName: ClearAllToggles
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &75145930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75145927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &75145931
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75145927}
+  m_CullTransparentMesh: 0
 --- !u!1 &77582235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,7 +2019,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: SOCEmplAgri
+        m_MethodName: SOCEmplAgriFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2034,7 +2166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2290,7 +2422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2573,7 +2705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2852,7 +2984,7 @@ RectTransform:
   m_Children:
   - {fileID: 1401975814}
   m_Father: {fileID: 2064896249}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -3114,7 +3246,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: RESHumDevIndRes
+        m_MethodName: RESHumDevIndResFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3211,7 +3343,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: FINBio
+        m_MethodName: FINBioFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3412,7 +3544,7 @@ RectTransform:
   m_Children:
   - {fileID: 955575759}
   m_Father: {fileID: 2064896249}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4409,7 +4541,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4513,7 +4645,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: FINAqua
+        m_MethodName: FINAquaFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4919,7 +5051,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: RESBudgetRes
+        m_MethodName: RESBudgetResFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5348,7 +5480,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6518,7 +6650,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: SOCEmplChem
+        m_MethodName: SOCEmplChemFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6898,7 +7030,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: ECOLPhoRemain
+        m_MethodName: ECOLPhoRemainFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7927,7 +8059,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: RESFishRes
+        m_MethodName: RESFishResFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8284,7 +8416,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9519,7 +9651,7 @@ GameObject:
   - component: {fileID: 424220598}
   - component: {fileID: 424220599}
   m_Layer: 0
-  m_Name: Toggle
+  m_Name: FullScreenToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10055,7 +10187,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: RESAllocateBudgetRes
+        m_MethodName: RESAllocateBudgetResFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10334,7 +10466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10977,7 +11109,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14532,7 +14664,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: FINFish
+        m_MethodName: FINFishFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15298,7 +15430,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: RESFishRes
+        m_MethodName: RESFishResFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16196,7 +16328,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16323,7 +16455,7 @@ RectTransform:
   - {fileID: 2017378637}
   - {fileID: 775665631}
   m_Father: {fileID: 2064896249}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -16387,7 +16519,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16726,7 +16858,7 @@ RectTransform:
   m_Children:
   - {fileID: 1389371052}
   m_Father: {fileID: 2064896249}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -17703,7 +17835,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18194,7 +18326,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: SOCEmplTotal
+        m_MethodName: SOCEmplTotalFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18262,7 +18394,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18517,7 +18649,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: ECOLPhoWaste
+        m_MethodName: ECOLPhoWasteFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19148,7 +19280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19636,7 +19768,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20198,7 +20330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20534,7 +20666,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: ECOLDegrLand
+        m_MethodName: ECOLDegrLandFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20631,7 +20763,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: ECOLDegrSea
+        m_MethodName: ECOLDegrSeaFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20817,6 +20949,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropdownmenu: {fileID: 2017378638}
+  RESFishRes: {fileID: 557377358}
+  RESPopRes: {fileID: 985758560}
+  RESAllocateBudgetRes: {fileID: 452482696}
+  RESRestBudgetRes: {fileID: 850092425}
+  RESBudgetRes: {fileID: 210295692}
+  RESIncPerCapitaRes: {fileID: 1622819502}
+  RESQualityOfEnvRes: {fileID: 1062832905}
+  RESHumDevIndRes: {fileID: 125016459}
+  SOCPop: {fileID: 54156845}
+  SOCPopGrowRate: {fileID: 1629002061}
+  SOCPopLifeSpan: {fileID: 2018895113}
+  SOCAblePop: {fileID: 1074486637}
+  SOCTotalNumJobs: {fileID: 1440868533}
+  SOCEmplTotal: {fileID: 720836491}
+  SOCEmplPaper: {fileID: 1593255725}
+  SOCEmplFish: {fileID: 2067279057}
+  SOCEmplAqua: {fileID: 20127847}
+  SOCEmplAgri: {fileID: 77920104}
+  SOCEmplTour: {fileID: 1474431573}
+  SOCEmplBio: {fileID: 884512448}
+  SOCEmplChem: {fileID: 271308823}
+  SOCHumDevInd: {fileID: 1933709851}
+  ECOLFishNum: {fileID: 347675858}
+  ECOLFishCath: {fileID: 1184504246}
+  ECOLEcolWaste: {fileID: 1794141379}
+  ECOLPhoWaste: {fileID: 738914523}
+  ECOLOtherWaste: {fileID: 967003150}
+  ECOLEcolRemain: {fileID: 1794089428}
+  ECOLPhoRemain: {fileID: 287548940}
+  ECOLOtherRemain: {fileID: 1430204833}
+  ECOLDegrLand: {fileID: 816652488}
+  ECOLDegrSea: {fileID: 831331643}
+  ECOLVolBio: {fileID: 2033257567}
+  ECOLVolChem: {fileID: 1879784015}
+  ECOLQualityOfEnv: {fileID: 1656385404}
+  FINpaperFact: {fileID: 1714931049}
+  FINFish: {fileID: 521593672}
+  FINAqua: {fileID: 197400477}
+  FINAgri: {fileID: 1310353427}
+  FINTour: {fileID: 1655297986}
+  FINChem: {fileID: 1446882402}
+  FINBio: {fileID: 128194816}
 --- !u!1 &837348196
 GameObject:
   m_ObjectHideFlags: 0
@@ -21191,7 +21365,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: RESRestBudgetRes
+        m_MethodName: RESRestBudgetResFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21762,7 +21936,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: SOCEmplBio
+        m_MethodName: SOCEmplBioFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22299,7 +22473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22374,7 +22548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22770,7 +22944,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23425,7 +23599,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23822,7 +23996,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: ECOLOtherWaste
+        m_MethodName: ECOLOtherWasteFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23919,7 +24093,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: RESPopRes
+        m_MethodName: RESPopResFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24510,7 +24684,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25147,7 +25321,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: RESQualityOfEnvRes
+        m_MethodName: RESQualityOfEnvResFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25402,7 +25576,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: SOCAblePop
+        m_MethodName: SOCAblePopFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27184,7 +27358,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: ECOLFishCath
+        m_MethodName: ECOLFishCathFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27252,7 +27426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27840,7 +28014,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27890,7 +28064,7 @@ RectTransform:
   m_Children:
   - {fileID: 1487809046}
   m_Father: {fileID: 2064896249}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -28047,7 +28221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28657,7 +28831,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28732,7 +28906,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29787,7 +29961,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29899,7 +30073,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -30203,7 +30377,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: FINAgri
+        m_MethodName: FINAgriFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30667,7 +30841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -31918,7 +32092,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -32424,7 +32598,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: ECOLOtherRemain
+        m_MethodName: ECOLOtherRemainFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32492,7 +32666,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -32722,7 +32896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -32905,7 +33079,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: SOCTotalNumJobs
+        m_MethodName: SOCTotalNumJobsFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33149,7 +33323,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: FINChem
+        m_MethodName: FINChemFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33626,7 +33800,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: SOCEmplTour
+        m_MethodName: SOCEmplTourFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35055,7 +35229,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -35499,7 +35673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -35678,7 +35852,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: SOCEmplPaper
+        m_MethodName: SOCEmplPaperFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35846,7 +36020,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36239,7 +36413,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: RESIncPerCapitaRes
+        m_MethodName: RESIncPerCapitaResFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36336,7 +36510,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: SOCPopGrowRate
+        m_MethodName: SOCPopGrowRateFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37057,7 +37231,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: FINTour
+        m_MethodName: FINTourFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37154,7 +37328,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: RESQualityOfEnvRes
+        m_MethodName: RESQualityOfEnvResFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38144,7 +38318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -38992,7 +39166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -39096,7 +39270,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: FINpaperFact
+        m_MethodName: FINpaperFactFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39381,7 +39555,7 @@ RectTransform:
   m_Children:
   - {fileID: 1800552141}
   m_Father: {fileID: 2064896249}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -39663,7 +39837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30060d39af1edc549ae8adc35903e38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolitionsDropdown: {fileID: 1954179837}
 --- !u!1 &1756839004
 GameObject:
   m_ObjectHideFlags: 0
@@ -40375,7 +40548,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: ECOLEcolRemain
+        m_MethodName: ECOLEcolRemainFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40472,7 +40645,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: ECOLEcolWaste
+        m_MethodName: ECOLEcolWasteFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41880,7 +42053,7 @@ RectTransform:
   m_Children:
   - {fileID: 118302552}
   m_Father: {fileID: 2064896249}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -42303,7 +42476,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: ECOLVolChem
+        m_MethodName: ECOLVolChemFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43613,7 +43786,7 @@ PrefabInstance:
     - target: {fileID: 9081610244973116921, guid: 5b0cf957fc2c5d541a9112742eb40949,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9081610244973116921, guid: 5b0cf957fc2c5d541a9112742eb40949,
         type: 3}
@@ -44146,7 +44319,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: RESHumDevIndRes
+        m_MethodName: RESHumDevIndResFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44214,7 +44387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -44746,6 +44919,85 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!1 &1975466414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1975466415}
+  - component: {fileID: 1975466417}
+  - component: {fileID: 1975466416}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1975466415
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975466414}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 75145928}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1975466416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975466414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: ff5dc096fa309964496997fc18356824, type: 3}
+    m_FontSize: 32
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Clear All
+--- !u!222 &1975466417
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975466414}
+  m_CullTransparentMesh: 0
 --- !u!1 &1982584025
 GameObject:
   m_ObjectHideFlags: 0
@@ -45832,7 +46084,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: FINDropDownhandler
+        m_MethodName: FINDropDownhandlerFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45967,7 +46219,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: SOCPopLifeSpan
+        m_MethodName: SOCPopLifeSpanFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46252,7 +46504,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -46356,7 +46608,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: ECOLVolBio
+        m_MethodName: ECOLVolBioFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46642,7 +46894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -46938,6 +47190,7 @@ RectTransform:
   m_Children:
   - {fileID: 671387587}
   - {fileID: 2000560430}
+  - {fileID: 75145928}
   - {fileID: 121630319}
   - {fileID: 1539189358}
   - {fileID: 1732440005}
@@ -47118,7 +47371,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 836871471}
         m_TargetAssemblyTypeName: FunctionsForUIGraph, Assembly-CSharp
-        m_MethodName: SOCEmplFish
+        m_MethodName: SOCEmplFishFUNC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47393,7 +47646,7 @@ RectTransform:
   m_Children:
   - {fileID: 2082589989}
   m_Father: {fileID: 2064896249}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -48050,7 +48303,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -48676,7 +48929,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -48854,7 +49107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a39ba86a9f3a5a48bddad1bb1001c88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

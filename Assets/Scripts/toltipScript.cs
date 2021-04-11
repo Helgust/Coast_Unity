@@ -10,6 +10,7 @@ public class toltipScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        gameObject.transform.SetAsLastSibling();
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
         isOver = true;
     }

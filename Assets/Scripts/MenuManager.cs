@@ -16,13 +16,16 @@ public class MenuManager : MonoBehaviour
     public GameObject ChoosingMapDialog;
     public GameObject SettingsDialog;
     public GameObject MainMenu;
+    public Button StartButton;
+    public Toggle Map1Toggle;
+    public Toggle Map2Toggle;
+    public Toggle Map3Toggle;
 
     private string stat_parametr;
     private bool pauseBool;
     private bool saveWindowBool = false;
     public bool isSaveItemDeSelected = false;
     public string saveName = String.Empty;
-    public static string choosedMap = String.Empty;
 
     void Awake() // here was Awake
     {
@@ -38,7 +41,19 @@ public class MenuManager : MonoBehaviour
             }
         }
     }
-    
+
+    private void Update()
+    {
+        if (Basket.instance.mapType == String.Empty)
+        {
+            StartButton.interactable = false;
+        }
+        else
+        {
+            StartButton.interactable = true;
+        }
+    }
+
     public void MMPressContinue()
     {
         DateTime last_modif_time = DateTime.MinValue;
@@ -90,21 +105,52 @@ public class MenuManager : MonoBehaviour
     
     public void ChoosedMap1()
     {
-        Basket.instance.mapType = "map1";
+        if (Map1Toggle.isOn)
+        {
+            Basket.instance.mapType = "map1";
+            Map2Toggle.SetIsOnWithoutNotify(false);
+            Map3Toggle.SetIsOnWithoutNotify(false);
+        }
+        else
+        {
+            Basket.instance.mapType = String.Empty;
+        }
+        
     }
     public void ChoosedMap2()
     {
-        Basket.instance.mapType = "map2";
+        if (Map2Toggle.isOn)
+        {
+            Basket.instance.mapType = "map2";
+            Map1Toggle.SetIsOnWithoutNotify(false);
+            Map3Toggle.SetIsOnWithoutNotify(false);
+        }
+        else
+        {
+            Basket.instance.mapType = String.Empty;
+        }
+        
     }
     public void ChoosedMap3()
     {
-        Basket.instance.mapType = "map3";
+        if (Map3Toggle.isOn)
+        {
+            Basket.instance.mapType = "map3";
+            Map1Toggle.SetIsOnWithoutNotify(false);
+            Map2Toggle.SetIsOnWithoutNotify(false);
+        }
+        else
+        {
+            Basket.instance.mapType = String.Empty;
+        }
+        
     }
     
     
     
     public void MapDialogPressCancel()
     {
+        Basket.instance.mapType = String.Empty;
         ChoosingMapDialog.SetActive(false);
     }
     public void MapDialogPressStart()
