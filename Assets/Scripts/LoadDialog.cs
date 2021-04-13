@@ -19,15 +19,6 @@ public class LoadDialog : MonoBehaviour
     private RectTransform grid;
     private RectTransform savelistRectTransform;
 
-    private void Update()
-    {
-        
-        // if (UIManager.instance.isSaveItemDeSelected == true)
-        // {
-        //     deleteButton.interactable = false;
-        // }
-        
-    }
 
     private void OnEnable()
     {

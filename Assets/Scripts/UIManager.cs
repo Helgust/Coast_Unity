@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,12 +25,14 @@ public class UIManager : MonoBehaviour
     public GameObject ExportDialog;
     public GameObject SettingsDialog;
     public GameObject FinalDialog;
+    public TMP_Text FinalDialogText;
     public InputField CreatingSave;
 
     private string stat_parametr;
     private bool pauseBool;
     private bool statWindowBool = false;
     private bool saveWindowBool = false;
+    private bool settingWindowBool = false;
     private bool loadWindowBool = false;
     private bool exportWindowBool = false;
     public bool isSaveItemDeSelected = false;
@@ -37,6 +41,7 @@ public class UIManager : MonoBehaviour
     public Dictionary<string, Color> paramDict = new Dictionary<string, Color>();
     public Dictionary<string, List<bool>> finDict = new Dictionary<string, List<bool>>();
 
+    //public UnityEvent<bool> OnUiButtonPressed;
 
     void Awake() // here was Awake
     {
@@ -72,7 +77,7 @@ public class UIManager : MonoBehaviour
     public void ShowStatView()
     {
         //List<int> valueList = new List<int>() {23,5,1,76,2,4,43,68,23,4,15,25};
-        
+
         HideAllStatButtons();
         WGObject.SetActive(true);
         setStatWinBool(true);
@@ -132,7 +137,7 @@ public class UIManager : MonoBehaviour
 
     public void PauseMenuCheck()
     {
-        if (pauseBool == false && saveWindowBool == false)
+        if (pauseBool == false && saveWindowBool == false && settingWindowBool == false)
         {
             PauseMenu.SetActive(true);
             pauseBool = true;
@@ -186,6 +191,7 @@ public class UIManager : MonoBehaviour
 
     public void MenuPressSettingButton()
     {
+        settingWindowBool = true;
         pauseBool = false;
         PauseMenu.SetActive(false);
         SettingsDialog.SetActive(true);
@@ -216,6 +222,7 @@ public class UIManager : MonoBehaviour
 
     public void SettingDialogPressClose()
     {
+        settingWindowBool = false;
         SettingsDialog.SetActive(false);
     }
 

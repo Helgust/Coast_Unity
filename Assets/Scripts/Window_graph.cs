@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Window_graph : MonoBehaviour
 {
-    private static Window_graph instance;
     [SerializeField] private GameObject circleObject;
     private RectTransform graphContainer;
     private RectTransform labelTemplateX;
@@ -21,7 +20,6 @@ public class Window_graph : MonoBehaviour
     private void Awake()
     {
         Debug.Log("HUI");
-        instance = this;
         graphContainer = transform.Find("graphContainer").GetComponent<RectTransform>();
         labelTemplateX = graphContainer.Find("labelTemplateX").GetComponent<RectTransform>();
         labelTemplateY = graphContainer.Find("labelTemplateY").GetComponent<RectTransform>();
@@ -49,7 +47,7 @@ public class Window_graph : MonoBehaviour
 
         if (getAxisLabelX == null)
         {
-            getAxisLabelX = delegate(int _i) { return _i.ToString(); };
+            getAxisLabelX = delegate(int _i) { return (_i+1).ToString(); };
         }
 
         if (getAxisLabelY == null)
@@ -81,8 +79,8 @@ public class Window_graph : MonoBehaviour
 
         foreach (var param in paramDict)
         {
-            for (int i = Mathf.Max((GameManager.instance.currentYear - 1 - maxVisibleAmontValues), 0);
-                i < GameManager.instance.currentYear - 1;
+            for (int i = Mathf.Max((GameManager.instance.currentYear - maxVisibleAmontValues), 0);
+                i < GameManager.instance.currentYear;
                 i++)
             {
                 float value = DB.instance.statDict[param.Key][i];

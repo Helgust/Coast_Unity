@@ -5,24 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de759657-e7b8-48fc-a140-a1531cbbf490" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/New_sprite/clock-pixel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/New_sprite/clock-pixel.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/New_sprite/debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/New_sprite/pixel-20-512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/New_sprite/pixel-20-512.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reports/report_Helgust_02-04-2021-06-02-35.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reports/report_Helgust_02-04-2021-06-02-35.csv.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reports/report_Helgust_02-04-2021-06-02-57.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reports/report_Helgust_02-04-2021-06-02-57.csv.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/Helgust_03-04-2021-07-03-27.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/Helgust_03-04-2021-07-03-27.data.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New_sprite/debug.log.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/JOPA.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/JOPA.data.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CSVParsing.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CSVParsing.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExportDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ExportDialog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/toltipScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/toltipScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/gameSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/gameSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +57,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/toltipScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoadDialogInMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BAD59441-8129-43C7-B8D5-A5BA85795810/79/7a8df5f3/Screen.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Basket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" root0="FORCE_HIGHLIGHTING" />
@@ -84,22 +89,22 @@
       <option value="$PROJECT_DIR$/Assets/Resources/Configs/map3BG.json" />
       <option value="$PROJECT_DIR$/Assets/Resources/Configs/map3Map.json" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SaveDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ZoomWithMouseWheel.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/toltipScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/OLD.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ExportDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Resources/Configs/gameSettings.json" />
       <option value="$PROJECT_DIR$/Assets/Scripts/gameSettings.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameSettings.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" />
     </changedPaths>
@@ -203,7 +208,11 @@
       <workItem from="1618046515717" duration="2038000" />
       <workItem from="1618064659260" duration="10420000" />
       <workItem from="1618081318328" duration="72000" />
-      <workItem from="1618130720740" duration="11289000" />
+      <workItem from="1618130720740" duration="11594000" />
+      <workItem from="1618231332106" duration="4379000" />
+      <workItem from="1618259767312" duration="13294000" />
+      <workItem from="1618273442848" duration="871000" />
+      <workItem from="1618302832686" duration="1023000" />
     </task>
     <servers />
   </component>

@@ -41,7 +41,7 @@ public class SettingsMenu : MonoBehaviour
         resolitionsDropdown.AddOptions(rOptions) ;
         resolitionsDropdown.value = currentResolutionIndex;
         resolitionsDropdown.RefreshShownValue();
-        readGameSettings();
+        //SaveGameSettings();
     }
     
     private void OnEnable()
@@ -49,7 +49,7 @@ public class SettingsMenu : MonoBehaviour
         GetSettingItems();
         readGameSettings();
     }
-
+    
     private void GetSettingItems()
     {
         resolitionsDropdown = transform.Find("DialogWindow/Resolution").gameObject.GetComponent<TMP_Dropdown>();
@@ -78,7 +78,7 @@ public class SettingsMenu : MonoBehaviour
             SetQuality(_settings.currentQualityIndex);
         }
     }
-    public void saveGameSettings()
+    public void SaveGameSettings()
     {
         
         //_gameSettingsJSON = Resources.Load <TextAsset> ("Configs/gameSettings");
@@ -88,8 +88,13 @@ public class SettingsMenu : MonoBehaviour
         _settings.currentQualityIndex = qualityDropdown.value;
         _settings.currentResolutionIndex = resolitionsDropdown.value;
         
+        
         string settingText = JsonUtility.ToJson(_settings);
+        Debug.Log("SettingText"+settingText);
         File.WriteAllText(Application.dataPath + "/gameSettings.json", settingText);
+        SetFullscreen(_settings.fullScreenflag);
+        SetResolution(_settings.currentResolutionIndex);
+        SetQuality(_settings.currentQualityIndex);
     }
 
     public void SetFullscreen(bool isFullScreen)

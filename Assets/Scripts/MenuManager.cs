@@ -17,6 +17,7 @@ public class MenuManager : MonoBehaviour
     public GameObject SettingsDialog;
     public GameObject MainMenu;
     public Button StartButton;
+    public Button CountinueButton;
     public Toggle Map1Toggle;
     public Toggle Map2Toggle;
     public Toggle Map3Toggle;
@@ -40,18 +41,28 @@ public class MenuManager : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
-
-    private void Update()
-    {
-        if (Basket.instance.mapType == String.Empty)
+        
+        DirectoryInfo d = new DirectoryInfo(Application.dataPath + "/Save/");
+        if (!d.Exists)
         {
-            StartButton.interactable = false;
+            CountinueButton.interactable = false;
+            Directory.CreateDirectory(Application.dataPath + "/Save/");
         }
         else
         {
-            StartButton.interactable = true;
+            FileInfo[] files = d.GetFiles("*.data");
+            if (files.Length == 0)
+            {
+                CountinueButton.interactable = false;
+            }
+            else
+            {
+                CountinueButton.interactable = true;
+            }
         }
+        
+        
+        
     }
 
     public void MMPressContinue()
@@ -110,9 +121,11 @@ public class MenuManager : MonoBehaviour
             Basket.instance.mapType = "map1";
             Map2Toggle.SetIsOnWithoutNotify(false);
             Map3Toggle.SetIsOnWithoutNotify(false);
+            StartButton.interactable = true;
         }
         else
         {
+            StartButton.interactable = false;
             Basket.instance.mapType = String.Empty;
         }
         
@@ -124,9 +137,11 @@ public class MenuManager : MonoBehaviour
             Basket.instance.mapType = "map2";
             Map1Toggle.SetIsOnWithoutNotify(false);
             Map3Toggle.SetIsOnWithoutNotify(false);
+            StartButton.interactable = true;
         }
         else
         {
+            StartButton.interactable = false;
             Basket.instance.mapType = String.Empty;
         }
         
@@ -138,9 +153,11 @@ public class MenuManager : MonoBehaviour
             Basket.instance.mapType = "map3";
             Map1Toggle.SetIsOnWithoutNotify(false);
             Map2Toggle.SetIsOnWithoutNotify(false);
+            StartButton.interactable = true;
         }
         else
         {
+            StartButton.interactable = false;
             Basket.instance.mapType = String.Empty;
         }
         

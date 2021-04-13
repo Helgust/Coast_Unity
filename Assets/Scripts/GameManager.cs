@@ -4,19 +4,21 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using Newtonsoft.Json;
 using UnityEngine.UI;
-
-using System.Collections.Generic;//Allows us to use Lists. 
+using System.Collections.Generic;
+using TMPro; //Allows us to use Lists. 
 
 public class GameManager : MonoBehaviour
 {
-	public static GameManager instance;
+    public static GameManager instance;
     public bool ShiftBool;
     public bool CtrlBool;
 
     public int currentYear;
     public string mapType = String.Empty;
-    public bool gameStartFlag =false;
+    public bool gameStartFlag = false;
+
     public int finalYear;
+
     //public bool inMainMenuState;
     private BoardManager BoardScript;
 
@@ -24,7 +26,6 @@ public class GameManager : MonoBehaviour
     public GameObject DBObject;
     public GameObject UIObject;
     private InputHandler IHScript;
-    
 
 
     //public bool enable;
@@ -34,55 +35,54 @@ public class GameManager : MonoBehaviour
 
     void GetConfig()
     {
-	    configJSON = Resources.Load <TextAsset> ("Configs/config");
-	    configMapJSON = Resources.Load <TextAsset> ("Configs/"+Basket.instance.mapType+"Map");
-	    configBGJSON = Resources.Load <TextAsset> ("Configs/"+Basket.instance.mapType+"BG");
-	    mapType = Basket.instance.mapType;
+        configJSON = Resources.Load<TextAsset>("Configs/config");
+        configMapJSON = Resources.Load<TextAsset>("Configs/" + Basket.instance.mapType + "Map");
+        configBGJSON = Resources.Load<TextAsset>("Configs/" + Basket.instance.mapType + "BG");
+        mapType = Basket.instance.mapType;
     }
 
 
     //Awake is always called before any Start functions
     void Awake() // here was Awake
     {
-	    if(instance == null)
-	    {
-		    instance = this;
-	    }
-	    else
-	    {
-		    if(instance != this)
-		    {
-			    Destroy(gameObject);
-		    }
-	    }
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            if (instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
 
-	    //DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
-	    //inMainMenuState = true;
+        //inMainMenuState = true;
     }
 
     //This is called each time a scene is loaded.
     private void Start()
     {
-	    gameStartFlag = true;
-	    BoardScript = GetComponent<BoardManager>();
-	    IHScript = IHObject.GetComponent<InputHandler>();
-	    if (Basket.instance.modeType == "LOAD")
-	    { 
-		    instance.LoadFromSave(Basket.instance.saveData);
-	    }
-	    else // modeType == "NEW"
-	    {
-		    GetConfig();
-		    InitGame();
-	    }
-	    
+        gameStartFlag = true;
+        BoardScript = GetComponent<BoardManager>();
+        IHScript = IHObject.GetComponent<InputHandler>();
+        if (Basket.instance.modeType == "LOAD")
+        {
+            instance.LoadFromSave(Basket.instance.saveData);
+        }
+        else // modeType == "NEW"
+        {
+            GetConfig();
+            InitGame();
+        }
     }
 
     //Initializes the game for each level.
     void InitGame()
     {
-	    currentYear = 0;
+        currentYear = 0;
         DB.instance.InitDB(configJSON, finalYear);
         DB.instance.InitBoard(configMapJSON);
         DB.instance.InitBG(configBGJSON);
@@ -91,17 +91,11 @@ public class GameManager : MonoBehaviour
         IHScript.InitTextUI();
         currentYear = 1;
     }
+
     void CheckGameOver()
     {
-
     }
 
-     void Update() 
-	{
-		
-	} 
-
-    
 
     private void PrintList(List<int> L)
     {
@@ -110,16 +104,25 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log(L[i]);
         }
-        Debug.Log("--------");
 
+        Debug.Log("--------");
     }
+
     public void NextMove()
     {
         Debug.Log("IS_OVER: " + DB.instance.is_over);
-        if ((currentYear > finalYear - 1) || (DB.instance.is_over == true))
+        if ((currentYear > finalYear - 1))
         {
-	        enabled = false;
+            enabled = false;
             UIManager.instance.NextMoveButtons.interactable = false;
+            UIManager.instance.FinalDialogText.text = "Years of simulation ended";
+            UIManager.instance.FinalDialog.SetActive(true);
+        }
+        else if (DB.instance.is_over)
+        {
+            enabled = false;
+            UIManager.instance.NextMoveButtons.interactable = false;
+            UIManager.instance.FinalDialogText.text = "No more space for development";
             UIManager.instance.FinalDialog.SetActive(true);
         }
         else
@@ -130,58 +133,54 @@ public class GameManager : MonoBehaviour
             Destroy(GameObject.FindWithTag("gameBoard"));
             BoardScript.SetupScene(DB.instance.board);
             IHScript.InitNextMove();
+            InputHandler.instance.ChangeUiTextParams();
         }
-
     }
-    
+
     public Save CreateSaveGameObject()
     {
-	    Save save = new Save();
-	    save.currentYear = GameManager.instance.currentYear;
-	    save.saveName = UIManager.instance.CreatingSave.text;
-	    save.mapType = mapType;
-	    save.Listofyears = DB.instance.yearDataBase;
-	    save.statDict = DB.instance.statDict;
-	    save.board = DB.instance.board;
-	    save.boardBG = DB.instance.boardBG;
-	    save.is_over = DB.instance.is_over;
-	    return save;
+        Save save = new Save();
+        save.currentYear = GameManager.instance.currentYear;
+        save.saveName = UIManager.instance.CreatingSave.text;
+        save.mapType = mapType;
+        save.Listofyears = DB.instance.yearDataBase;
+        save.statDict = DB.instance.statDict;
+        save.board = DB.instance.board;
+        save.boardBG = DB.instance.boardBG;
+        save.is_over = DB.instance.is_over;
+        return save;
     }
 
     public void LoadFromSave(Save new_save)
     {
-	    Time.timeScale = 0;
-	    if (DB.instance.yearDataBase.Count == 0)
-	    {
-		    DB.instance.yearDataBase.Clear();
-		    DB.instance.yearDataBase = new_save.Listofyears;
-		    DB.instance.statDict = new_save.statDict;
-	    }
-	    else
-	    {
-		    
-		    Destroy(GameObject.FindWithTag("gameBoardBG"));
-		    Destroy(GameObject.FindWithTag("gameBoard"));
+        Time.timeScale = 0;
+        if (DB.instance.yearDataBase.Count == 0)
+        {
+            DB.instance.yearDataBase.Clear();
+            DB.instance.yearDataBase = new_save.Listofyears;
+            DB.instance.statDict = new_save.statDict;
+        }
+        else
+        {
+            Destroy(GameObject.FindWithTag("gameBoardBG"));
+            Destroy(GameObject.FindWithTag("gameBoard"));
 
-		    
-		    DB.instance.yearDataBase.Clear();
-		    DB.instance.statDict.Clear();
-		    
-		    GameManager.instance.currentYear = new_save.currentYear;
-		    DB.instance.yearDataBase = new_save.Listofyears;
-		    DB.instance.statDict = new_save.statDict;
-		    DB.instance.boardBG = new_save.boardBG;
-		    DB.instance.board = new_save.board;
-		    DB.instance.is_over = new_save.is_over;
-		    
-		    //DB.instance.board.array2d.Reverse();
-		    BoardScript.SetupBGScene(DB.instance.boardBG);
-		    BoardScript.SetupScene(DB.instance.board);
-		    GameObject.FindWithTag("gameBoardBG").SetActive(true);
-		    //todo 
-	    }
-	    
+
+            DB.instance.yearDataBase.Clear();
+            DB.instance.statDict.Clear();
+
+            GameManager.instance.currentYear = new_save.currentYear;
+            DB.instance.yearDataBase = new_save.Listofyears;
+            DB.instance.statDict = new_save.statDict;
+            DB.instance.boardBG = new_save.boardBG;
+            DB.instance.board = new_save.board;
+            DB.instance.is_over = new_save.is_over;
+
+            //DB.instance.board.array2d.Reverse();
+            BoardScript.SetupBGScene(DB.instance.boardBG);
+            BoardScript.SetupScene(DB.instance.board);
+            GameObject.FindWithTag("gameBoardBG").SetActive(true);
+            //todo 
+        }
     }
-    
-
 }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class InputHandler : MonoBehaviour
 {
+    public static InputHandler instance;
     private string value;
     public GameObject DBObject;
     private DB DBScript;
@@ -18,7 +19,6 @@ public class InputHandler : MonoBehaviour
     public GameObject InputPar6;
     public GameObject InputPar7;
     public GameObject SumPar;
-    public TMP_Text YearCounter;
     public GameObject ResourceBar;
 
     private int ProcPar1 = 0;
@@ -27,10 +27,9 @@ public class InputHandler : MonoBehaviour
     private int ProcPar4 = 0;
     private int ProcPar5 = 0;
     private int ProcPar6 = 5;
-
     private int ProcPar7 = 5;
-    //private int SumProc = 10;
 
+    //private int SumProc = 10;
     private int ProcTotal;
 
 
@@ -47,10 +46,23 @@ public class InputHandler : MonoBehaviour
     List<float> Res = new List<float>();
 
     int c_year;
-
+    
 
     void Awake() // here was Awake
     {
+       
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                if (instance != this)
+                {
+                    Destroy(gameObject);
+                }
+            }
+            
         c_year = GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentYear;
         DBScript = DBObject.GetComponent<DB>();
         ProcPar1 = 0;
@@ -87,7 +99,8 @@ public class InputHandler : MonoBehaviour
         ProcPar7 = 5;
     }
 
-    public void Update()
+
+    public void ChangeUiTextParams()
     {
         if (GameManager.instance.gameStartFlag)
         {
@@ -95,8 +108,9 @@ public class InputHandler : MonoBehaviour
             c_year = GameManager.instance.currentYear;
             if (c_year == 0)
             {
-                c_year = 1; // remove it AFAP(As Fast As Possible)
+                c_year = 1;
             }
+
 
             // index 2 its Money Par
             InputPar1.transform.GetChild(2).GetComponent<Text>().text =
@@ -126,27 +140,28 @@ public class InputHandler : MonoBehaviour
             InputPar6.transform.GetChild(3).GetComponent<Text>().text = ProcPar6.ToString();
             InputPar7.transform.GetChild(3).GetComponent<Text>().text = ProcPar7.ToString();
             SumPar.transform.GetChild(2).GetComponent<Text>().text = FuncProcTotal().ToString();
-            YearCounter.text = c_year.ToString();
 
-            ResourceBar.transform.GetChild(0).GetChild(2).GetComponent<TMP_Text>().text =
+
+            ResourceBar.transform.GetChild(0).GetChild(2).GetComponent<TMP_Text>().text = (c_year - 1 + 1).ToString();
+            ResourceBar.transform.GetChild(1).GetChild(2).GetComponent<TMP_Text>().text =
                 DB.instance.yearDataBase[c_year - 1].fishAmount.ToString("0,0");
-            ResourceBar.transform.GetChild(1).GetChild(2).GetComponent<TMP_Text>().text = DB.instance
+            ResourceBar.transform.GetChild(2).GetChild(2).GetComponent<TMP_Text>().text = DB.instance
                 .yearDataBase[c_year - 1].population.ToString("0,0");
-            ResourceBar.transform.GetChild(2).GetChild(2).GetComponent<TMP_Text>().text =
+            ResourceBar.transform.GetChild(3).GetChild(2).GetComponent<TMP_Text>().text =
                 DB.instance.yearDataBase[c_year - 1].budget.ToString("0,0");
-            ResourceBar.transform.GetChild(3).GetChild(2).GetComponent<TMP_Text>().text = DB.instance
-                .yearDataBase[c_year - 1].incomeSumPerHum.ToString("0.00");
             ResourceBar.transform.GetChild(4).GetChild(2).GetComponent<TMP_Text>().text = DB.instance
+                .yearDataBase[c_year - 1].incomeSumPerHum.ToString("0.00");
+            ResourceBar.transform.GetChild(5).GetChild(2).GetComponent<TMP_Text>().text = DB.instance
                 .yearDataBase[c_year - 1].qualityOfEnv.ToString("0.00");
-            ResourceBar.transform.GetChild(5).GetChild(2).GetComponent<TMP_Text>().text =
+            ResourceBar.transform.GetChild(6).GetChild(2).GetComponent<TMP_Text>().text =
                 DB.instance.yearDataBase[c_year - 1].humDevInd.ToString("0.0");
-
-            if ((Input.GetKeyDown(KeyCode.Escape)))
-            {
-                UIManager.instance.PauseMenuCheck();
-            }
-            
-            
+        }
+    }
+    public void Update()
+    {
+        if ((Input.GetKeyDown(KeyCode.Escape)))
+        {
+            UIManager.instance.PauseMenuCheck();
         }
     }
 
@@ -170,6 +185,7 @@ public class InputHandler : MonoBehaviour
         InputPar6.transform.GetChild(3).GetComponent<Text>().text = "5";
         InputPar7.transform.GetChild(3).GetComponent<Text>().text = "5";
         SumPar.transform.GetChild(1).GetComponent<Text>().text = "10";
+        ChangeUiTextParams();
     }
 
     public void PlusClickPar1()
@@ -189,6 +205,7 @@ public class InputHandler : MonoBehaviour
             {
                 ProcPar1 += 1;
             }
+            ChangeUiTextParams();
         }
     }
 
@@ -210,6 +227,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar2 += 1;
             }
         }
+        ChangeUiTextParams();
     }
 
     public void PlusClickPar3()
@@ -230,6 +248,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar3 += 1;
             }
         }
+        ChangeUiTextParams();
     }
 
     public void PlusClickPar4()
@@ -250,6 +269,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar4 += 1;
             }
         }
+        ChangeUiTextParams();
     }
 
     public void PlusClickPar5()
@@ -270,6 +290,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar5 += 1;
             }
         }
+        ChangeUiTextParams();
     }
 
     public void PlusClickPar6()
@@ -290,6 +311,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar6 += 1;
             }
         }
+        ChangeUiTextParams();
     }
 
     public void PlusClickPar7()
@@ -310,6 +332,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar7 += 1;
             }
         }
+        ChangeUiTextParams();
     }
 
     public void MinusClickPar1()
@@ -330,6 +353,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar1 -= 1;
             }
         }
+        ChangeUiTextParams();
     }
 
     public void MinusClickPar2()
@@ -350,6 +374,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar2 -= 1;
             }
         }
+        ChangeUiTextParams();
     }
 
     public void MinusClickPar3()
@@ -370,6 +395,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar3 -= 1;
             }
         }
+        ChangeUiTextParams();
     }
 
     public void MinusClickPar4()
@@ -390,6 +416,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar4 -= 1;
             }
         }
+        ChangeUiTextParams();
     }
 
     public void MinusClickPar5()
@@ -410,6 +437,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar5 -= 1;
             }
         }
+        ChangeUiTextParams();
     }
 
     public void MinusClickPar6()
@@ -430,6 +458,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar6 -= 1;
             }
         }
+        ChangeUiTextParams();
     }
 
     public void MinusClickPar7()
@@ -450,6 +479,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar7 -= 1;
             }
         }
+        ChangeUiTextParams();
     }
 
 
@@ -464,6 +494,7 @@ public class InputHandler : MonoBehaviour
         {
             return 0;
         }
+        
     }
 
     public float Invest2()
