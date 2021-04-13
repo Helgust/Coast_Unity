@@ -41,7 +41,11 @@ public class SettingsMenu : MonoBehaviour
         resolitionsDropdown.AddOptions(rOptions) ;
         resolitionsDropdown.value = currentResolutionIndex;
         resolitionsDropdown.RefreshShownValue();
-        //SaveGameSettings();
+        if (!File.Exists(Application.dataPath + "/gameSettings.json"))
+        {
+            SaveGameSettings();
+        }
+        
     }
     
     private void OnEnable()
