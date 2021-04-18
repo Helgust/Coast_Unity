@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -16,6 +17,7 @@ public class MenuManager : MonoBehaviour
     public GameObject ChoosingMapDialog;
     public GameObject SettingsDialog;
     public GameObject MainMenu;
+    public TMP_Text Description;
     public Button StartButton;
     public Button CountinueButton;
     public Toggle Map1Toggle;
@@ -60,9 +62,11 @@ public class MenuManager : MonoBehaviour
                 CountinueButton.interactable = true;
             }
         }
-        
-        
-        
+
+        Map1Toggle.SetIsOnWithoutNotify(true);
+        ChoosedMap1();
+
+
     }
 
     public void MMPressContinue()
@@ -121,11 +125,13 @@ public class MenuManager : MonoBehaviour
             Basket.instance.mapType = "map1";
             Map2Toggle.SetIsOnWithoutNotify(false);
             Map3Toggle.SetIsOnWithoutNotify(false);
+            Description.text = "Description1";
             StartButton.interactable = true;
         }
         else
         {
             StartButton.interactable = false;
+            Description.text = String.Empty;
             Basket.instance.mapType = String.Empty;
         }
         
@@ -137,11 +143,13 @@ public class MenuManager : MonoBehaviour
             Basket.instance.mapType = "map2";
             Map1Toggle.SetIsOnWithoutNotify(false);
             Map3Toggle.SetIsOnWithoutNotify(false);
+            Description.text = "Description2";
             StartButton.interactable = true;
         }
         else
         {
             StartButton.interactable = false;
+            Description.text = String.Empty;
             Basket.instance.mapType = String.Empty;
         }
         
@@ -153,11 +161,13 @@ public class MenuManager : MonoBehaviour
             Basket.instance.mapType = "map3";
             Map1Toggle.SetIsOnWithoutNotify(false);
             Map2Toggle.SetIsOnWithoutNotify(false);
+            Description.text = "Description3";
             StartButton.interactable = true;
         }
         else
         {
             StartButton.interactable = false;
+            Description.text = String.Empty;
             Basket.instance.mapType = String.Empty;
         }
         
