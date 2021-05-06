@@ -9,11 +9,13 @@ public class GameSettings
     public int currentQualityIndex;
     public bool fullScreenflag;
     public int currentLanguage;
+    public string currentLanguageName;
 
     public GameSettings()
     {
         this.fullScreenflag = false;
         this.currentLanguage = 0;
+        this.currentLanguageName = "English";
         this.currentResolutionIndex = 0;
         this.currentQualityIndex = 1;
     }
@@ -28,6 +30,11 @@ public class GameSettings
     {
         get => currentLanguage;
         set => currentLanguage = value;
+    }
+    public string CurrentLanguageName
+    {
+        get => currentLanguageName;
+        set => currentLanguageName = value;
     }
 
 

@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Assets.SimpleLocalization;
 
 public class MenuManager : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class MenuManager : MonoBehaviour
     public Toggle Map1Toggle;
     public Toggle Map2Toggle;
     public Toggle Map3Toggle;
-
+    public GameObject DescriptionGO;
     private string stat_parametr;
     private bool pauseBool;
     private bool saveWindowBool = false;
@@ -65,10 +66,23 @@ public class MenuManager : MonoBehaviour
 
         Map1Toggle.SetIsOnWithoutNotify(true);
         ChoosedMap1();
+        
+        LocalizationManager.Read();
+        SettingsDialog.GetComponent<SettingsMenu>().Start();
 
-
+        // switch (Application.systemLanguage)
+        // {
+        //     case SystemLanguage.Russian:
+        //         LocalizationManager.Language = "Russian";
+        //         break;
+        //     default:
+        //         LocalizationManager.Language = "English";
+        //         break;
+        // }
+        
     }
-
+ 
+    
     public void MMPressContinue()
     {
         DateTime last_modif_time = DateTime.MinValue;
@@ -127,6 +141,8 @@ public class MenuManager : MonoBehaviour
             Map3Toggle.SetIsOnWithoutNotify(false);
             Description.text = "Description1";
             StartButton.interactable = true;
+            DescriptionGO.GetComponent<LocalizedText>().LocalizationKey = "NewGame.Description1";
+            DescriptionGO.GetComponent<LocalizedText>().Start();
         }
         else
         {
@@ -145,6 +161,8 @@ public class MenuManager : MonoBehaviour
             Map3Toggle.SetIsOnWithoutNotify(false);
             Description.text = "Description2";
             StartButton.interactable = true;
+            DescriptionGO.GetComponent<LocalizedText>().LocalizationKey = "NewGame.Description2";
+            DescriptionGO.GetComponent<LocalizedText>().Start();
         }
         else
         {
@@ -163,6 +181,8 @@ public class MenuManager : MonoBehaviour
             Map2Toggle.SetIsOnWithoutNotify(false);
             Description.text = "Description3";
             StartButton.interactable = true;
+            DescriptionGO.GetComponent<LocalizedText>().LocalizationKey = "NewGame.Description3";
+            DescriptionGO.GetComponent<LocalizedText>().Start();
         }
         else
         {
@@ -202,4 +222,6 @@ public class MenuManager : MonoBehaviour
     {
         SettingsDialog.SetActive(false);
     }
+
+    
 }

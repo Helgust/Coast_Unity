@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de759657-e7b8-48fc-a140-a1531cbbf490" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/gameSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Configs/gameSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Basket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Basket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/COMPAS_FINAL.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/COMPAS_FINAL.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/gameSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/gameSettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +66,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI_StatWindows.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MenuManger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LoadinDialogInMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Basket.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialogInMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
       <option value="$PROJECT_DIR$/Assets/Configs/map1Map.json" />
@@ -75,7 +85,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/OLD.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ExportDialog.cs" />
-      <option value="$PROJECT_DIR$/Assets/Resources/Configs/gameSettings.json" />
       <option value="$PROJECT_DIR$/Assets/Scripts/gameSettings.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
@@ -83,9 +92,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Example.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Basket.cs" />
+      <option value="$PROJECT_DIR$/Assets/SimpleLocalization/LocalizedText.cs" />
+      <option value="$PROJECT_DIR$/Assets/SimpleLocalization/LocalizedDropdown.cs" />
+      <option value="$PROJECT_DIR$/Assets/Resources/Configs/gameSettings.json" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameSettings.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lsbLZ6lLN3T85LfSGhTvVajcLR" />
@@ -106,7 +120,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="discord-application" />
+    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -198,6 +212,10 @@
       <workItem from="1618343552107" duration="193000" />
       <workItem from="1618343774355" duration="1054000" />
       <workItem from="1619459376147" duration="1971000" />
+      <workItem from="1619774250288" duration="782000" />
+      <workItem from="1620078138649" duration="527000" />
+      <workItem from="1620078904471" duration="633000" />
+      <workItem from="1620295294145" duration="12353000" />
     </task>
     <servers />
   </component>

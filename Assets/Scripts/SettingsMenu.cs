@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using  TMPro;
 using Newtonsoft.Json;
+using Assets.SimpleLocalization;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -45,9 +46,18 @@ public class SettingsMenu : MonoBehaviour
         {
             SaveGameSettings();
         }
+        else
+        {
+            readGameSettings();
+        }
         
     }
-    
+
+    public void Start()
+    {
+        GetSettingItems();
+        FirstReadGameSetting();
+    }
     private void OnEnable()
     {
         GetSettingItems();
@@ -71,6 +81,7 @@ public class SettingsMenu : MonoBehaviour
             SetFullscreen(_settings.fullScreenflag);
             SetResolution(_settings.currentResolutionIndex);
             SetQuality(_settings.currentQualityIndex);
+            SetLanguage(_settings.currentLanguage);
         }
         else
         {
@@ -80,6 +91,14 @@ public class SettingsMenu : MonoBehaviour
             SetFullscreen(_settings.fullScreenflag);
             SetResolution(_settings.currentResolutionIndex);
             SetQuality(_settings.currentQualityIndex);
+            for (int i=0; i < languageDropdown.options.Count;i++)
+            {
+                if (languageDropdown.options[i].text == LocalizationManager.Language)
+                {
+                    _settings.currentLanguage = i;
+                }
+            }
+            SetLanguage(_settings.currentLanguage);
         }
     }
     public void SaveGameSettings()
@@ -89,6 +108,7 @@ public class SettingsMenu : MonoBehaviour
          GameSettings _settings = new GameSettings();
         _settings.fullScreenflag = fullscreen.isOn;
         _settings.currentLanguage = languageDropdown.value;
+        _settings.currentLanguageName = languageDropdown.options[languageDropdown.value].text;
         _settings.currentQualityIndex = qualityDropdown.value;
         _settings.currentResolutionIndex = resolitionsDropdown.value;
         
@@ -99,6 +119,7 @@ public class SettingsMenu : MonoBehaviour
         SetFullscreen(_settings.fullScreenflag);
         SetResolution(_settings.currentResolutionIndex);
         SetQuality(_settings.currentQualityIndex);
+        SetLanguage(_settings.currentLanguage);
     }
 
     public void SetFullscreen(bool isFullScreen)
@@ -126,9 +147,30 @@ public class SettingsMenu : MonoBehaviour
     public void SetLanguage(int languageIndex)
     {
         languageDropdown.SetValueWithoutNotify(languageIndex);
+        string localization = languageDropdown.options[languageIndex].text;
+        SetLocalization(localization);
         //_settings.currentResolutionIndex = resolutionIndex;
         //ToDo Localization
     }
-    
-
+    public void SetLocalization(string localization)
+    {
+        LocalizationManager.Language = localization;
+    }
+    public void FirstReadGameSetting()
+    {
+        if (File.Exists(Application.dataPath + "/gameSettings.json"))
+        {
+            Debug.Log("Exists");
+            string _settingText = File.ReadAllText(Application.dataPath + "/gameSettings.json");
+            GameSettings _settings = JsonConvert.DeserializeObject<GameSettings>(_settingText);
+            SetLocalization(_settings.currentLanguageName);
+        }
+        else
+        {
+            Debug.Log("Not Exists");
+            GameSettings _settings = new GameSettings();
+            Debug.Log("FullDef="+_settings.fullScreenflag);
+            SetLocalization(_settings.currentLanguageName);
+        }
+    }
 }

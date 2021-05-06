@@ -1,0 +1,10 @@
+Key,English,Russian
+NewGame.Map1,Hinterland,Маломорье
+NewGame.Map2,Coastland,Среднеморье
+NewGame.Map3,Sealand,Широкоморье
+NewGame.Description,List of Saves,Список сохранений
+NewGame.Button.Close,Close,Закрыть
+NewGame.Button.Start,Start,Старт
+NewGame.Description1,"Hinterland is a region with a very limited sea resources and very short coastline. Natural communities inhabiting this rather small zone are highly sensitive to anthropogenic impact and, therefore, represent vital importance in choosing the management strategy.","Маломорье - регион с ограниченными морскими ресурсами. Его важная особенность - малая протяженность береговой линии. Природные сообщества, приуроченные к этой очень незначительной по площади зоне, высоко чувствительны к антропогенным воздействиям и, следовательно, имеют ключевое значение при выборе стратегии развития."
+NewGame.Description2,"Coastland is a region where land and sea occupy equal areas. Although the region is quite rich on its marine and land resources and, therefore, has good possibilities for economic development, one should remember that ecological state of coastal zones indicates quality of the environment and sustainable development of the whole region.","Среднеморье - регион, в котором суша и море занимают равные площади. Неплохая обеспеченность и морскими, и наземными ресурсами предоставляет, следовательно, разнообразные возможности для развития хозяйственной деятельности. Но не следует забывать, что состояние прибрежных территорий является важным индикатором качества окружающей среды и гармоничного развития всего региона."
+NewGame.Description3,"Sealand is a region with a very short coastline. Although its land resources are very limited, it is very rich on marine resources. However, choosing a bad management strategy for development of the area can dangerously harm even seemingly unlimited natural resources.","Широкоморье - регион с небольшой площадью побережья. Его наземные ресурсы невелики, а морские -довольно значительны. Однако выбор необоснованной стратегии развития региона может привести к угрожающим последствиям даже для тех природных ресурсов, запасы которых кажутся неисчерпаемыми."
