@@ -29,7 +29,11 @@ namespace Assets.SimpleLocalization
         private void Localize()
         {
             //Debug.Log("TypeOfText"+this.GetType());
-            GetComponent<Text>().text = LocalizationManager.Localize(LocalizationKey);
+            if (this != null)
+            {
+                GetComponent<Text>().text = LocalizationManager.Localize(LocalizationKey);
+            }
+            
         }
     }
 }

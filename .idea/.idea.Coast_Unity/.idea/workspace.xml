@@ -5,29 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de759657-e7b8-48fc-a140-a1531cbbf490" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExportDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ExportDialog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Industry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Industry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadDialogInMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadDialogInMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveDialog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Year.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Year.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/LocalizedDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/LocalizedDropdown.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/LocalizedText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/LocalizedText.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/gameSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/gameSettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +81,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Year.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Industry.cs" />
       <option value="$PROJECT_DIR$/Assets/SimpleLocalization/LocalizedDropdown.cs" />
-      <option value="$PROJECT_DIR$/Assets/SimpleLocalization/LocalizedText.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SaveDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" />
@@ -112,10 +90,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialogInMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameUIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/SimpleLocalization/LocalizedText.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lsbLZ6lLN3T85LfSGhTvVajcLR" />
@@ -235,7 +214,7 @@
       <workItem from="1620319415311" duration="4265000" />
       <workItem from="1620832631447" duration="2621000" />
       <workItem from="1621935919749" duration="7125000" />
-      <workItem from="1622278840570" duration="14127000" />
+      <workItem from="1622278840570" duration="14994000" />
     </task>
     <servers />
   </component>
