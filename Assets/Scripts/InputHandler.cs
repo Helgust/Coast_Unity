@@ -9,7 +9,6 @@ public class InputHandler : MonoBehaviour
 {
     public static InputHandler instance;
     private string value;
-    public GameObject DBObject;
     private DB DBScript;
     public GameObject InputPar1;
     public GameObject InputPar2;
@@ -46,25 +45,29 @@ public class InputHandler : MonoBehaviour
     List<float> Res = new List<float>();
 
     int c_year;
-    
+
 
     void Awake() // here was Awake
     {
-       
-            if (instance == null)
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            if (instance != this)
             {
-                instance = this;
+                Destroy(gameObject);
             }
-            else
-            {
-                if (instance != this)
-                {
-                    Destroy(gameObject);
-                }
-            }
-            
-        c_year = GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentYear;
-        DBScript = DBObject.GetComponent<DB>();
+        }
+        //DontDestroyOnLoad(gameObject);
+        
+    }
+
+    public void OnEnable()
+    {
+        //c_year = GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentYear;
+        //DBScript = GameManager.instance.DBObject.GetComponent<DB>();
         ProcPar1 = 0;
         ProcPar2 = 0;
         ProcPar3 = 0;
@@ -72,8 +75,8 @@ public class InputHandler : MonoBehaviour
         ProcPar5 = 0;
         ProcPar6 = 5;
         ProcPar7 = 5;
+        InitTextUI();
     }
-
     public List<float> FromUIToDB()
     {
         Res.Clear();
@@ -102,15 +105,13 @@ public class InputHandler : MonoBehaviour
 
     public void ChangeUiTextParams()
     {
-        if (GameManager.instance.gameStartFlag)
+        if (UIManager.instance.curUIState == UIManager.UIState.Game)
         {
-            //c_year  = GameObject.FindWithTag("GameController").GetComponent<GameManager>().currentYear;
             c_year = GameManager.instance.currentYear;
             if (c_year == 0)
             {
                 c_year = 1;
             }
-
 
             // index 2 its Money Par
             InputPar1.transform.GetChild(2).GetComponent<Text>().text =
@@ -157,11 +158,12 @@ public class InputHandler : MonoBehaviour
                 DB.instance.yearDataBase[c_year - 1].humDevInd.ToString("0.0");
         }
     }
+
     public void Update()
     {
         if ((Input.GetKeyDown(KeyCode.Escape)))
         {
-            UIManager.instance.PauseMenuCheck();
+            GameUIManager.instance.PauseMenuCheck();
         }
     }
 
@@ -184,7 +186,7 @@ public class InputHandler : MonoBehaviour
         InputPar5.transform.GetChild(3).GetComponent<Text>().text = "0";
         InputPar6.transform.GetChild(3).GetComponent<Text>().text = "5";
         InputPar7.transform.GetChild(3).GetComponent<Text>().text = "5";
-        SumPar.transform.GetChild(1).GetComponent<Text>().text = "10";
+        SumPar.transform.GetChild(2).GetComponent<Text>().text = "10";
         ChangeUiTextParams();
     }
 
@@ -205,6 +207,7 @@ public class InputHandler : MonoBehaviour
             {
                 ProcPar1 += 1;
             }
+
             ChangeUiTextParams();
         }
     }
@@ -227,6 +230,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar2 += 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -248,6 +252,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar3 += 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -269,6 +274,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar4 += 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -290,6 +296,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar5 += 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -311,6 +318,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar6 += 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -332,6 +340,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar7 += 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -353,6 +362,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar1 -= 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -374,6 +384,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar2 -= 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -395,6 +406,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar3 -= 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -416,6 +428,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar4 -= 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -437,6 +450,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar5 -= 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -458,6 +472,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar6 -= 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -479,6 +494,7 @@ public class InputHandler : MonoBehaviour
                 ProcPar7 -= 1;
             }
         }
+
         ChangeUiTextParams();
     }
 
@@ -494,7 +510,6 @@ public class InputHandler : MonoBehaviour
         {
             return 0;
         }
-        
     }
 
     public float Invest2()

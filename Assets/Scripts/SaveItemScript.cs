@@ -9,11 +9,11 @@ public class SaveItemScript : MonoBehaviour,IDeselectHandler,ISelectHandler
 {
     public void OnDeselect(BaseEventData eventData)
     {
-        UIManager.instance.isSaveItemDeSelected = true;
+        GameUIManager.instance.isSaveItemDeSelected = true;
     }
 
     public void OnSelect(BaseEventData eventData)
     {
-        UIManager.instance.saveName = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text;
+        GameUIManager.instance.saveName = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text;
     }
 }

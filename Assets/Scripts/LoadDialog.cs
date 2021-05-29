@@ -54,40 +54,40 @@ public class LoadDialog : MonoBehaviour
 
     public void PressLoad()
     {
-        UIManager.instance.setSaveWinBool(false);
-        LoadProcess(UIManager.instance.choosedSave);
-        UIManager.instance.setPauseBool(false);
+        GameUIManager.instance.setSaveWinBool(false);
+        LoadProcess(GameUIManager.instance.choosedSave);
+        GameUIManager.instance.setPauseBool(false);
         ExistSaveList.SetActive(false);
         ExistSaveList.SetActive(true);
-        UIManager.instance.setLoadWinBool(false);
-        UIManager.instance.setPauseBool(false);
-        UIManager.instance.LoadingDialog.SetActive(false);
+        GameUIManager.instance.setLoadWinBool(false);
+        GameUIManager.instance.setPauseBool(false);
+        GameUIManager.instance.LoadingDialog.SetActive(false);
     }
     public void PressDelete()
     {
-        if (UIManager.instance.choosedSave != null && UIManager.instance.choosedSave.EndsWith(".data"))
+        if (GameUIManager.instance.choosedSave != null && GameUIManager.instance.choosedSave.EndsWith(".data"))
         {
-            File.Delete(Application.dataPath + "/Save/" + UIManager.instance.choosedSave);
+            File.Delete(Application.dataPath + "/Save/" + GameUIManager.instance.choosedSave);
         }
         ExistSaveList.SetActive(false);
-        UIManager.instance.choosedSave = String.Empty;
+        GameUIManager.instance.choosedSave = String.Empty;
         ExistSaveList.SetActive(true);
     }
 
     public void PressCancel()
     {
-        UIManager.instance.setLoadWinBool(false);
-        UIManager.instance.setPauseBool(false);
-        UIManager.instance.LoadingDialog.SetActive(false);
+        GameUIManager.instance.setLoadWinBool(false);
+        GameUIManager.instance.setPauseBool(false);
+        GameUIManager.instance.LoadingDialog.SetActive(false);
     }
     
     public void PressOnSaveItem()
     {
         //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text);
-        UIManager.instance.choosedSave = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text;
-        LoadProcess(UIManager.instance.choosedSave, 1);
+        GameUIManager.instance.choosedSave = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text;
+        LoadProcess(GameUIManager.instance.choosedSave, 1);
         deleteButton.interactable = true;
-        UIManager.instance.isSaveItemDeSelected = false;
+        GameUIManager.instance.isSaveItemDeSelected = false;
 
     }
 }

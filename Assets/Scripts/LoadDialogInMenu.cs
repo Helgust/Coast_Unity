@@ -70,6 +70,7 @@ public class LoadDialogInMenu : MonoBehaviour
         LoadProcessFromMenu(MenuManager.instance.saveName);
         ExistSaveList.SetActive(false);
         ExistSaveList.SetActive(true);
+        UIManager.instance.curUIState = UIManager.UIState.Game;
     }
     public void PressDelete()
     {

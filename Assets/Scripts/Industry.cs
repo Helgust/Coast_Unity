@@ -14,9 +14,6 @@ public class Industry
     public float toBudget; // deductions  floato the budget
     public float numJobs; // number of jobs at factory
     public float reqJobs; // amount of jobs that industry needed
-
-
-
 };
 
 [System.Serializable]

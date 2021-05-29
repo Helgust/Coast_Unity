@@ -1,0 +1,69 @@
+Key,English,Russian
+SS.ResoursesTab,Resourses,Ресурсы
+SS.EconomyTab,Economy,Экономика
+SS.SociologylTab,Sociology,Социология
+SS.EcologyTab,Ecology,Экология
+SS.Close,Close,Закрыть
+SS.ClearAll,Clear all,Очистить все
+SS.Export,Export to file,Экспорт в файл
+SS.Res.Fish,Fish,Рыба
+SS.Res.Pop,Population,Население
+SS.Res.Budget,Budget,Бюджет
+SS.Res.AllocBudg,Allocated Budget,Распредленный Бюджет
+SS.Res.RestBudgSum,Rest Budget,Оставшийся Бюджет
+SS.Res.IncomePerCap,Income Per Capita,Доход на душу населения
+SS.Res.EQI,Enviroment Quality Index,Индекс качетсва окружающей среды
+SS.Res.HDI,Human Development Index,Индекс человеческого развития
+SS.Econ.Dropdown.Taxes,Taxes,Налоги
+SS.Econ.Dropdown.Employed,Employed,Трудоустроено
+SS.Econ.Dropdown.Income,Income,Доход
+SS.Econ.Dropdown.Profit,Profit,Прибыль
+SS.Econ.Dropdown.VolProd,Volume Production,Объем продукции
+SS.Econ.Dropdown.CapDepr,Capital Depreciation,Амортизация Капитала
+SS.Econ.Dropdown.Invest,Investmetns,Инвестиции
+SS.Econ.Dropdown.Capital,Capital,Капитал
+SS.Econ.Paper,Paper Factory,ЦБК
+SS.Econ.Fishing,Fishing,Рыболовля
+SS.Econ.AquaCulture,Aquaculture,Марикультура
+SS.Econ.Agriculture,Agriculture,Сельское хозяйство
+SS.Econ.Tourism,Tourism,Туризм
+SS.Econ.Chemical,Chemical Cleaning,Химеская очистка
+SS.Econ.Biological,Biological Clenaning,Биологическая очистка
+SS.Soc.HumPop,Human Population,Популяция Населения
+SS.Soc.PopGrowRate,Population Grow Rate,Коеффицент роста населения
+SS.Soc.LifeSpan,Life span,Продолжительность жизни
+SS.Soc.AbelLabor,Abel to Labor Population,Насельное спсобное к труду
+SS.Soc.NumJobs,Total number of jobs,Всего рабочих мест
+SS.Soc.EmplTotal,Employment Total,Всего трудоустроено
+SS.Soc.EmplFish,Employment at Fishing,Трудоустроено в рыболовстве
+SS.Soc.EmplPaper,Employment at Paper Factory,Трудоустроено в ЦБК
+SS.Soc.EmplAqua,Employment at Aquaculture,Трудоустроено в Марикультуре
+SS.Soc.EmplAgri,Employment at Agriculture,Трудоустроено в Сельском хозяйстве
+SS.Soc.EmplTour,Employment at Tourism,Трудоустроено в Туризме
+SS.Soc.EmplBio,Employment at Biology Cleaning,Трудоустроено в Биологической Очистке
+SS.Soc.EmplChem,Employment at Chemical Cleaning,Трудоустроено в Химеческой Очистке
+SS.Ecol.FishNum,Fish number,Численность рыбы
+SS.Ecol.FishCatch,Fish Catch,Вылов рыбы
+SS.Ecol.EcolWast,Colon bacillus emission,Выброс бактерий
+SS.Ecol.PhosWast,Phosphate emission,Выброс фосфатов
+SS.Ecol.OthWast,Other Waste emission,Выброс прочих отходов
+SS.Ecol.RemainEcol,Colon bacillus remainder after threatment,Остаток бактерий после очистки
+SS.Ecol.RemainPho,Accamulated phospahte remainder,Накопленный остаток фосфатов
+SS.Ecol.RemainOther,Other Waste remainder after threatment,Остаток прочих отходов после очистки
+SS.Ecol.DegrLand,Degradaing land area,Площадь деградированной суши
+SS.Ecol.DegrSea,Degradaing sea area,Площадь деградированной моря
+SS.Ecol.VolBio,Volume of biological threatment,Объем биологической очистки
+SS.Ecol.VolChem,Volume of chemical threatment,Объем химической очистки
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+SS.Soc.,,
+SS.Econ.,,
+SS.Ecol.,,

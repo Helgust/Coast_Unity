@@ -99,10 +99,10 @@ public class FunctionsForUIGraph : MonoBehaviour
         FINTour.SetIsOnWithoutNotify(false);
         FINChem.SetIsOnWithoutNotify(false);
         FINBio.SetIsOnWithoutNotify(false);
-        UIManager.instance.finDict.Clear();
-        UIManager.instance.FillFinDict();
-        UIManager.instance.paramDict.Clear();
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.finDict.Clear();
+        GameUIManager.instance.FillFinDict();
+        GameUIManager.instance.paramDict.Clear();
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     //Resourses Group 
@@ -111,27 +111,27 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "fishAmount";
         if (RESFishRes.isOn || ECOLFishNum.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
                 RESFishRes.SetIsOnWithoutNotify(false);
                 ECOLFishNum.SetIsOnWithoutNotify(false);
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
                 RESFishRes.SetIsOnWithoutNotify(true);
                 ECOLFishNum.SetIsOnWithoutNotify(true);
-                UIManager.instance.paramDict.Add(stat_parametr, Color.green);
+                GameUIManager.instance.paramDict.Add(stat_parametr, Color.green);
             }
         }
         else
         {
             RESFishRes.SetIsOnWithoutNotify(false);
             ECOLFishNum.SetIsOnWithoutNotify(false);
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void RESPopResFUNC()
@@ -139,27 +139,27 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "population";
         if (RESPopRes.isOn || SOCPop.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
                 RESPopRes.SetIsOnWithoutNotify(false);
                 SOCPop.SetIsOnWithoutNotify(false);
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
                 RESPopRes.SetIsOnWithoutNotify(true);
                 SOCPop.SetIsOnWithoutNotify(true);
-                UIManager.instance.paramDict.Add(stat_parametr, Color.blue);
+                GameUIManager.instance.paramDict.Add(stat_parametr, Color.blue);
             }
         }
         else
         {
             SOCPop.SetIsOnWithoutNotify(false);
             RESPopRes.SetIsOnWithoutNotify(false);
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void RESAllocateBudgetResFUNC()
@@ -167,21 +167,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "moneySpend";
         if (RESAllocateBudgetRes.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, Color.red);
+                GameUIManager.instance.paramDict.Add(stat_parametr, Color.red);
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void RESRestBudgetResFUNC()
@@ -189,21 +189,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "moneyLeft";
         if (RESRestBudgetRes.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, Color.yellow);
+                GameUIManager.instance.paramDict.Add(stat_parametr, Color.yellow);
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void RESBudgetResFUNC()
@@ -211,21 +211,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "budget";
         if (RESBudgetRes.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, Color.cyan);
+                GameUIManager.instance.paramDict.Add(stat_parametr, Color.cyan);
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void RESIncPerCapitaResFUNC()
@@ -233,21 +233,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "incomeSumPerHum";
         if (RESIncPerCapitaRes.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, Color.white);
+                GameUIManager.instance.paramDict.Add(stat_parametr, Color.white);
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void RESQualityOfEnvResFUNC()
@@ -255,27 +255,27 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "qualityOfEnv";
         if (RESQualityOfEnvRes.isOn || ECOLQualityOfEnv.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
                 RESQualityOfEnvRes.SetIsOnWithoutNotify(false);
                 ECOLQualityOfEnv.SetIsOnWithoutNotify(false);
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
                 RESQualityOfEnvRes.SetIsOnWithoutNotify(true);
                 ECOLQualityOfEnv.SetIsOnWithoutNotify(true);
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(255, 224, 130, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(255, 224, 130, 255));
             }
         }
         else
         {
             RESQualityOfEnvRes.SetIsOnWithoutNotify(false);
             ECOLQualityOfEnv.SetIsOnWithoutNotify(false);
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void RESHumDevIndResFUNC()
@@ -283,27 +283,27 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "humDevInd";
         if (RESHumDevIndRes.isOn || SOCHumDevInd.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
                 SOCHumDevInd.SetIsOnWithoutNotify(false);
                 RESHumDevIndRes.SetIsOnWithoutNotify(false);
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
                 SOCHumDevInd.SetIsOnWithoutNotify(true);
                 RESHumDevIndRes.SetIsOnWithoutNotify(true);
-                UIManager.instance.paramDict.Add(stat_parametr, Color.magenta);
+                GameUIManager.instance.paramDict.Add(stat_parametr, Color.magenta);
             }
         }
         else
         {
             SOCHumDevInd.SetIsOnWithoutNotify(false);
             RESHumDevIndRes.SetIsOnWithoutNotify(false);
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
     //SocParams Group
 
@@ -312,21 +312,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "pop_inc";
         if (SOCPopGrowRate.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(38, 166, 154, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(38, 166, 154, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void SOCPopLifeSpanFUNC()
@@ -334,21 +334,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "lifespan";
         if (SOCPopLifeSpan.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(255, 167, 38, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(255, 167, 38, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void SOCAblePopFUNC()
@@ -357,21 +357,21 @@ public class FunctionsForUIGraph : MonoBehaviour
 
         if (SOCAblePop.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(156, 39, 176, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(156, 39, 176, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void SOCTotalNumJobsFUNC()
@@ -379,21 +379,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "jobsReqSum"; //FIX
         if (SOCTotalNumJobs.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(255, 23, 68, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(255, 23, 68, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void SOCEmplTotalFUNC()
@@ -401,21 +401,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "jobsAmSum"; //FIX
         if (SOCEmplTotal.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(179, 229, 252, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(179, 229, 252, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void SOCEmplPaperFUNC()
@@ -423,21 +423,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "pf_numJobs";
         if (SOCEmplPaper.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(56, 142, 60, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(56, 142, 60, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void SOCEmplFishFUNC()
@@ -445,21 +445,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "f_numJobs";
         if (SOCEmplFish.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(255, 235, 59, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(255, 235, 59, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void SOCEmplAquaFUNC()
@@ -467,21 +467,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "aq_numJobs";
         if (SOCEmplAqua.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(244, 81, 30, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(244, 81, 30, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void SOCEmplAgriFUNC()
@@ -489,21 +489,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "ag_numJobs";
         if (SOCEmplAgri.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(144, 164, 174, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(144, 164, 174, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void SOCEmplTourFUNC()
@@ -511,21 +511,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "t_numJobs";
         if (SOCEmplTour.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(240, 98, 146, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(240, 98, 146, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void SOCEmplBioFUNC()
@@ -533,21 +533,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "bio_numJobs";
         if (SOCEmplBio.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(63, 81, 181, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(63, 81, 181, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void SOCEmplChemFUNC()
@@ -555,21 +555,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "chem_numJobs";
         if (SOCEmplChem.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(77, 208, 225, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(77, 208, 225, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     //ECOL params
@@ -578,21 +578,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "f_production";
         if (ECOLFishCath.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(3, 169, 244, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(3, 169, 244, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void ECOLEcolWasteFUNC()
@@ -600,21 +600,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "ejectEColi";
         if (ECOLEcolWaste.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(139, 195, 74, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(139, 195, 74, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void ECOLPhoWasteFUNC()
@@ -622,21 +622,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "ejectPhs";
         if (ECOLPhoWaste.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(255, 202, 40, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(255, 202, 40, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void ECOLOtherWasteFUNC()
@@ -644,21 +644,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "ejectOrg";
         if (ECOLOtherWaste.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(161, 136, 127, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(161, 136, 127, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void ECOLEcolRemainFUNC()
@@ -666,21 +666,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "residueEColi";
         if (ECOLEcolRemain.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(74, 20, 140, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(74, 20, 140, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void ECOLPhoRemainFUNC()
@@ -688,21 +688,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "residuePhs";
         if (ECOLPhoRemain.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(13, 71, 161, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(13, 71, 161, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void ECOLOtherRemainFUNC()
@@ -710,21 +710,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "residueOrg";
         if (ECOLOtherRemain.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(245, 0, 87, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(245, 0, 87, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void ECOLDegrLandFUNC()
@@ -732,21 +732,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "degrLand";
         if (ECOLDegrLand.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(158, 157, 36, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(158, 157, 36, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void ECOLDegrSeaFUNC()
@@ -754,21 +754,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "degrSea";
         if (ECOLDegrSea.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(230, 81, 0, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(230, 81, 0, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void ECOLVolBioFUNC()
@@ -776,21 +776,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "bio_production";
         if (ECOLVolBio.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(158, 158, 158, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(158, 158, 158, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void ECOLVolChemFUNC()
@@ -798,21 +798,21 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "chem_production";
         if (ECOLVolChem.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.paramDict.Remove(stat_parametr);
+                GameUIManager.instance.paramDict.Remove(stat_parametr);
             }
             else
             {
-                UIManager.instance.paramDict.Add(stat_parametr, new Color32(244, 67, 54, 255));
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(244, 67, 54, 255));
             }
         }
         else
         {
-            UIManager.instance.paramDict.Remove(stat_parametr);
+            GameUIManager.instance.paramDict.Remove(stat_parametr);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void FINpaperFactFUNC()
@@ -820,27 +820,27 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "pf_";
         if (FINpaperFact.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.finDict[dropdown_param][0] = false;
-                UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+                GameUIManager.instance.finDict[dropdown_param][0] = false;
+                GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
             }
             else
             {
-                UIManager.instance.finDict[dropdown_param][0] = true;
+                GameUIManager.instance.finDict[dropdown_param][0] = true;
                 Color temp = new Color32(244, 67, 54, 255);
                 //Color32 res = temp - _dropdownColorAdjustmnet;
-                UIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
+                GameUIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
             }
         }
         else
         {
-            UIManager.instance.finDict[dropdown_param][0] = false;
-            UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+            GameUIManager.instance.finDict[dropdown_param][0] = false;
+            GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
         }
 
         Debug.Log("FIN_PF" + stat_parametr + dropdown_param);
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void FINFishFUNC()
@@ -848,26 +848,26 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "f_";
         if (FINFish.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.finDict[dropdown_param][1] = false;
-                UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+                GameUIManager.instance.finDict[dropdown_param][1] = false;
+                GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
             }
             else
             {
-                UIManager.instance.finDict[dropdown_param][1] = true;
+                GameUIManager.instance.finDict[dropdown_param][1] = true;
                 Color temp = new Color32(110, 80, 200, 255);
                 //Color32 res = temp - _dropdownColorAdjustmnet;
-                UIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
+                GameUIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
             }
         }
         else
         {
-            UIManager.instance.finDict[dropdown_param][1] = false;
-            UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+            GameUIManager.instance.finDict[dropdown_param][1] = false;
+            GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void FINAquaFUNC()
@@ -875,26 +875,26 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "aq_";
         if (FINAqua.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.finDict[dropdown_param][2] = false;
-                UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+                GameUIManager.instance.finDict[dropdown_param][2] = false;
+                GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
             }
             else
             {
-                UIManager.instance.finDict[dropdown_param][2] = true;
+                GameUIManager.instance.finDict[dropdown_param][2] = true;
                 Color temp = new Color32(180, 67, 250, 255);
                 //Color32 res = temp - _dropdownColorAdjustmnet;
-                UIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
+                GameUIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
             }
         }
         else
         {
-            UIManager.instance.finDict[dropdown_param][2] = false;
-            UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+            GameUIManager.instance.finDict[dropdown_param][2] = false;
+            GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void FINAgriFUNC()
@@ -902,26 +902,26 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "ag_";
         if (FINAgri.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.finDict[dropdown_param][3] = false;
-                UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+                GameUIManager.instance.finDict[dropdown_param][3] = false;
+                GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
             }
             else
             {
-                UIManager.instance.finDict[dropdown_param][3] = true;
+                GameUIManager.instance.finDict[dropdown_param][3] = true;
                 Color temp = new Color32(100, 200, 54, 255);
                 //Color32 res = temp - _dropdownColorAdjustmnet;
-                UIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
+                GameUIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
             }
         }
         else
         {
-            UIManager.instance.finDict[dropdown_param][3] = false;
-            UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+            GameUIManager.instance.finDict[dropdown_param][3] = false;
+            GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void FINTourFUNC()
@@ -929,26 +929,26 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "t_";
         if (FINTour.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.finDict[dropdown_param][4] = false;
-                UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+                GameUIManager.instance.finDict[dropdown_param][4] = false;
+                GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
             }
             else
             {
-                UIManager.instance.finDict[dropdown_param][4] = true;
+                GameUIManager.instance.finDict[dropdown_param][4] = true;
                 Color temp = new Color32(244, 67, 240, 255);
                 //Color32 res = temp - _dropdownColorAdjustmnet;
-                UIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
+                GameUIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
             }
         }
         else
         {
-            UIManager.instance.finDict[dropdown_param][4] = false;
-            UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+            GameUIManager.instance.finDict[dropdown_param][4] = false;
+            GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void FINChemFUNC()
@@ -956,26 +956,26 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "chem_";
         if (FINChem.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.finDict[dropdown_param][5] = false;
-                UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+                GameUIManager.instance.finDict[dropdown_param][5] = false;
+                GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
             }
             else
             {
-                UIManager.instance.finDict[dropdown_param][5] = true;
+                GameUIManager.instance.finDict[dropdown_param][5] = true;
                 Color temp = new Color32(200, 100, 54, 255);
                 //Color32 res = temp - _dropdownColorAdjustmnet;
-                UIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
+                GameUIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
             }
         }
         else
         {
-            UIManager.instance.finDict[dropdown_param][5] = false;
-            UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+            GameUIManager.instance.finDict[dropdown_param][5] = false;
+            GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void FINBioFUNC()
@@ -983,26 +983,26 @@ public class FunctionsForUIGraph : MonoBehaviour
         stat_parametr = "bio_";
         if (FINBio.isOn)
         {
-            if (UIManager.instance.paramDict.ContainsKey(stat_parametr))
+            if (GameUIManager.instance.paramDict.ContainsKey(stat_parametr))
             {
-                UIManager.instance.finDict[dropdown_param][6] = false;
-                UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+                GameUIManager.instance.finDict[dropdown_param][6] = false;
+                GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
             }
             else
             {
-                UIManager.instance.finDict[dropdown_param][6] = true;
+                GameUIManager.instance.finDict[dropdown_param][6] = true;
                 Color temp = new Color32(80, 90, 255, 255);
                 //Color32 res = temp - _dropdownColorAdjustmnet;
-                UIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
+                GameUIManager.instance.paramDict.Add(stat_parametr + dropdown_param, temp);
             }
         }
         else
         {
-            UIManager.instance.finDict[dropdown_param][6] = false;
-            UIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
+            GameUIManager.instance.finDict[dropdown_param][6] = false;
+            GameUIManager.instance.paramDict.Remove(stat_parametr + dropdown_param);
         }
 
-        UIManager.instance.ShowGraph(UIManager.instance.paramDict);
+        GameUIManager.instance.ShowGraph(GameUIManager.instance.paramDict);
     }
 
     public void FINDropDownhandlerFUNC()
@@ -1053,13 +1053,13 @@ public class FunctionsForUIGraph : MonoBehaviour
 
     private void SetCorrectToggle(string param)
     {
-        FINpaperFact.SetIsOnWithoutNotify(UIManager.instance.finDict[param][0]);
-        FINFish.SetIsOnWithoutNotify(UIManager.instance.finDict[param][1]);
-        FINAqua.SetIsOnWithoutNotify(UIManager.instance.finDict[param][2]);
-        FINAgri.SetIsOnWithoutNotify(UIManager.instance.finDict[param][3]);
-        FINTour.SetIsOnWithoutNotify(UIManager.instance.finDict[param][4]);
-        FINChem.SetIsOnWithoutNotify(UIManager.instance.finDict[param][5]);
-        FINBio.SetIsOnWithoutNotify(UIManager.instance.finDict[param][6]);
+        FINpaperFact.SetIsOnWithoutNotify(GameUIManager.instance.finDict[param][0]);
+        FINFish.SetIsOnWithoutNotify(GameUIManager.instance.finDict[param][1]);
+        FINAqua.SetIsOnWithoutNotify(GameUIManager.instance.finDict[param][2]);
+        FINAgri.SetIsOnWithoutNotify(GameUIManager.instance.finDict[param][3]);
+        FINTour.SetIsOnWithoutNotify(GameUIManager.instance.finDict[param][4]);
+        FINChem.SetIsOnWithoutNotify(GameUIManager.instance.finDict[param][5]);
+        FINBio.SetIsOnWithoutNotify(GameUIManager.instance.finDict[param][6]);
     }
 
     // Start is called before the first frame update

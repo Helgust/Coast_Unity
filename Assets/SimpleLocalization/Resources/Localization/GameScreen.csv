@@ -1,0 +1,5 @@
+Key,English,Russian
+GameScreen.Icon,Icon,Иконка
+GameScreen.Money,Money,Деньги
+GameScreen.Button.ShowGraph,Show Stat,Показать Статистику
+GameScreen.Button.NextMove,NextMove,Сделать Ход

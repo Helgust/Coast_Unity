@@ -18,6 +18,7 @@
           <e p="FunctionsForUIGraph.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="gameSettings.cs" t="Include" />
+          <e p="GameUIManager.cs" t="Include" />
           <e p="Industry.cs" t="Include" />
           <e p="InputHandler.cs" t="Include" />
           <e p="LoadDialog.cs" t="Include" />
@@ -27,6 +28,7 @@
           <e p="SaveDialog.cs" t="Include" />
           <e p="SaveItemScript.cs" t="Include" />
           <e p="SettingsMenu.cs" t="Include" />
+          <e p="SettingsMenuAtMainMenu.cs" t="Include" />
           <e p="toltipScript.cs" t="Include" />
           <e p="UI_StatWindows.cs" t="Include" />
           <e p="UIManager.cs" t="Include" />

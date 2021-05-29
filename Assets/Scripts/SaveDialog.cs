@@ -20,7 +20,7 @@ public class SaveDialog : MonoBehaviour
 
     private void Update()
     {
-        if (UIManager.instance.isSaveItemDeSelected == true)
+        if (GameUIManager.instance.isSaveItemDeSelected == true)
         {
             deleteButton.interactable = false;
         }
@@ -48,34 +48,34 @@ public class SaveDialog : MonoBehaviour
 
     public void PressSave()
     {
-        UIManager.instance.setSaveWinBool(false);
+        GameUIManager.instance.setSaveWinBool(false);
         SaveProcess();
-        UIManager.instance.setPauseBool(false);
+        GameUIManager.instance.setPauseBool(false);
         ExistSaveList.SetActive(false);
         ExistSaveList.SetActive(true);
     }
     public void PressDelete()
     {
-        if (UIManager.instance.choosedSave != null && UIManager.instance.choosedSave.EndsWith(".data"))
+        if (GameUIManager.instance.choosedSave != null && GameUIManager.instance.choosedSave.EndsWith(".data"))
         {
-            File.Delete(Application.dataPath + "/Save/" + UIManager.instance.choosedSave);
+            File.Delete(Application.dataPath + "/Save/" + GameUIManager.instance.choosedSave);
         }
         ExistSaveList.SetActive(false);
-        UIManager.instance.choosedSave = string.Empty;
+        GameUIManager.instance.choosedSave = string.Empty;
         ExistSaveList.SetActive(true);
     }
 
     public void PressCancel()
     {
-        UIManager.instance.setSaveWinBool(false);
-        UIManager.instance.setPauseBool(false);
-        UIManager.instance.SavingDialog.SetActive(false);
+        GameUIManager.instance.setSaveWinBool(false);
+        GameUIManager.instance.setPauseBool(false);
+        GameUIManager.instance.SavingDialog.SetActive(false);
     }
     
     public void PressOnSaveItem()
     {
-        UIManager.instance.choosedSave = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text;
+        GameUIManager.instance.choosedSave = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text;
         deleteButton.interactable = true;
-        UIManager.instance.isSaveItemDeSelected = false;
+        GameUIManager.instance.isSaveItemDeSelected = false;
     }
 }

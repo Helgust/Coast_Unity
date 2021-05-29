@@ -5,17 +5,15 @@ using System.Collections;
 using Newtonsoft.Json;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using TMPro; //Allows us to use Lists. 
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public bool ShiftBool;
     public bool CtrlBool;
-
+    
     public int currentYear;
     public string mapType = String.Empty;
-    public bool gameStartFlag = false;
 
     public int finalYear;
 
@@ -56,18 +54,11 @@ public class GameManager : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
+        //gameStartFlag = false;
         //DontDestroyOnLoad(gameObject);
-
-        //inMainMenuState = true;
-    }
-
-    //This is called each time a scene is loaded.
-    private void Start()
-    {
-        gameStartFlag = true;
+        UIManager.instance.InputHandler.SetActive(true);
         BoardScript = GetComponent<BoardManager>();
-        IHScript = IHObject.GetComponent<InputHandler>();
+        IHScript = UIManager.instance.InputHandler.GetComponent<InputHandler>();
         if (Basket.instance.modeType == "LOAD")
         {
             instance.LoadFromSave(Basket.instance.saveData);
@@ -77,6 +68,14 @@ public class GameManager : MonoBehaviour
             GetConfig();
             InitGame();
         }
+
+        //inMainMenuState = true;
+    }
+
+    //This is called each time a scene is loaded.
+    private void Start()
+    {
+        
     }
 
     //Initializes the game for each level.
@@ -90,6 +89,7 @@ public class GameManager : MonoBehaviour
         BoardScript.SetupScene(DB.instance.board);
         IHScript.InitTextUI();
         currentYear = 1;
+        UIManager.instance.InputHandler.SetActive(true);
     }
 
     void CheckGameOver()
@@ -114,16 +114,16 @@ public class GameManager : MonoBehaviour
         if ((currentYear > finalYear - 1))
         {
             enabled = false;
-            UIManager.instance.NextMoveButtons.interactable = false;
-            UIManager.instance.FinalDialogText.text = "Years of simulation ended";
-            UIManager.instance.FinalDialog.SetActive(true);
+            GameUIManager.instance.NextMoveButtons.interactable = false;
+            GameUIManager.instance.FinalDialogText.text = "Years of simulation ended";
+            GameUIManager.instance.FinalDialog.SetActive(true);
         }
         else if (DB.instance.is_over)
         {
             enabled = false;
-            UIManager.instance.NextMoveButtons.interactable = false;
-            UIManager.instance.FinalDialogText.text = "No more space for development";
-            UIManager.instance.FinalDialog.SetActive(true);
+            GameUIManager.instance.NextMoveButtons.interactable = false;
+            GameUIManager.instance.FinalDialogText.text = "No more space for development";
+            GameUIManager.instance.FinalDialog.SetActive(true);
         }
         else
         {
@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour
     {
         Save save = new Save();
         save.currentYear = GameManager.instance.currentYear;
-        save.saveName = UIManager.instance.CreatingSave.text;
+        save.saveName = GameUIManager.instance.CreatingSave.text;
         save.mapType = mapType;
         save.Listofyears = DB.instance.yearDataBase;
         save.statDict = DB.instance.statDict;

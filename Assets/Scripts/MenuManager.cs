@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour
     public GameObject ChoosingMapDialog;
     public GameObject SettingsDialog;
     public GameObject MainMenu;
-    public TMP_Text Description;
+    public Text Description;
     public Button StartButton;
     public Button CountinueButton;
     public Toggle Map1Toggle;
@@ -68,17 +68,17 @@ public class MenuManager : MonoBehaviour
         ChoosedMap1();
         
         LocalizationManager.Read();
-        SettingsDialog.GetComponent<SettingsMenu>().Start();
+        //SettingsDialog.GetComponent<SettingsMenu>().Start();
 
-        // switch (Application.systemLanguage)
-        // {
-        //     case SystemLanguage.Russian:
-        //         LocalizationManager.Language = "Russian";
-        //         break;
-        //     default:
-        //         LocalizationManager.Language = "English";
-        //         break;
-        // }
+       switch (Application.systemLanguage)
+       {
+           case SystemLanguage.Russian:
+               LocalizationManager.Language = "Russian";
+               break;
+           default:
+               LocalizationManager.Language = "English";
+               break;
+       }
         
     }
  
@@ -111,6 +111,7 @@ public class MenuManager : MonoBehaviour
             //GameManager.instance.LoadFromSave(data);
             SceneManager.LoadScene("Scenes/SampleScene");
             fileStream.Close();
+            UIManager.instance.curUIState = UIManager.UIState.Game;
         }
     }
     public void MMPressNewGame()
@@ -204,6 +205,7 @@ public class MenuManager : MonoBehaviour
     {
         Basket.instance.modeType = "NEW";
         SceneManager.LoadScene("Scenes/SampleScene");
+        UIManager.instance.curUIState = UIManager.UIState.Game;
     }
     public void setPauseBool(bool new_bool)
     {
@@ -223,5 +225,10 @@ public class MenuManager : MonoBehaviour
         SettingsDialog.SetActive(false);
     }
 
-    
+    public void OnDisable()
+    {
+        LoadingDialog.SetActive(false);
+            ChoosingMapDialog.SetActive(false);
+        SettingsDialog.SetActive(false);
+    }
 }

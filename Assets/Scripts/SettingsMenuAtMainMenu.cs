@@ -9,11 +9,11 @@ using  TMPro;
 using Newtonsoft.Json;
 using Assets.SimpleLocalization;
 
-public class SettingsMenu : MonoBehaviour
+public class SettingsMenuAtMainMenu : MonoBehaviour
 {
-    private Dropdown resolitionsDropdown;
-    private Dropdown qualityDropdown;
-    private Dropdown languageDropdown;
+    private TMP_Dropdown resolitionsDropdown;
+    private TMP_Dropdown qualityDropdown;
+    private TMP_Dropdown languageDropdown;
     private Toggle fullscreen;
     private Resolution[] _resolutions;
     private TextAsset _gameSettingsJSON;
@@ -66,9 +66,9 @@ public class SettingsMenu : MonoBehaviour
     
     private void GetSettingItems()
     {
-        resolitionsDropdown = transform.Find("DialogWindow/Resolution").gameObject.GetComponent<Dropdown>();
-        qualityDropdown = transform.Find("DialogWindow/Quality").gameObject.GetComponent<Dropdown>();
-        languageDropdown = transform.Find("DialogWindow/Language").gameObject.GetComponent<Dropdown>();
+        resolitionsDropdown = transform.Find("DialogWindow/Resolution").gameObject.GetComponent<TMP_Dropdown>();
+        qualityDropdown = transform.Find("DialogWindow/Quality").gameObject.GetComponent<TMP_Dropdown>();
+        languageDropdown = transform.Find("DialogWindow/Language").gameObject.GetComponent<TMP_Dropdown>();
         fullscreen = transform.Find("DialogWindow/FullScreenToggle").gameObject.GetComponent<Toggle>();
     }
     private void readGameSettings()

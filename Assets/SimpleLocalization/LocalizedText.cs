@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,11 +8,12 @@ namespace Assets.SimpleLocalization
 	/// <summary>
 	/// Localize text component.
 	/// </summary>
-    //[RequireComponent(typeof(Text))]
+    [RequireComponent(typeof(Text))]
     //[RequireComponent(typeof(TMP_Text))]
     public class LocalizedText : MonoBehaviour
     {
         public string LocalizationKey;
+        
 
         public void Start()
         {
@@ -27,14 +29,7 @@ namespace Assets.SimpleLocalization
         private void Localize()
         {
             //Debug.Log("TypeOfText"+this.GetType());
-            if (GetComponent<Text>() == null)
-            {
-                GetComponent<TMP_Text>().text = LocalizationManager.Localize(LocalizationKey);
-            }
-            else
-            {
-                GetComponent<Text>().text = LocalizationManager.Localize(LocalizationKey);
-            }
+            GetComponent<Text>().text = LocalizationManager.Localize(LocalizationKey);
         }
     }
 }

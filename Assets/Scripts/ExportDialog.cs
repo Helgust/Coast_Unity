@@ -60,16 +60,16 @@ public class ExportDialog : MonoBehaviour
     public void PressExport()
     {
         ExportProcess();
-        UIManager.instance.setExportWinBool(false);
-        UIManager.instance.ExportDialog.SetActive(false);
-        UIManager.instance.setPauseBool(false);
+        GameUIManager.instance.setExportWinBool(false);
+        GameUIManager.instance.ExportDialog.SetActive(false);
+        GameUIManager.instance.setPauseBool(false);
     }
 
 
     public void PressCancel()
     {
-        UIManager.instance.ExportDialog.SetActive(false);
-        UIManager.instance.setExportWinBool(false);
-        UIManager.instance.setPauseBool(false);
+        GameUIManager.instance.ExportDialog.SetActive(false);
+        GameUIManager.instance.setExportWinBool(false);
+        GameUIManager.instance.setPauseBool(false);
     }
 }
