@@ -15,7 +15,7 @@ SS.Res.IncomePerCap,Income Per Capita,Доход на душу населени�
 SS.Res.EQI,Enviroment Quality Index,Индекс качетсва окружающей среды
 SS.Res.HDI,Human Development Index,Индекс человеческого развития
 SS.Econ.Dropdown.Taxes,Taxes,Налоги
-SS.Econ.Dropdown.Employed,Employed,Трудоустроено
+SS.Econ.Dropdown.Employed,Employed,Трудоустройсьвл
 SS.Econ.Dropdown.Income,Income,Доход
 SS.Econ.Dropdown.Profit,Profit,Прибыль
 SS.Econ.Dropdown.VolProd,Volume Production,Объем продукции
@@ -32,7 +32,7 @@ SS.Econ.Biological,Biological Clenaning,Биологическая очистк�
 SS.Soc.HumPop,Human Population,Популяция Населения
 SS.Soc.PopGrowRate,Population Grow Rate,Коеффицент роста населения
 SS.Soc.LifeSpan,Life span,Продолжительность жизни
-SS.Soc.AbelLabor,Abel to Labor Population,Насельное спсобное к труду
+SS.Soc.AbelLabor,Abel to Labor Population,Население способное к труду
 SS.Soc.NumJobs,Total number of jobs,Всего рабочих мест
 SS.Soc.EmplTotal,Employment Total,Всего трудоустроено
 SS.Soc.EmplFish,Employment at Fishing,Трудоустроено в рыболовстве
@@ -54,16 +54,3 @@ SS.Ecol.DegrLand,Degradaing land area,Площадь деградированн�
 SS.Ecol.DegrSea,Degradaing sea area,Площадь деградированной моря
 SS.Ecol.VolBio,Volume of biological threatment,Объем биологической очистки
 SS.Ecol.VolChem,Volume of chemical threatment,Объем химической очистки
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-SS.Soc.,,
-SS.Econ.,,
-SS.Ecol.,,

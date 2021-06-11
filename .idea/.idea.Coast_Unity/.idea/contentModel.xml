@@ -13,6 +13,7 @@
           <e p="BoardManager.cs" t="Include" />
           <e p="CameraMovement.cs" t="Include" />
           <e p="DB.cs" t="Include" />
+          <e p="ExistMaps.cs" t="Include" />
           <e p="ExistSaves.cs" t="Include" />
           <e p="ExportDialog.cs" t="Include" />
           <e p="FunctionsForUIGraph.cs" t="Include" />
@@ -23,6 +24,8 @@
           <e p="InputHandler.cs" t="Include" />
           <e p="LoadDialog.cs" t="Include" />
           <e p="LoadDialogInMenu.cs" t="Include" />
+          <e p="Map.cs" t="Include" />
+          <e p="MapItemScript.cs" t="Include" />
           <e p="MenuManager.cs" t="Include" />
           <e p="Save.cs" t="Include" />
           <e p="SaveDialog.cs" t="Include" />

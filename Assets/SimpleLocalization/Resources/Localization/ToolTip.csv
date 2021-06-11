@@ -1,0 +1,98 @@
+Key,English,Russian
+TT.pf_capital,Paper Factory Capital,Капитал ЦБК
+TT.pf_invest,Paper Factory Investments,Инвестиции ЦБК
+TT.pf_production,Paper Factory Production,Производство ЦБК
+TT.pf_amortization,Paper Factory Amortization,Амортизация ЦБК
+TT.pf_income,Paper Factory Income,Доход ЦБК
+TT.pf_profit,Paper Factory Profit,Прибыль ЦБК
+TT.pf_toBudget,Paper Factory Taxes,Налоги ЦБК
+TT.pf_numJobs,Paper Factory Number of Jobs,Занятых рабочих мест в ЦБК
+TT.pf_reqJobs,Paper Factory Requed Jobs,Требуемых рабочих мест в ЦБК
+TT.f_capital,Fishing Capital,Капитал Рыболовлства
+TT.f_invest,Fishing Investments,Инвестиции в Рыболовстве
+TT.f_production,Fishing Production,Производство Рыболовлстве
+TT.f_amortization,Fishing Amortization,Амортизация Рыболовстве
+TT.f_income,Fishing Income,Доход Рыболовства
+TT.f_profit,Fishing Profit,Прибыль Рыболовства
+TT.f_toBudget,Fishing Taxes,Налоги в рыболовстве
+TT.f_numJobs,Fishing Number of Jobs,Занятых рабочих мест в рыболовстве
+TT.f_reqJobs,Fishing Requed Jobs,Требуемых рабочих мест в рыболовстве
+TT.aq_capital,Aquaculture Capital,Капитал Марикультуры
+TT.aq_invest,Aquaculture Investments,Инвестиции Марикультуры
+TT.aq_production,Aquaculture Production,Производство Марикультуры
+TT.aq_amortization,Aquaculture Amortization,Амортизация Марикультуры
+TT.aq_income,Aquaculture Income,Доход Марикультуры
+TT.aq_profit,Aquaculture Profit,Прибыль Марикультуры
+TT.aq_toBudget,Aquaculture Taxes,Налоги Марикультуры
+TT.aq_numJobs,Aquaculture Number of Jobs,Занятых рабочих мест в Марикультуре
+TT.aq_reqJobs,Aquaculture Requed Jobs,Требуемых рабочих мест в Марикультуре
+TT.ag_capital,Agriculture Capital,Капитал Сельского Хозяйства
+TT.ag_invest,Agriculture Investments,Инвестиции в Сельское Хозяйство
+TT.ag_production,Agriculture Production,Производство Сельского Хозяйства
+TT.ag_amortization,Agriculture Amortization,Амортизация Сельского Хозяйства
+TT.ag_income,Agriculture Income,Доход Сельского Хозяйства
+TT.ag_profit,Agriculture Profit,Прибыль Сельского Хозяйства
+TT.ag_toBudget,Agriculture Taxes,Налоги Сельского Хозяйства
+TT.ag_numJobs,Agriculture Number of Jobs,Занятых рабочих мест в Сельском Хозяйстве
+TT.ag_reqJobs,Agriculture Requed Jobs,Требуемых рабочих мест в Сельском Хозяйстве
+TT.t_capital,Tourism Capital,Капитал Туризма
+TT.t_invest,Tourism Investments,Инвестиции в Туризм
+TT.t_production,Tourism Production,Производство Туризма
+TT.t_amortization,Tourism Amortization,Амортизация Туризма
+TT.t_income,Tourism Income,Доход Туризма
+TT.t_profit,Tourism Profit,Прибыль Туризма
+TT.t_toBudget,Tourism Taxes,Налоги Туризма
+TT.t_numJobs,Tourism Number of Jobs,Занятых рабочих мест в Туризме
+TT.t_reqJobs,Tourism Requed Jobs,Требуемых рабочих мест в Туризме
+TT.chem_capital,Chemical Cleaning Capital,Капитал Химической Очистки
+TT.chem_invest,Chemical Cleaning Investments,Инвестиции в Химическую Очистку
+TT.chem_production,Chemical Cleaning Production,Производство Химической Очистки
+TT.chem_amortization,Chemical Cleaning Amortization,Амортизация Химической Очистки
+TT.chem_income,Chemical Cleaning Income,Доход Химической Очистки
+TT.chem_profit,Chemical Cleaning Profit,Прибыль Химической Очистки
+TT.chem_toBudget,Chemical threatment Taxes,Налоги Химеческой очистке
+TT.chem_numJobs,Chemical threatment Number of Jobs,Занятых рабочих мест в Химеческой очистке
+TT.chem_reqJobs,Chemical threatment Requed Jobs,Требуемых рабочих мест в Химеческой очистке
+TT.bio_capital,Biological Cleaning Capital,Капитал Биологической Очистки
+TT.bio_invest,Biological Cleaning Investments,Инвестиции в Биологическую Очистку
+TT.bio_production,Biological Cleaning Production,Производство Биологической Очистки
+TT.bio_amortization,Biological Cleaning Amortization,Амортизация Биологической Очистки
+TT.bio_income,Biological Cleaning Income,Доход Биологической Очистки
+TT.bio_profit,Biological Cleaning Profit,Прибыль Биологической Очистки
+TT.bio_toBudget,Biological threatment Taxes,Налоги Биологической очистке
+TT.bio_numJobs,Biological threatment Number of Jobs,Занятых рабочих мест в Биологической очистке
+TT.bio_reqJobs,Biological threatment Requed jobs,Требуемых рабочих мест в Биологической очистке
+TT.fishAmount,Amount of Fish,Количество Рыбы
+TT.ejectEColi,Colon bacillus emission,Выброс бактерий
+TT.ejectOrg,Phosphate emission,Выброс фосфатов
+TT.ejectPhs,Other Waste emission,Выброс прочих отходов
+TT.residueEColi,Colon bacillus remainder after threatment,Остаток бактерий после очистки
+TT.residueOrg,Accamulated phospahte remainder,Накопленный остаток фосфатов
+TT.residuePhs,Other Waste remainder after threatment,Остаток прочих отходов после очистки
+TT.degr,Degrading,Деградирование
+TT.degrLand,Degrading Land Area,Площадь Деградированной Суши
+TT.degrSea,Degrading Sea Area,Площадь Деградированного Моря
+TT.budget,Budget,Бюджет
+TT.moneySpend,Money Spent,Денег Потрачено
+TT.moneyLeft,Money Left,Денег Осталось
+TT.incomeSum,Income Amount,Количество Дохода
+TT.capitalSum,Capital Amount,Капитал
+TT.incomeSumPerHum,Income Per Human,Доход на душу населения
+TT.population,Population,Население
+TT.employmentRate,Employment Rate,Уровень занятости
+TT.unemploymentRate,Unemployment Rate,Уровень безработицы
+TT.jobsAmSum,Total amount of jobs,Суммарное колличетсво занятых рабочих мест
+TT.jobsReqSum,Total amount of requed jobs,Суммарное колличетсво требуемых рабочих мест
+TT.ablePopSum,Abel to Labor Population,Население способное к труду
+TT.lifespan,Lifespan,Продолжительность жизни
+TT.humDevInd,Human Development Index,Индекс Человеческого Развития
+TT.qualityOfEnv,Quality of Environment,Качество Окружающей Среды
+TT.pop_inc,Population Grow Rate,Коеффицент роста населения
+,,
+pf,Целюлозно бумажный комбинат,
+t,Туризм,
+bio,Био Очистка,
+chem,Хим Очистка,
+aq,марикультура,
+ag,агрикультура,
+f,Рыболовство,

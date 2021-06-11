@@ -1,0 +1,7 @@
+﻿{
+    "name" : "Map1",
+    "descriptionName": "Description1",
+    "mapConfig" : "map1/map1config",
+    "mapElementsConfig" : "map1/map1Elements",
+    "mapUnderConfig" : "map1/map1Under"
+}

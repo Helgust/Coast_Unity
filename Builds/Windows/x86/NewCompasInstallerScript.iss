@@ -5,7 +5,7 @@
 #define MyAppVersion "0.8"
 #define MyAppPublisher "EgorTyutyunikov"
 #define MyAppURL "https://www.example.com/"
-#define MyAppExeName "Coast_Unity.exe"
+#define MyAppExeName "NEWCoMPAS.exe"
 #define MyAppAssocName MyAppName + " File"
 #define MyAppAssocExt ".exe"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
@@ -41,7 +41,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "W:\MSU\Ã√” ≈√Œ–\¬ –\Builds\Windows\x86\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "W:\MSU\Ã√” ≈√Œ–\¬ –\Builds\Windows\x86\Coast_Unity\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "W:\MSU\Ã√” ≈√Œ–\¬ –\Builds\Windows\x86\NewCompas\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]

@@ -207,12 +207,12 @@ public class GameUIManager : MonoBehaviour
         UIManager.instance.curUIState = UIManager.UIState.Menu;
         if (Basket.instance.modeType == "NEW")
         {
-            Basket.instance.mapType = String.Empty;
+            Basket.instance.mapData.name = String.Empty;
             Basket.instance.modeType = String.Empty;
         }
         else
         {
-            Basket.instance.mapType = String.Empty;
+            Basket.instance.mapData.name = String.Empty;
             Basket.instance.modeType = String.Empty;
             Basket.instance.saveData.Clear();
         }

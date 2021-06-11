@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,7 +48,7 @@ public class Window_graph : MonoBehaviour
 
         if (getAxisLabelX == null)
         {
-            getAxisLabelX = delegate(int _i) { return (_i+1).ToString(); };
+            getAxisLabelX = delegate(int _i) { return (_i + 1).ToString(); };
         }
 
         if (getAxisLabelY == null)
@@ -126,12 +127,12 @@ public class Window_graph : MonoBehaviour
         }
 
         xIndex = 0;
-        
+
         xIndex = 0;
         for (int i = 0; i < GameManager.instance.currentYear; i++)
         {
             float xPosition = xSize + xIndex * xSize;
-            
+
             RectTransform labelX = Instantiate(labelTemplateX);
             labelX.SetParent(graphContainer, false);
             labelX.SetSiblingIndex(8);
@@ -149,7 +150,7 @@ public class Window_graph : MonoBehaviour
 
             ++xIndex;
         }
-        
+
         foreach (var param in paramDict)
         {
             List<float> valueList = DB.instance.statDict[param.Key];
@@ -162,8 +163,9 @@ public class Window_graph : MonoBehaviour
                 float yPosition = ((valueList[i] - yMinimum) / (yMaximum - yMinimum)) * graphHeight;
 
                 string toolTipText = getAxisLabelY(valueList[i]);
+
                 _gameObjectList.AddRange(graphVisual.AddGraphVisual(new Vector2(xPosition, yPosition), xSize,
-                    param.Key + ": " + toolTipText,
+                    "TT." + param.Key, ": " + toolTipText,
                     param.Value, param.Value));
                 /* GameObject circleGameObject = CreateCircle(new Vector2(xPosition, yPosition));
                 gameObjectList.Add(circleGameObject);
@@ -197,35 +199,34 @@ public class Window_graph : MonoBehaviour
 
             graphVisual.SetlastCircleGameObject(null);
         }
-        // xIndex = 0;
-            // for (int i = Mathf.Max((GameManager.instance.currentYear - 1 - maxVisibleAmontValues), 0); i < GameManager.instance.currentYear - 1; i++)
-            // {
-            //     float fristElemOnVis = valueList[Mathf.Max((valueList.Count - maxVisibleAmontValues), 0)];
-            //     float xPosition = xSize + xIndex * xSize;
-            //     float yPosition = ((valueList[i] - yMinimum) / (yMaximum - yMinimum)) * graphHeight;
-            //
-            //     string toolTipText = getAxisLabelY(valueList[i]);
-            //
-            //     // GameObject toolT = Instantiate(tooltipGameObject);
-            //     // toolT.SetActive(true);
-            //     // toolT.transform.SetParent(graphContainer, false);
-            //     // yPosition -= 25f;
-            //     // toolT.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, yPosition);
-            //     // float textPaddingSize = 4f;
-            //     // toolT.transform.Find("text").GetComponent<Text>().text = toolTipText;
-            //     //  Vector2 backgroundSize = new Vector2(
-            //     //         toolT.transform.Find("text").GetComponent<Text>().preferredWidth + textPaddingSize * 2f,
-            //     //         toolT.transform.Find("text").GetComponent<Text>().preferredHeight + textPaddingSize * 2f
-            //     // );
-            //     // GameObject bg = toolT.transform.Find("backgroung").gameObject;
-            //     // bg.GetComponent<RectTransform>().sizeDelta = backgroundSize;
-            //     // toolT.transform.SetAsLastSibling();
-            //     // gameObjectList.Add(toolT);
-            //
-            //     xIndex++;
-            // }
 
-        
+        // xIndex = 0;
+        // for (int i = Mathf.Max((GameManager.instance.currentYear - 1 - maxVisibleAmontValues), 0); i < GameManager.instance.currentYear - 1; i++)
+        // {
+        //     float fristElemOnVis = valueList[Mathf.Max((valueList.Count - maxVisibleAmontValues), 0)];
+        //     float xPosition = xSize + xIndex * xSize;
+        //     float yPosition = ((valueList[i] - yMinimum) / (yMaximum - yMinimum)) * graphHeight;
+        //
+        //     string toolTipText = getAxisLabelY(valueList[i]);
+        //
+        //     // GameObject toolT = Instantiate(tooltipGameObject);
+        //     // toolT.SetActive(true);
+        //     // toolT.transform.SetParent(graphContainer, false);
+        //     // yPosition -= 25f;
+        //     // toolT.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, yPosition);
+        //     // float textPaddingSize = 4f;
+        //     // toolT.transform.Find("text").GetComponent<Text>().text = toolTipText;
+        //     //  Vector2 backgroundSize = new Vector2(
+        //     //         toolT.transform.Find("text").GetComponent<Text>().preferredWidth + textPaddingSize * 2f,
+        //     //         toolT.transform.Find("text").GetComponent<Text>().preferredHeight + textPaddingSize * 2f
+        //     // );
+        //     // GameObject bg = toolT.transform.Find("backgroung").gameObject;
+        //     // bg.GetComponent<RectTransform>().sizeDelta = backgroundSize;
+        //     // toolT.transform.SetAsLastSibling();
+        //     // gameObjectList.Add(toolT);
+        //
+        //     xIndex++;
+        // }
     }
 
     private class LineGraphVisual : IGraphVisual
@@ -253,10 +254,11 @@ public class Window_graph : MonoBehaviour
         }
 
         public List<GameObject> AddGraphVisual(Vector2 graphPosition, float graphPositonWidth, string tooltipText,
+            string tooltipValue,
             Color new_color, Color new_connection_color)
         {
             List<GameObject> gameObjectList = new List<GameObject>();
-            GameObject circleGameObject = CreateCircle(graphPosition, tooltipText, new_color);
+            GameObject circleGameObject = CreateCircle(graphPosition, tooltipText, tooltipValue, new_color);
 
             gameObjectList.Add(circleGameObject);
             if (lastCircleGameObject != null)
@@ -271,7 +273,8 @@ public class Window_graph : MonoBehaviour
             return gameObjectList;
         }
 
-        private GameObject CreateCircle(Vector2 anchoredPosition, string tooltipText, Color new_color)
+        private GameObject CreateCircle(Vector2 anchoredPosition, string tooltipText, string tooltipValue,
+            Color new_color)
         {
             GameObject gameObject = Instantiate(_circleObject);
             gameObject.transform.SetParent(graphContainer, false);
@@ -279,20 +282,28 @@ public class Window_graph : MonoBehaviour
             gameObject.GetComponent<Image>().color = new_color;
             RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
             rectTransform.anchoredPosition = anchoredPosition;
-            rectTransform.sizeDelta = new Vector2(11, 11);
+            rectTransform.sizeDelta = new Vector2(15, 15);
             rectTransform.anchorMin = new Vector2(0, 0);
             rectTransform.anchorMax = new Vector2(0, 0);
 
             GameObject toolT = gameObject.transform.GetChild(0).gameObject;
             toolT.transform.position = toolT.transform.position + Vector3.up * 10f;
             float textPaddingSize = 4f;
-            toolT.transform.Find("text").GetComponent<Text>().text = tooltipText;
+            Transform toolTtranform = toolT.transform.Find("grid");
+            toolTtranform.GetChild(0).GetComponent<LocalizedText>().LocalizationKey = tooltipText;
+            toolTtranform.GetChild(0).GetComponent<LocalizedText>().Start();
+            toolTtranform.GetChild(1).GetComponent<Text>().text = tooltipValue;
             Vector2 backgroundSize = new Vector2(
-                toolT.transform.Find("text").GetComponent<Text>().preferredWidth + textPaddingSize * 2f,
-                toolT.transform.Find("text").GetComponent<Text>().preferredHeight + textPaddingSize * 2f
+                toolTtranform.GetChild(0).GetComponent<Text>().preferredWidth + textPaddingSize * 2f +
+                toolTtranform.GetChild(1).GetComponent<Text>().preferredWidth + textPaddingSize * 2f,
+                toolTtranform.GetChild(0).GetComponent<Text>().preferredHeight + textPaddingSize * 2f
             );
             GameObject bg = toolT.transform.Find("backgroung").gameObject;
             bg.GetComponent<RectTransform>().sizeDelta = backgroundSize;
+            toolTtranform.GetChild(0).GetComponent<RectTransform>().sizeDelta =
+                new Vector2(toolTtranform.GetChild(0).GetComponent<Text>().preferredWidth, 0);
+            toolTtranform.GetChild(1).GetComponent<RectTransform>().sizeDelta =
+                new Vector2(toolTtranform.GetChild(1).GetComponent<Text>().preferredWidth, 0);
             return gameObject;
         }
 
@@ -307,7 +318,7 @@ public class Window_graph : MonoBehaviour
             float distance = Vector2.Distance(dotPositionA, dotPositionB);
             rectTransform.anchorMin = new Vector2(0, 0);
             rectTransform.anchorMax = new Vector2(0, 0);
-            rectTransform.sizeDelta = new Vector2(distance, 3f);
+            rectTransform.sizeDelta = new Vector2(distance, 5f);
             rectTransform.anchoredPosition = dotPositionA + dir * distance * .5f;
             rectTransform.localEulerAngles = new Vector3(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg);
 
@@ -318,6 +329,7 @@ public class Window_graph : MonoBehaviour
     public interface IGraphVisual
     {
         List<GameObject> AddGraphVisual(Vector2 graphPosition, float graphPositonWidth, string tooltipText,
+            string tooltipValue,
             Color circleColor, Color circleConnectionColor);
 
         void SetlastCircleGameObject(GameObject new_game_object);

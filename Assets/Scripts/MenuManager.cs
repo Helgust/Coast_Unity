@@ -33,18 +33,29 @@ public class MenuManager : MonoBehaviour
 
     void Awake() // here was Awake
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
         else
         {
-            if(instance != this)
+            if (instance != this)
             {
                 Destroy(gameObject);
             }
         }
-        
+
+        DirectoryInfo mapDir = new DirectoryInfo(Application.dataPath + "/Maps/");
+        if (!mapDir.Exists)
+        {
+            Directory.CreateDirectory(Application.dataPath + "/Maps/");
+            CopyMapsFromResourses();
+        }
+        else
+        {
+            CopyMapsFromResourses();
+        }
+
         DirectoryInfo d = new DirectoryInfo(Application.dataPath + "/Save/");
         if (!d.Exists)
         {
@@ -64,29 +75,27 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        Map1Toggle.SetIsOnWithoutNotify(true);
-        ChoosedMap1();
-        
+
         LocalizationManager.Read();
         //SettingsDialog.GetComponent<SettingsMenu>().Start();
 
-       switch (Application.systemLanguage)
-       {
-           case SystemLanguage.Russian:
-               LocalizationManager.Language = "Russian";
-               break;
-           default:
-               LocalizationManager.Language = "English";
-               break;
-       }
+        switch (Application.systemLanguage)
+        {
+            case SystemLanguage.Russian:
+                LocalizationManager.Language = "Russian";
+                break;
+            default:
+                LocalizationManager.Language = "English";
+                break;
+        }
         
     }
- 
-    
+
+
     public void MMPressContinue()
     {
         DateTime last_modif_time = DateTime.MinValue;
-        String filename =String.Empty;
+        String filename = String.Empty;
         DirectoryInfo d = new DirectoryInfo(Application.dataPath + "/Save/");
         FileInfo[] files = d.GetFiles("*.data");
 
@@ -98,8 +107,9 @@ public class MenuManager : MonoBehaviour
                 filename = file.Name;
             }
         }
+
         Debug.Log("Name " + filename);
-        string path = Application.dataPath +"/Save/" + filename;
+        string path = Application.dataPath + "/Save/" + filename;
 
         if (File.Exists(path))
         {
@@ -114,107 +124,58 @@ public class MenuManager : MonoBehaviour
             UIManager.instance.curUIState = UIManager.UIState.Game;
         }
     }
+
+    private void Update()
+    {
+        if (instance.isSaveItemDeSelected == true)
+        {
+            StartButton.interactable = false;
+        }
+    }
+
     public void MMPressNewGame()
     {
         ChoosingMapDialog.SetActive(true);
-        
     }
+
     public void MMPressLoadGame()
     {
         LoadingDialog.SetActive(true);
     }
+
     public void MMPressSettings()
     {
         SettingsDialog.SetActive(true);
     }
-    
+
     public void MMPressExit()
     {
         Application.Quit();
     }
-    
-    public void ChoosedMap1()
-    {
-        if (Map1Toggle.isOn)
-        {
-            Basket.instance.mapType = "map1";
-            Map2Toggle.SetIsOnWithoutNotify(false);
-            Map3Toggle.SetIsOnWithoutNotify(false);
-            Description.text = "Description1";
-            StartButton.interactable = true;
-            DescriptionGO.GetComponent<LocalizedText>().LocalizationKey = "NewGame.Description1";
-            DescriptionGO.GetComponent<LocalizedText>().Start();
-        }
-        else
-        {
-            StartButton.interactable = false;
-            Description.text = String.Empty;
-            Basket.instance.mapType = String.Empty;
-        }
-        
-    }
-    public void ChoosedMap2()
-    {
-        if (Map2Toggle.isOn)
-        {
-            Basket.instance.mapType = "map2";
-            Map1Toggle.SetIsOnWithoutNotify(false);
-            Map3Toggle.SetIsOnWithoutNotify(false);
-            Description.text = "Description2";
-            StartButton.interactable = true;
-            DescriptionGO.GetComponent<LocalizedText>().LocalizationKey = "NewGame.Description2";
-            DescriptionGO.GetComponent<LocalizedText>().Start();
-        }
-        else
-        {
-            StartButton.interactable = false;
-            Description.text = String.Empty;
-            Basket.instance.mapType = String.Empty;
-        }
-        
-    }
-    public void ChoosedMap3()
-    {
-        if (Map3Toggle.isOn)
-        {
-            Basket.instance.mapType = "map3";
-            Map1Toggle.SetIsOnWithoutNotify(false);
-            Map2Toggle.SetIsOnWithoutNotify(false);
-            Description.text = "Description3";
-            StartButton.interactable = true;
-            DescriptionGO.GetComponent<LocalizedText>().LocalizationKey = "NewGame.Description3";
-            DescriptionGO.GetComponent<LocalizedText>().Start();
-        }
-        else
-        {
-            StartButton.interactable = false;
-            Description.text = String.Empty;
-            Basket.instance.mapType = String.Empty;
-        }
-        
-    }
-    
-    
-    
+
     public void MapDialogPressCancel()
     {
-        Basket.instance.mapType = String.Empty;
+        Basket.instance.mapData.name = String.Empty;
         ChoosingMapDialog.SetActive(false);
     }
+
     public void MapDialogPressStart()
     {
         Basket.instance.modeType = "NEW";
         SceneManager.LoadScene("Scenes/SampleScene");
         UIManager.instance.curUIState = UIManager.UIState.Game;
     }
+
     public void setPauseBool(bool new_bool)
     {
         pauseBool = new_bool;
     }
+
     public void setSaveWinBool(bool new_bool)
     {
         saveWindowBool = new_bool;
     }
+
     public bool getPauseBool()
     {
         return pauseBool;
@@ -228,7 +189,61 @@ public class MenuManager : MonoBehaviour
     public void OnDisable()
     {
         LoadingDialog.SetActive(false);
-            ChoosingMapDialog.SetActive(false);
+        ChoosingMapDialog.SetActive(false);
         SettingsDialog.SetActive(false);
+    }
+    public void OnEnable()
+    {
+        //SettingsDialog.GetComponent<SettingsMenu>().ReadLocalOnEnable();
+        SettingsDialog.SetActive(true);
+        SettingsDialog.SetActive(false);
+        DirectoryInfo d = new DirectoryInfo(Application.dataPath + "/Save/");
+        if (!d.Exists)
+        {
+            CountinueButton.interactable = false;
+            Directory.CreateDirectory(Application.dataPath + "/Save/");
+        }
+        else
+        {
+            FileInfo[] files = d.GetFiles("*.data");
+            if (files.Length == 0)
+            {
+                CountinueButton.interactable = false;
+            }
+            else
+            {
+                CountinueButton.interactable = true;
+            }
+        }
+    }
+
+    public void CopyMapsFromResourses()
+    {
+        DirectoryInfo mapDir = new DirectoryInfo(Application.dataPath + "/Maps/");
+        if (mapDir.GetFiles().Length == 0)
+        {
+            CopyMapFiles("map1");
+            CopyMapFiles("map2");
+            CopyMapFiles("map3");
+        }
+    }
+
+    public void CopyMapFiles(string predicat)
+    {
+        string path = Application.dataPath + "/Maps/" + predicat;
+        Directory.CreateDirectory(path);
+        TextAsset mapConfig = Resources.Load<TextAsset>("Configs/Maps/" + predicat + "/" + predicat + "Config");
+        TextAsset mapElements = Resources.Load<TextAsset>("Configs/Maps/" + predicat + "/" + predicat + "Elements");
+        TextAsset mapUnder = Resources.Load<TextAsset>("Configs/Maps/" + predicat + "/" + predicat + "Under");
+        TextAsset mapInfo = Resources.Load<TextAsset>("Configs/Maps/" + predicat + "/" + predicat + "Info");
+        CreateConfigFile(path + "/" + predicat + "Config", mapConfig);
+        CreateConfigFile(path + "/" + predicat + "Elements", mapElements);
+        CreateConfigFile(path + "/" + predicat + "Under", mapUnder);
+        CreateConfigFile(Application.dataPath + "/Maps/" + predicat + "Info", mapInfo);
+    }
+
+    public void CreateConfigFile(string filename, TextAsset text)
+    {
+        File.WriteAllText(filename + ".json", text.ToString());
     }
 }

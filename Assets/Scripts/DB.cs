@@ -69,14 +69,14 @@ public class DB : MonoBehaviour
     //         }
     //     }
     // }
-    public void InitDB(TextAsset jsonAsset, int finalYear)
+    public void InitDB(string jsonStr, int finalYear)
     {
         //yearDataBase.Add(new Year());
         // for current moment size og list is locked by dev TODO: made it modifiable
 
         //Debug.Log("InitDB: File Exists: " + File.Exists(jsonString));
         //string json = File.ReadAllText(jsonString);
-        yearDataBase[0] = JsonConvert.DeserializeObject<Year>(jsonAsset.text);
+        yearDataBase[0] = JsonConvert.DeserializeObject<Year>(jsonStr);
 
         InitDict();
         PreCalc();
@@ -89,11 +89,11 @@ public class DB : MonoBehaviour
 
     }
 
-    public void InitBoard(TextAsset jsonAsset)
+    public void InitBoard(string jsonStr)
     {
         //Debug.Log("InitBoard: File Exists: " + File.Exists(jsonString));
         //string json = File.ReadAllText(jsonString);
-        board = JsonConvert.DeserializeObject<Board>(jsonAsset.text);
+        board = JsonConvert.DeserializeObject<Board>(jsonStr);
         board.array2d.Reverse();
         /* for (int i = 0; i < 20; i++)
         {
@@ -101,9 +101,9 @@ public class DB : MonoBehaviour
         } */
 
     }
-    public void InitBG(TextAsset jsonAsset)
+    public void InitBG(string jsonStr)
     {
-        boardBG = JsonConvert.DeserializeObject<Board>(jsonAsset.text);
+        boardBG = JsonConvert.DeserializeObject<Board>(jsonStr);
         boardBG.array2d.Reverse();
 
     }

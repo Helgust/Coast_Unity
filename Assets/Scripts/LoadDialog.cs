@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using Assets.SimpleLocalization;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -43,7 +44,17 @@ public class LoadDialog : MonoBehaviour
                 GameManager.instance.LoadFromSave(data);
             }
             SaveNameText.text = data.saveName;
-            MapNameText.text = data.mapType.ToString();
+            try
+            {
+                MapNameText.GetComponent<LocalizedText>().LocalizationKey = "NewGame."+data.mapType;
+            }
+            catch (KeyNotFoundException e)
+            {
+                Debug.Log("Catch! "+e);
+                MapNameText.text = data.mapType;
+                throw;
+            }
+            
             fileStream.Close();
         }
     }

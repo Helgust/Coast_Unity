@@ -5,6 +5,8 @@ using System.Collections;
 using Newtonsoft.Json;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.IO;
+using Assets.SimpleLocalization;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,16 +29,17 @@ public class GameManager : MonoBehaviour
 
 
     //public bool enable;
-    private TextAsset configJSON;
-    private TextAsset configMapJSON;
-    private TextAsset configBGJSON;
+    private string configJSON;
+    private string configMapJSON;
+    private string configBGJSON;
 
     void GetConfig()
     {
-        configJSON = Resources.Load<TextAsset>("Configs/config");
-        configMapJSON = Resources.Load<TextAsset>("Configs/" + Basket.instance.mapType + "Map");
-        configBGJSON = Resources.Load<TextAsset>("Configs/" + Basket.instance.mapType + "BG");
-        mapType = Basket.instance.mapType;
+        //Debug.Log("DEBUG"+Application.dataPath+"/Maps/" + Basket.instance.mapData.mapConfig);
+        configJSON = File.ReadAllText(Application.dataPath+"/Maps/" + Basket.instance.mapData.mapConfig+".json");
+        configMapJSON = File.ReadAllText(Application.dataPath+"/Maps/" + Basket.instance.mapData.mapElementsConfig+".json");
+        configBGJSON = File.ReadAllText(Application.dataPath+"/Maps/" + Basket.instance.mapData.mapUnderConfig+".json");
+        mapType = Basket.instance.mapData.name;
     }
 
 
@@ -115,14 +118,14 @@ public class GameManager : MonoBehaviour
         {
             enabled = false;
             GameUIManager.instance.NextMoveButtons.interactable = false;
-            GameUIManager.instance.FinalDialogText.text = "Years of simulation ended";
+            GameUIManager.instance.FinalDialogText.GetComponent<LocalizedText>().LocalizationKey = "Final.GameOver1";
             GameUIManager.instance.FinalDialog.SetActive(true);
         }
         else if (DB.instance.is_over)
         {
             enabled = false;
             GameUIManager.instance.NextMoveButtons.interactable = false;
-            GameUIManager.instance.FinalDialogText.text = "No more space for development";
+            GameUIManager.instance.FinalDialogText.GetComponent<LocalizedText>().LocalizationKey = "Final.GameOver2";
             GameUIManager.instance.FinalDialog.SetActive(true);
         }
         else

@@ -239,7 +239,7 @@ public class FunctionsForUIGraph : MonoBehaviour
             }
             else
             {
-                GameUIManager.instance.paramDict.Add(stat_parametr, Color.white);
+                GameUIManager.instance.paramDict.Add(stat_parametr, new Color32(16, 180, 50, 255));
             }
         }
         else

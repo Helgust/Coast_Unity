@@ -63,6 +63,11 @@ public class SettingsMenu : MonoBehaviour
         GetSettingItems();
         readGameSettings();
     }
+    public void ReadLocalOnEnable()
+    {
+        GetSettingItems();
+        readGameSettings();
+    }
     
     private void GetSettingItems()
     {
