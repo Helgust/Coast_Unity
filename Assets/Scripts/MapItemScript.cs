@@ -15,9 +15,11 @@ public class MapItemScript : MonoBehaviour,IDeselectHandler,ISelectHandler
 
     public void OnSelect(BaseEventData eventData)
     {
+        Basket.instance.mapData = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Map>();
         MenuManager.instance.Description.GetComponent<LocalizedText>().LocalizationKey = 
             "NewGame."+EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Map>().descriptionName;
+        MenuManager.instance.Description.GetComponent<Text>().text = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Map>().descriptionName;
         MenuManager.instance.Description.GetComponent<LocalizedText>().Start();
-        Basket.instance.mapData = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Map>();
+        
     }
 }

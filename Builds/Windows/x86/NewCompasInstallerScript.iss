@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "NewCoMPAS"
-#define MyAppVersion "1.0"
+#define MyAppVersion "0.8"
 #define MyAppPublisher "EgorTyutyunikov"
 #define MyAppURL "https://www.example.com/"
 #define MyAppExeName "NEWCoMPAS.exe"

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using Assets.SimpleLocalization;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -55,7 +56,9 @@ public class LoadDialogInMenu : MonoBehaviour
                 SceneManager.LoadScene("Scenes/SampleScene");
             }
             SaveNameText.text = data.saveName;
-            MapNameText.text = data.mapType.ToString();
+            MapNameText.GetComponent<LocalizedText>().LocalizationKey = "NewGame."+data.mapType;
+            MapNameText.text = data.mapType;
+            MapNameText.GetComponent<LocalizedText>().Start();
             fileStream.Close();
         }
     }

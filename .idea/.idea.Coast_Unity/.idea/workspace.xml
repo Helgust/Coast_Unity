@@ -5,41 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de759657-e7b8-48fc-a140-a1531cbbf490" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coast_Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameUI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/circleTemp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/circleTemp.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/pfWindow_graph.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/pfWindow_graph.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/map1BG.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/map1BG.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/map1Map.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/map1Map.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/map2BG.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/map2BG.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/map2Map.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/map2Map.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/map3BG.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/map3BG.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/map3Map.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/map3Map.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Reports/report_Helgust_11-04-2021-12-11-06.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Reports/report_Helgust_11-04-2021-12-11-06.csv.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Reports/report_Helgust_29-05-2021-01-29-18.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Reports/report_Helgust_29-05-2021-01-29-18.csv.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/Helgust_01-05-2021-05-01-20.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/Helgust_01-05-2021-05-01-20.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/Helgust_11-06-2021-03-11-11.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/Helgust_11-06-2021-03-11-11.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/Helgust_11-06-2021-03-11-28.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/Helgust_11-06-2021-03-11-28.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/Helgust_29-05-2021-03-29-28.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/Helgust_29-05-2021-03-29-28.data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/JOPA.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Save/JOPA.data.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Basket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Basket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DB.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FunctionsForUIGraph.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExistMaps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ExistMaps.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/Export.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/Export.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/Final.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/Final.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadDialogInMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadDialogInMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapItemScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapItemScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/NewGame.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/NewGame.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/StatScreen.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/StatScreen.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/gameSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/gameSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +68,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/LoadinDialogInMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
       <option value="$PROJECT_DIR$/Assets/Configs/map1Map.json" />
       <option value="$PROJECT_DIR$/Assets/Configs/map1BG.json" />
@@ -107,7 +93,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/SettingsMenuAtMainMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ExportDialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SaveItemScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialogInMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/SimpleLocalization/LocalizedText.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
@@ -124,14 +109,16 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/DB.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameUIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Resources/Configs/Maps/map3/map3Info.json" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/MapItemScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ExistSaves.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ExistMaps.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Window_graph.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SettingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Maps/map4Info.json" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ExistMaps.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialog.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/LoadDialogInMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MapItemScript.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lsbLZ6lLN3T85LfSGhTvVajcLR" />
@@ -256,7 +243,8 @@
       <workItem from="1622629935743" duration="2181000" />
       <workItem from="1623355305779" duration="14810000" />
       <workItem from="1623371706443" duration="2111000" />
-      <workItem from="1623443949779" duration="8241000" />
+      <workItem from="1623443949779" duration="8683000" />
+      <workItem from="1623512881075" duration="2275000" />
     </task>
     <servers />
   </component>

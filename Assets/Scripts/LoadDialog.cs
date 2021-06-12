@@ -44,17 +44,9 @@ public class LoadDialog : MonoBehaviour
                 GameManager.instance.LoadFromSave(data);
             }
             SaveNameText.text = data.saveName;
-            try
-            {
-                MapNameText.GetComponent<LocalizedText>().LocalizationKey = "NewGame."+data.mapType;
-            }
-            catch (KeyNotFoundException e)
-            {
-                Debug.Log("Catch! "+e);
-                MapNameText.text = data.mapType;
-                throw;
-            }
-            
+            MapNameText.GetComponent<LocalizedText>().LocalizationKey = "NewGame."+data.mapType;
+            MapNameText.text = data.mapType;
+            MapNameText.GetComponent<LocalizedText>().Start();
             fileStream.Close();
         }
     }

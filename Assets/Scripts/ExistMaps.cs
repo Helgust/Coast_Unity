@@ -65,11 +65,13 @@ public class ExistMaps : MonoBehaviour
             map_item.GetComponent<Map>().mapConfig = _map.mapConfig;
             map_item.GetComponent<Map>().mapElementsConfig = _map.mapElementsConfig;
             map_item.GetComponent<Map>().mapUnderConfig = _map.mapUnderConfig;
+            map_item.GetComponentInChildren<Text>().text = _map.name;
             map_item.GetComponentInChildren<LocalizedText>().LocalizationKey = "NewGame."+_map.name;
             map_item.SetActive(true);
         }
 
         Description.GetComponent<LocalizedText>().LocalizationKey = "NewGame."+_MapList[0].descriptionName;
+        Description.GetComponent<LocalizedText>().Start();
         Basket.instance.mapData = _gameObjectList[0].GetComponent<Map>();
     }
 
